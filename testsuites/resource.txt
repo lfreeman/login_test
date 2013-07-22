@@ -1,0 +1,168 @@
+*** Settings ***
+Documentation     A resource file with reusable keywords and variables.
+...                 
+...               The system specific keywords created here utilize keywords provided
+...               by the imported Selenium2Library.
+Library           Selenium2Library
+
+*** Variables ***
+${BROWSER}        Firefox
+${DELAY}          0
+${VALID PASSWORD}  xEYLg1xI
+${LOGIN URL}      http://www.interviewstreet.com
+${COMPANY}        My Company
+${COMPANY1}       My New Company
+${PHONE}          12121234567  
+${PHONE1}         19141234567  
+${INVITES_AS}     My Company Hiring Team 
+${INVITES_AS1}    My New Company Hiring Team  
+${username1}      myNewName
+
+*** Keywords ***
+Open Browser To Login Page
+    Open Browser    ${LOGIN URL}    ${BROWSER}
+    #Maximize Browser Window
+    Set Selenium Speed    ${DELAY}
+    Login Page Should Be Open
+	Click Element  id=login_button
+
+Login Page Should Be Open
+    Title Should Be    Programming Test | Hire programmers | Interviewstreet | Dashboard
+
+Go To Login Page
+    Go To    ${LOGIN URL}
+    Login Page Should Be Open
+	Click Element  id=login_button
+
+Input Username
+    [Arguments]    ${username}
+    Input Text    email    ${username}
+
+Input Password
+    [Arguments]    ${password}
+    Input Text    password    ${password}
+
+Submit Credentials
+    Click Button    login_action
+
+Account Page Should Be Open
+    [Arguments]    ${name}
+    Wait Until Page Contains Element  css=div.fade.in  20
+    Click Element  css=div.fade.in
+    Title Should Be    Programming Test | Hire programmers | Interviewstreet | Dashboard
+    Page Should Contain Element  link=${name}
+
+user name is changed
+    [Arguments]    ${name}
+    Page Should Contain Element  link=${name}
+
+User Enters Settings
+    [Arguments]    ${name}
+    Click Link  ${name}
+    Click Element  id=link_settings
+
+User See Basic Info
+    Wait Until Page Contains Element  name=name
+    #Page Should Contain Button   Save
+
+Email Address Is
+    [Arguments]    ${email}
+    Textfield Should Contain  name  ${email}
+
+Your Name Is
+    [Arguments]    ${name}
+    Textfield Should Contain  xpath=(//input[@name='name'])[2]  ${name}
+
+Your Company Name Is
+    [Arguments]    ${company}
+    Textfield Should Contain  company  ${company}
+
+Your Contact Number Is
+    [Arguments]    ${phone}
+    Textfield Should Contain  phone  ${phone}
+
+Send invites as Is
+    [Arguments]    ${invites_as}
+    Textfield Should Contain  email_from  ${invites_as}
+
+User logout
+    [Arguments]    ${name}
+    Click Link  ${name}
+    Click Link  Logout
+
+User see login page
+    Page Should Contain  The best way to hire programmers
+
+
+user changes name to
+    [Arguments]    ${name}
+    Input Text  xpath=(//input[@name='name'])[2]  ${name}
+
+user changes company name to
+    [Arguments]    ${company}
+    Input Text  company  ${company}
+
+user changes contact number to
+    [Arguments]    ${phone}
+    Input Text  phone  ${phone}
+
+user changes send invites as to
+    [Arguments]    ${invites_as}
+    Input Text  email_from  ${invites_as}
+
+Save the basic info
+    Click Link  Save
+
+User start sign up
+    Click Link  signup
+
+User see sign up dialog
+    Page Should Contain Textfield  inputEmail
+    Page Should Contain Element    id=inputPassword
+    Page Should Contain Textfield  inputFirstName
+    Page Should Contain Textfield  inputCompany
+    Page Should Contain Textfield  inputNumber
+
+User provides email address
+    [Arguments]    ${email}
+    Input Text  inputEmail  ${email}
+
+User provides password
+    [Arguments]    ${password}
+    Input Text    inputPassword    ${password}
+
+User provides name
+    [Arguments]    ${name}
+    Input Text    inputFirstName    ${name}
+
+User provides company name
+    [Arguments]    ${company}
+    Input Text    inputCompany    ${company}
+    
+User provides phone
+    [Arguments]    ${phone}
+    Input Text    inputNumber    ${phone}
+
+User signup
+    Click Button    signup_button
+
+Browser is opened to login page
+    Open browser to login page
+
+User "${username}" logs in with password "${password}"
+    Input user name    ${username}
+    Input password    ${password}
+    Submit credentials
+
+Verification email is sent 
+    [Arguments]    ${account}
+    Verification Email Is Received  ${account}
+
+Login Should Have Failed
+    Wait Until Page Contains  Login Failed. Please check username/password.
+
+Login Should Have Failed Password Is required
+    Wait Until Page Contains  Please enter a password.
+
+Login Should Have Failed Email Is Required
+    Wait Until Page Contains  Please enter your registered e-mail address.

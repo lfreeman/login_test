@@ -1,0 +1,1 @@
+pybot --outputdir output --loglevel TRACE   --timestampoutputs testsuites

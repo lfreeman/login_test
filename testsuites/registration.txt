@@ -1,0 +1,106 @@
+*** Settings ***
+Documentation     A test suite to test registration, login abd account settings
+...
+Library         lib/LoginTestLib.py 
+Resource        resource.txt
+Suite Setup     Set Variables
+#Suite Teardown  Close Browser
+#Test Teardown   Close Browser
+
+*** Test Cases ***
+Registration dialog
+    Given browser is opened to login page
+    When user start sign up
+    Then user see sign up dialog
+
+User Registration 
+	When user provides email address  ${email}
+	And user provides password  ${VALID PASSWORD}
+	And user provides name  ${username}
+	And user provides company name  ${COMPANY}
+	And user provides phone  ${PHONE}
+	And user signup
+	Then verification email is sent  ${username}
+	[Teardown]  Close Browser
+
+Valid Login
+    Given browser is opened to login page
+    When user "${email}" logs in with password "${VALID PASSWORD}"
+    Then Account page should be open  ${username}
+
+User can see basic info
+	When user enters settings  ${username}
+	Then user see basic info
+	Then email address Is  ${email}
+	Then Your Name Is   ${username}  
+	Then Your Company Name Is   ${COMPANY}
+	Then Your Contact Number Is   ${PHONE}
+	Then Send invites as Is   ${INVITES_AS}
+
+User can modify basic info
+	When user changes name to  ${username1}
+	And user changes company name to  ${COMPANY1}
+	And user changes contact number to  ${PHONE1}
+	And user changes send invites as to  ${INVITES_AS1}
+	And Save the basic info
+	Then user name is changed    ${username1}
+	[Teardown]  Close Browser
+
+User can see modified basic info
+    Given browser is opened to login page
+    When user "${email}" logs in with password "${VALID PASSWORD}"
+    Then Account page should be open  ${username1}
+	When user enters settings  ${username1}
+	Then user see basic info
+	Then email address Is  ${email}
+	Then Your Name Is   ${username1}  
+	Then Your Company Name Is   ${COMPANY1}
+	Then Your Contact Number Is   ${PHONE1}
+	Then Send invites as Is   ${INVITES_AS1}
+
+User can logout
+	When user logout  ${username1}
+	Then user see login page
+	[Teardown]  Close Browser
+
+Login With Invalid Username
+	Given browser is opened to login page
+    When user "invalid" logs in with password "${VALID PASSWORD}"
+    Then Login Should Have Failed
+    [Teardown]  Close Browser
+
+Login With Invalid Password 
+	Given browser is opened to login page
+    When user "${email}" logs in with password "invalid"
+    Then Login Should Have Failed
+    [Teardown]  Close Browser
+
+Login With Invalid Username And Password 
+	Given browser is opened to login page
+    When user "invalid" logs in with password "whatever"
+    Then Login Should Have Failed
+    [Teardown]  Close Browser
+
+Login With Empty Password   
+	Given browser is opened to login page
+    When user "${email}" logs in with password "${EMPTY}"
+    Then Login Should Have Failed Password Is required
+    [Teardown]  Close Browser
+
+Login With Empty Username  
+	Given browser is opened to login page
+    When user "${EMPTY}" logs in with password "${VALID PASSWORD}"
+    Then Login Should Have Failed Email Is Required
+    [Teardown]  Close Browser
+
+Login With Empty Username And Password 
+	Given browser is opened to login page
+    When user "${EMPTY}" logs in with password "${EMPTY}"
+    Then Login Should Have Failed Email Is Required
+	[Teardown]  Close Browser
+
+*** Keywords ***
+Set Variables
+	@{account}=  generate random email account
+	Set Global Variable  ${username}  @{account}[0]
+	Set Global Variable  ${email}  @{account}[1]

@@ -1,0 +1,2499 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generated="20130722 02:59:17.613" generator="Robot 2.8.1 (Python 2.7.2 on win32)">
+<suite source="d:\Documents\Dropbox\coding\testing\logintest\testsuites" id="s1" name="Testsuites">
+<suite source="d:\Documents\Dropbox\coding\testing\logintest\testsuites\registration.txt" id="s1-s1" name="Registration">
+<kw type="setup" name="Set Variables">
+<doc></doc>
+<arguments>
+</arguments>
+<msg timestamp="20130722 02:59:17.847" level="TRACE">Arguments: [  ]</msg>
+<kw type="kw" name="@{account} = LoginTestLib.Generate Random Email Account">
+<doc></doc>
+<arguments>
+</arguments>
+<msg timestamp="20130722 02:59:17.847" level="TRACE">Arguments: [  ]</msg>
+<msg timestamp="20130722 02:59:17.847" level="TRACE">Return: ['klctD0130722025917', 'klctD0130722025917@mailinator.com']</msg>
+<msg timestamp="20130722 02:59:17.848" level="INFO">@{account} = [ klctD0130722025917 | klctD0130722025917@mailinator.com ]</msg>
+<status status="PASS" endtime="20130722 02:59:17.847" starttime="20130722 02:59:17.847"></status>
+</kw>
+<kw type="kw" name="BuiltIn.Set Global Variable">
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<arguments>
+<arg>${username}</arg>
+<arg>@{account}[0]</arg>
+</arguments>
+<msg timestamp="20130722 02:59:17.848" level="TRACE">Arguments: [ u'${username}' | u'@{account}[0]' ]</msg>
+<msg timestamp="20130722 02:59:17.848" level="INFO">${username} = klctD0130722025917</msg>
+<msg timestamp="20130722 02:59:17.848" level="TRACE">Return: None</msg>
+<status status="PASS" endtime="20130722 02:59:17.848" starttime="20130722 02:59:17.848"></status>
+</kw>
+<kw type="kw" name="BuiltIn.Set Global Variable">
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<arguments>
+<arg>${email}</arg>
+<arg>@{account}[1]</arg>
+</arguments>
+<msg timestamp="20130722 02:59:17.849" level="TRACE">Arguments: [ u'${email}' | u'@{account}[1]' ]</msg>
+<msg timestamp="20130722 02:59:17.849" level="INFO">${email} = klctD0130722025917@mailinator.com</msg>
+<msg timestamp="20130722 02:59:17.849" level="TRACE">Return: None</msg>
+<status status="PASS" endtime="20130722 02:59:17.849" starttime="20130722 02:59:17.849"></status>
+</kw>
+<msg timestamp="20130722 02:59:17.849" level="TRACE">Return: None</msg>
+<status status="PASS" endtime="20130722 02:59:17.849" starttime="20130722 02:59:17.846"></status>
+</kw>
+<test id="s1-s1-t1" name="Registration dialog">
+<kw type="kw" name="resource.Given browser is opened to login page">
+<doc></doc>
+<arguments>
+</arguments>
+<msg timestamp="20130722 02:59:17.851" level="TRACE">Arguments: [  ]</msg>
+<kw type="kw" name="resource.Open Browser To Login Page">
+<doc></doc>
+<arguments>
+</arguments>
+<msg timestamp="20130722 02:59:17.852" level="TRACE">Arguments: [  ]</msg>
+<kw type="kw" name="Selenium2Library.Open Browser">
+<doc>Opens a new browser instance to given URL.</doc>
+<arguments>
+<arg>${LOGIN URL}</arg>
+<arg>${BROWSER}</arg>
+</arguments>
+<msg timestamp="20130722 02:59:17.852" level="TRACE">Arguments: [ u'http://www.interviewstreet.com' | u'Firefox' ]</msg>
+<msg timestamp="20130722 02:59:17.852" level="INFO">Opening browser 'Firefox' to base url 'http://www.interviewstreet.com'</msg>
+<msg timestamp="20130722 02:59:24.151" level="DEBUG">POST http://127.0.0.1:59414/hub/session {"sessionId": null, "desiredCapabilities": {"platform": "ANY", "browserName": "firefox", "version": "", "javascriptEnabled": true}}</msg>
+<msg timestamp="20130722 02:59:24.228" level="DEBUG">POST http://127.0.0.1:59414/hub/session/ec8686e4-422f-4367-9363-0eede45f5b8a/timeouts/async_script {"sessionId": "ec8686e4-422f-4367-9363-0eede45f5b8a", "ms": 5000.0}</msg>
+<msg timestamp="20130722 02:59:24.245" level="DEBUG">POST http://127.0.0.1:59414/hub/session/ec8686e4-422f-4367-9363-0eede45f5b8a/timeouts/implicit_wait {"sessionId": "ec8686e4-422f-4367-9363-0eede45f5b8a", "ms": 0.0}</msg>
+<msg timestamp="20130722 02:59:24.253" level="DEBUG">POST http://127.0.0.1:59414/hub/session/ec8686e4-422f-4367-9363-0eede45f5b8a/url {"url": "http://www.interviewstreet.com", "sessionId": "ec8686e4-422f-4367-9363-0eede45f5b8a"}</msg>
+<msg timestamp="20130722 02:59:30.606" level="DEBUG">Opened browser with session id ec8686e4-422f-4367-9363-0eede45f5b8a</msg>
+<msg timestamp="20130722 02:59:30.606" level="TRACE">Return: 1</msg>
+<status status="PASS" endtime="20130722 02:59:30.606" starttime="20130722 02:59:17.852"></status>
+</kw>
+<kw type="kw" name="Selenium2Library.Set Selenium Speed">
+<doc>Sets the delay in seconds that is waited after each Selenium command.</doc>
+<arguments>
+<arg>${DELAY}</arg>
+</arguments>
+<msg timestamp="20130722 02:59:30.606" level="TRACE">Arguments: [ u'0' ]</msg>
+<msg timestamp="20130722 02:59:30.606" level="TRACE">Return: '0 seconds'</msg>
+<status status="PASS" endtime="20130722 02:59:30.606" starttime="20130722 02:59:30.606"></status>
+</kw>
+<kw type="kw" name="resource.Login Page Should Be Open">
+<doc></doc>
+<arguments>
+</arguments>
+<msg timestamp="20130722 02:59:30.607" level="TRACE">Arguments: [  ]</msg>
+<kw type="kw" name="Selenium2Library.Title Should Be">
+<doc>Verifies that current page title equals `title`.</doc>
+<arguments>
+<arg>Programming Test | Hire programmers | Interviewstreet | Dashboard</arg>
+</arguments>
+<msg timestamp="20130722 02:59:30.607" level="TRACE">Arguments: [ u'Programming Test | Hire programmers | Interviewstreet | Dashboard' ]</msg>
+<msg timestamp="20130722 02:59:30.608" level="DEBUG">GET http://127.0.0.1:59414/hub/session/ec8686e4-422f-4367-9363-0eede45f5b8a/title {"sessionId": "ec8686e4-422f-4367-9363-0eede45f5b8a"}</msg>
+<msg timestamp="20130722 02:59:33.782" level="INFO">Page title is 'Programming Test | Hire programmers | Interviewstreet | Dashboard'.</msg>
+<msg timestamp="20130722 02:59:33.782" level="TRACE">Return: None</msg>
+<status status="PASS" endtime="20130722 02:59:33.782" starttime="20130722 02:59:30.607"></status>
+</kw>
+<msg timestamp="20130722 02:59:33.783" level="TRACE">Return: None</msg>
+<status status="PASS" endtime="20130722 02:59:33.783" starttime="20130722 02:59:30.607"></status>
+</kw>
+<kw type="kw" name="Selenium2Library.Click Element">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>id=login_button</arg>
+</arguments>
+<msg timestamp="20130722 02:59:33.784" level="TRACE">Arguments: [ u'id=login_button' ]</msg>
+<msg timestamp="20130722 02:59:33.784" level="INFO">Clicking element 'id=login_button'.</msg>
+<msg timestamp="20130722 02:59:33.784" level="DEBUG">POST http://127.0.0.1:59414/hub/session/ec8686e4-422f-4367-9363-0eede45f5b8a/elements {"using": "id", "sessionId": "ec8686e4-422f-4367-9363-0eede45f5b8a", "value": "login_button"}</msg>
+<msg timestamp="20130722 02:59:33.847" level="DEBUG">POST http://127.0.0.1:59414/hub/session/ec8686e4-422f-4367-9363-0eede45f5b8a/element/{5484e266-36d9-4a0a-bde5-8c31427eb8eb}/click {"sessionId": "ec8686e4-422f-4367-9363-0eede45f5b8a", "id": "{5484e266-36d9-4a0a-bde5-8c31427eb8eb}"}</msg>
+<msg timestamp="20130722 02:59:33.947" level="TRACE">Return: None</msg>
+<status status="PASS" endtime="20130722 02:59:33.947" starttime="20130722 02:59:33.783"></status>
+</kw>
+<msg timestamp="20130722 02:59:33.947" level="TRACE">Return: None</msg>
+<status status="PASS" endtime="20130722 02:59:33.947" starttime="20130722 02:59:17.851"></status>
+</kw>
+<msg timestamp="20130722 02:59:33.947" level="TRACE">Return: None</msg>
+<status status="PASS" endtime="20130722 02:59:33.947" starttime="20130722 02:59:17.850"></status>
+</kw>
+<kw type="kw" name="resource.When user start sign up">
+<doc></doc>
+<arguments>
+</arguments>
+<msg timestamp="20130722 02:59:33.949" level="TRACE">Arguments: [  ]</msg>
+<kw type="kw" name="Selenium2Library.Click Link">
+<doc>Clicks a link identified by locator.</doc>
+<arguments>
+<arg>signup</arg>
+</arguments>
+<msg timestamp="20130722 02:59:33.949" level="TRACE">Arguments: [ u'signup' ]</msg>
+<msg timestamp="20130722 02:59:33.949" level="INFO">Clicking link 'signup'.</msg>
+<msg timestamp="20130722 02:59:33.949" level="DEBUG">GET http://127.0.0.1:59414/hub/session/ec8686e4-422f-4367-9363-0eede45f5b8a/url {"sessionId": "ec8686e4-422f-4367-9363-0eede45f5b8a"}</msg>
+<msg timestamp="20130722 02:59:33.962" level="DEBUG">POST http://127.0.0.1:59414/hub/session/ec8686e4-422f-4367-9363-0eede45f5b8a/elements {"using": "xpath", "sessionId": "ec8686e4-422f-4367-9363-0eede45f5b8a", "value": "//a[(@id='signup' or @name='signup' or @href='signup' or normalize-space(descendant-or-self::text())='signup' or @href='https://www.interviewstreet.com/recruit2/signup')]"}</msg>
+<msg timestamp="20130722 02:59:33.973" level="DEBUG">POST http://127.0.0.1:59414/hub/session/ec8686e4-422f-4367-9363-0eede45f5b8a/element/{bc0441b8-0899-4131-97e3-2056ac7d8f2f}/click {"sessionId": "ec8686e4-422f-4367-9363-0eede45f5b8a", "id": "{bc0441b8-0899-4131-97e3-2056ac7d8f2f}"}</msg>
+<msg timestamp="20130722 02:59:36.539" level="TRACE">Return: None</msg>
+<status status="PASS" endtime="20130722 02:59:36.539" starttime="20130722 02:59:33.949"></status>
+</kw>
+<msg timestamp="20130722 02:59:36.540" level="TRACE">Return: None</msg>
+<status status="PASS" endtime="20130722 02:59:36.540" starttime="20130722 02:59:33.948"></status>
+</kw>
+<kw type="kw" name="resource.Then user see sign up dialog">
+<doc></doc>
+<arguments>
+</arguments>
+<msg timestamp="20130722 02:59:36.541" level="TRACE">Arguments: [  ]</msg>
+<kw type="kw" name="Selenium2Library.Page Should Contain Textfield">
+<doc>Verifies text field identified by `locator` is found from current page.</doc>
+<arguments>
+<arg>inputEmail</arg>
+</arguments>
+<msg timestamp="20130722 02:59:36.542" level="TRACE">Arguments: [ u'inputEmail' ]</msg>
+<msg timestamp="20130722 02:59:36.542" level="DEBUG">GET http://127.0.0.1:59414/hub/session/ec8686e4-422f-4367-9363-0eede45f5b8a/url {"sessionId": "ec8686e4-422f-4367-9363-0eede45f5b8a"}</msg>
+<msg timestamp="20130722 02:59:37.170" level="DEBUG">POST http://127.0.0.1:59414/hub/session/ec8686e4-422f-4367-9363-0eede45f5b8a/elements {"using": "xpath", "sessionId": "ec8686e4-422f-4367-9363-0eede45f5b8a", "value": "//input[@type='text' and (@id='inputEmail' or @name='inputEmail' or @value='inputEmail' or @src='inputEmail' or @src='https://www.interviewstreet.com/recruit2/inputEmail')]"}</msg>
+<msg timestamp="20130722 02:59:37.193" level="INFO">Current page contains text field 'inputEmail'.</msg>
+<msg timestamp="20130722 02:59:37.193" level="TRACE">Return: None</msg>
+<status status="PASS" endtime="20130722 02:59:37.193" starttime="20130722 02:59:36.541"></status>
+</kw>
+<kw type="kw" name="Selenium2Library.Page Should Contain Element">
+<doc>Verifies element identified by `locator` is found on the current page.</doc>
+<arguments>
+<arg>id=inputPassword</arg>
+</arguments>
+<msg timestamp="20130722 02:59:37.194" level="TRACE">Arguments: [ u'id=inputPassword' ]</msg>
+<msg timestamp="20130722 02:59:37.195" level="DEBUG">POST http://127.0.0.1:59414/hub/session/ec8686e4-422f-4367-9363-0eede45f5b8a/elements {"using": "id", "sessionId": "ec8686e4-422f-4367-9363-0eede45f5b8a", "value": "inputPassword"}</msg>
+<msg timestamp="20130722 02:59:37.234" level="INFO">Current page contains element 'id=inputPassword'.</msg>
+<msg timestamp="20130722 02:59:37.234" level="TRACE">Return: None</msg>
+<status status="PASS" endtime="20130722 02:59:37.234" starttime="20130722 02:59:37.194"></status>
+</kw>
+<kw type="kw" name="Selenium2Library.Page Should Contain Textfield">
+<doc>Verifies text field identified by `locator` is found from current page.</doc>
+<arguments>
+<arg>inputFirstName</arg>
+</arguments>
+<msg timestamp="20130722 02:59:37.235" level="TRACE">Arguments: [ u'inputFirstName' ]</msg>
+<msg timestamp="20130722 02:59:37.235" level="DEBUG">GET http://127.0.0.1:59414/hub/session/ec8686e4-422f-4367-9363-0eede45f5b8a/url {"sessionId": "ec8686e4-422f-4367-9363-0eede45f5b8a"}</msg>
+<msg timestamp="20130722 02:59:37.408" level="DEBUG">POST http://127.0.0.1:59414/hub/session/ec8686e4-422f-4367-9363-0eede45f5b8a/elements {"using": "xpath", "sessionId": "ec8686e4-422f-4367-9363-0eede45f5b8a", "value": "//input[@type='text' and (@id='inputFirstName' or @name='inputFirstName' or @value='inputFirstName' or @src='inputFirstName' or @src='https://www.interviewstreet.com/recruit2/inputFirstName')]"}</msg>
+<msg timestamp="20130722 02:59:37.432" level="INFO">Current page contains text field 'inputFirstName'.</msg>
+<msg timestamp="20130722 02:59:37.432" level="TRACE">Return: None</msg>
+<status status="PASS" endtime="20130722 02:59:37.432" starttime="20130722 02:59:37.234"></status>
+</kw>
+<kw type="kw" name="Selenium2Library.Page Should Contain Textfield">
+<doc>Verifies text field identified by `locator` is found from current page.</doc>
+<arguments>
+<arg>inputCompany</arg>
+</arguments>
+<msg timestamp="20130722 02:59:37.433" level="TRACE">Arguments: [ u'inputCompany' ]</msg>
+<msg timestamp="20130722 02:59:37.433" level="DEBUG">GET http://127.0.0.1:59414/hub/session/ec8686e4-422f-4367-9363-0eede45f5b8a/url {"sessionId": "ec8686e4-422f-4367-9363-0eede45f5b8a"}</msg>
+<msg timestamp="20130722 02:59:37.460" level="DEBUG">POST http://127.0.0.1:59414/hub/session/ec8686e4-422f-4367-9363-0eede45f5b8a/elements {"using": "xpath", "sessionId": "ec8686e4-422f-4367-9363-0eede45f5b8a", "value": "//input[@type='text' and (@id='inputCompany' or @name='inputCompany' or @value='inputCompany' or @src='inputCompany' or @src='https://www.interviewstreet.com/recruit2/inputCompany')]"}</msg>
+<msg timestamp="20130722 02:59:37.487" level="INFO">Current page contains text field 'inputCompany'.</msg>
+<msg timestamp="20130722 02:59:37.487" level="TRACE">Return: None</msg>
+<status status="PASS" endtime="20130722 02:59:37.487" starttime="20130722 02:59:37.432"></status>
+</kw>
+<kw type="kw" name="Selenium2Library.Page Should Contain Textfield">
+<doc>Verifies text field identified by `locator` is found from current page.</doc>
+<arguments>
+<arg>inputNumber</arg>
+</arguments>
+<msg timestamp="20130722 02:59:37.488" level="TRACE">Arguments: [ u'inputNumber' ]</msg>
+<msg timestamp="20130722 02:59:37.489" level="DEBUG">GET http://127.0.0.1:59414/hub/session/ec8686e4-422f-4367-9363-0eede45f5b8a/url {"sessionId": "ec8686e4-422f-4367-9363-0eede45f5b8a"}</msg>
+<msg timestamp="20130722 02:59:37.506" level="DEBUG">POST http://127.0.0.1:59414/hub/session/ec8686e4-422f-4367-9363-0eede45f5b8a/elements {"using": "xpath", "sessionId": "ec8686e4-422f-4367-9363-0eede45f5b8a", "value": "//input[@type='text' and (@id='inputNumber' or @name='inputNumber' or @value='inputNumber' or @src='inputNumber' or @src='https://www.interviewstreet.com/recruit2/inputNumber')]"}</msg>
+<msg timestamp="20130722 02:59:37.521" level="INFO">Current page contains text field 'inputNumber'.</msg>
+<msg timestamp="20130722 02:59:37.521" level="TRACE">Return: None</msg>
+<status status="PASS" endtime="20130722 02:59:37.521" starttime="20130722 02:59:37.488"></status>
+</kw>
+<msg timestamp="20130722 02:59:37.522" level="TRACE">Return: None</msg>
+<status status="PASS" endtime="20130722 02:59:37.522" starttime="20130722 02:59:36.541"></status>
+</kw>
+<doc></doc>
+<tags>
+</tags>
+<status status="PASS" endtime="20130722 02:59:37.523" critical="yes" starttime="20130722 02:59:17.849"></status>
+</test>
+<test id="s1-s1-t2" name="User Registration">
+<kw type="kw" name="resource.When user provides email address">
+<doc></doc>
+<arguments>
+<arg>${email}</arg>
+</arguments>
+<msg timestamp="20130722 02:59:37.529" level="TRACE">Arguments: [ ${email}='klctD0130722025917@mailinator.com' ]</msg>
+<kw type="kw" name="Selenium2Library.Input Text">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>inputEmail</arg>
+<arg>${email}</arg>
+</arguments>
+<msg timestamp="20130722 02:59:37.529" level="TRACE">Arguments: [ u'inputEmail' | 'klctD0130722025917@mailinator.com' ]</msg>
+<msg timestamp="20130722 02:59:37.530" level="INFO">Typing text 'klctD0130722025917@mailinator.com' into text field 'inputEmail'</msg>
+<msg timestamp="20130722 02:59:37.530" level="DEBUG">POST http://127.0.0.1:59414/hub/session/ec8686e4-422f-4367-9363-0eede45f5b8a/elements {"using": "xpath", "sessionId": "ec8686e4-422f-4367-9363-0eede45f5b8a", "value": "//*[(@id='inputEmail' or @name='inputEmail')]"}</msg>
+<msg timestamp="20130722 02:59:37.549" level="DEBUG">POST http://127.0.0.1:59414/hub/session/ec8686e4-422f-4367-9363-0eede45f5b8a/element/{67ed1ffd-4ac1-4e44-9f72-b442ebd493a2}/clear {"sessionId": "ec8686e4-422f-4367-9363-0eede45f5b8a", "id": "{67ed1ffd-4ac1-4e44-9f72-b442ebd493a2}"}</msg>
+<msg timestamp="20130722 02:59:37.585" level="DEBUG">POST http://127.0.0.1:59414/hub/session/ec8686e4-422f-4367-9363-0eede45f5b8a/element/{67ed1ffd-4ac1-4e44-9f72-b442ebd493a2}/value {"sessionId": "ec8686e4-422f-4367-9363-0eede45f5b8a", "id": "{67ed1ffd-4ac1-4e44-9f72-b442ebd493a2}", "value": ["k", "l", "c", "t", "D", "0", "1", "3", "0", "7", "2", "2", "0", "2", "5", "9", "1", "7", "@", "m", "a", "i", "l", "i", "n", "a", "t", "o", "r", ".", "c", "o", "m"]}</msg>
+<msg timestamp="20130722 02:59:37.650" level="TRACE">Return: None</msg>
+<status status="PASS" endtime="20130722 02:59:37.650" starttime="20130722 02:59:37.529"></status>
+</kw>
+<msg timestamp="20130722 02:59:37.650" level="TRACE">Return: None</msg>
+<status status="PASS" endtime="20130722 02:59:37.650" starttime="20130722 02:59:37.528"></status>
+</kw>
+<kw type="kw" name="resource.And user provides password">
+<doc></doc>
+<arguments>
+<arg>${VALID PASSWORD}</arg>
+</arguments>
+<msg timestamp="20130722 02:59:37.652" level="TRACE">Arguments: [ ${password}=u'xEYLg1xI' ]</msg>
+<kw type="kw" name="Selenium2Library.Input Text">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>inputPassword</arg>
+<arg>${password}</arg>
+</arguments>
+<msg timestamp="20130722 02:59:37.652" level="TRACE">Arguments: [ u'inputPassword' | u'xEYLg1xI' ]</msg>
+<msg timestamp="20130722 02:59:37.652" level="INFO">Typing text 'xEYLg1xI' into text field 'inputPassword'</msg>
+<msg timestamp="20130722 02:59:37.652" level="DEBUG">POST http://127.0.0.1:59414/hub/session/ec8686e4-422f-4367-9363-0eede45f5b8a/elements {"using": "xpath", "sessionId": "ec8686e4-422f-4367-9363-0eede45f5b8a", "value": "//*[(@id='inputPassword' or @name='inputPassword')]"}</msg>
+<msg timestamp="20130722 02:59:37.668" level="DEBUG">POST http://127.0.0.1:59414/hub/session/ec8686e4-422f-4367-9363-0eede45f5b8a/element/{51e14196-b198-4db7-b382-58b58eb012b6}/clear {"sessionId": "ec8686e4-422f-4367-9363-0eede45f5b8a", "id": "{51e14196-b198-4db7-b382-58b58eb012b6}"}</msg>
+<msg timestamp="20130722 02:59:37.698" level="DEBUG">POST http://127.0.0.1:59414/hub/session/ec8686e4-422f-4367-9363-0eede45f5b8a/element/{51e14196-b198-4db7-b382-58b58eb012b6}/value {"sessionId": "ec8686e4-422f-4367-9363-0eede45f5b8a", "id": "{51e14196-b198-4db7-b382-58b58eb012b6}", "value": ["x", "E", "Y", "L", "g", "1", "x", "I"]}</msg>
+<msg timestamp="20130722 02:59:37.748" level="TRACE">Return: None</msg>
+<status status="PASS" endtime="20130722 02:59:37.748" starttime="20130722 02:59:37.652"></status>
+</kw>
+<msg timestamp="20130722 02:59:37.748" level="TRACE">Return: None</msg>
+<status status="PASS" endtime="20130722 02:59:37.748" starttime="20130722 02:59:37.651"></status>
+</kw>
+<kw type="kw" name="resource.And user provides name">
+<doc></doc>
+<arguments>
+<arg>${username}</arg>
+</arguments>
+<msg timestamp="20130722 02:59:37.750" level="TRACE">Arguments: [ ${name}='klctD0130722025917' ]</msg>
+<kw type="kw" name="Selenium2Library.Input Text">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>inputFirstName</arg>
+<arg>${name}</arg>
+</arguments>
+<msg timestamp="20130722 02:59:37.750" level="TRACE">Arguments: [ u'inputFirstName' | 'klctD0130722025917' ]</msg>
+<msg timestamp="20130722 02:59:37.750" level="INFO">Typing text 'klctD0130722025917' into text field 'inputFirstName'</msg>
+<msg timestamp="20130722 02:59:37.750" level="DEBUG">POST http://127.0.0.1:59414/hub/session/ec8686e4-422f-4367-9363-0eede45f5b8a/elements {"using": "xpath", "sessionId": "ec8686e4-422f-4367-9363-0eede45f5b8a", "value": "//*[(@id='inputFirstName' or @name='inputFirstName')]"}</msg>
+<msg timestamp="20130722 02:59:37.766" level="DEBUG">POST http://127.0.0.1:59414/hub/session/ec8686e4-422f-4367-9363-0eede45f5b8a/element/{6551f780-6fdd-4c7d-b947-5f27b95aa0b3}/clear {"sessionId": "ec8686e4-422f-4367-9363-0eede45f5b8a", "id": "{6551f780-6fdd-4c7d-b947-5f27b95aa0b3}"}</msg>
+<msg timestamp="20130722 02:59:37.800" level="DEBUG">POST http://127.0.0.1:59414/hub/session/ec8686e4-422f-4367-9363-0eede45f5b8a/element/{6551f780-6fdd-4c7d-b947-5f27b95aa0b3}/value {"sessionId": "ec8686e4-422f-4367-9363-0eede45f5b8a", "id": "{6551f780-6fdd-4c7d-b947-5f27b95aa0b3}", "value": ["k", "l", "c", "t", "D", "0", "1", "3", "0", "7", "2", "2", "0", "2", "5", "9", "1", "7"]}</msg>
+<msg timestamp="20130722 02:59:37.863" level="TRACE">Return: None</msg>
+<status status="PASS" endtime="20130722 02:59:37.863" starttime="20130722 02:59:37.750"></status>
+</kw>
+<msg timestamp="20130722 02:59:37.864" level="TRACE">Return: None</msg>
+<status status="PASS" endtime="20130722 02:59:37.864" starttime="20130722 02:59:37.749"></status>
+</kw>
+<kw type="kw" name="resource.And user provides company name">
+<doc></doc>
+<arguments>
+<arg>${COMPANY}</arg>
+</arguments>
+<msg timestamp="20130722 02:59:37.865" level="TRACE">Arguments: [ ${company}=u'My Company' ]</msg>
+<kw type="kw" name="Selenium2Library.Input Text">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>inputCompany</arg>
+<arg>${company}</arg>
+</arguments>
+<msg timestamp="20130722 02:59:37.866" level="TRACE">Arguments: [ u'inputCompany' | u'My Company' ]</msg>
+<msg timestamp="20130722 02:59:37.866" level="INFO">Typing text 'My Company' into text field 'inputCompany'</msg>
+<msg timestamp="20130722 02:59:37.866" level="DEBUG">POST http://127.0.0.1:59414/hub/session/ec8686e4-422f-4367-9363-0eede45f5b8a/elements {"using": "xpath", "sessionId": "ec8686e4-422f-4367-9363-0eede45f5b8a", "value": "//*[(@id='inputCompany' or @name='inputCompany')]"}</msg>
+<msg timestamp="20130722 02:59:37.883" level="DEBUG">POST http://127.0.0.1:59414/hub/session/ec8686e4-422f-4367-9363-0eede45f5b8a/element/{bed124bb-06ba-48c3-aa2a-89eb882514cb}/clear {"sessionId": "ec8686e4-422f-4367-9363-0eede45f5b8a", "id": "{bed124bb-06ba-48c3-aa2a-89eb882514cb}"}</msg>
+<msg timestamp="20130722 02:59:37.912" level="DEBUG">POST http://127.0.0.1:59414/hub/session/ec8686e4-422f-4367-9363-0eede45f5b8a/element/{bed124bb-06ba-48c3-aa2a-89eb882514cb}/value {"sessionId": "ec8686e4-422f-4367-9363-0eede45f5b8a", "id": "{bed124bb-06ba-48c3-aa2a-89eb882514cb}", "value": ["M", "y", " ", "C", "o", "m", "p", "a", "n", "y"]}</msg>
+<msg timestamp="20130722 02:59:37.961" level="TRACE">Return: None</msg>
+<status status="PASS" endtime="20130722 02:59:37.961" starttime="20130722 02:59:37.866"></status>
+</kw>
+<msg timestamp="20130722 02:59:37.961" level="TRACE">Return: None</msg>
+<status status="PASS" endtime="20130722 02:59:37.961" starttime="20130722 02:59:37.865"></status>
+</kw>
+<kw type="kw" name="resource.And user provides phone">
+<doc></doc>
+<arguments>
+<arg>${PHONE}</arg>
+</arguments>
+<msg timestamp="20130722 02:59:37.962" level="TRACE">Arguments: [ ${phone}=u'12121234567' ]</msg>
+<kw type="kw" name="Selenium2Library.Input Text">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>inputNumber</arg>
+<arg>${phone}</arg>
+</arguments>
+<msg timestamp="20130722 02:59:37.963" level="TRACE">Arguments: [ u'inputNumber' | u'12121234567' ]</msg>
+<msg timestamp="20130722 02:59:37.963" level="INFO">Typing text '12121234567' into text field 'inputNumber'</msg>
+<msg timestamp="20130722 02:59:37.963" level="DEBUG">POST http://127.0.0.1:59414/hub/session/ec8686e4-422f-4367-9363-0eede45f5b8a/elements {"using": "xpath", "sessionId": "ec8686e4-422f-4367-9363-0eede45f5b8a", "value": "//*[(@id='inputNumber' or @name='inputNumber')]"}</msg>
+<msg timestamp="20130722 02:59:37.979" level="DEBUG">POST http://127.0.0.1:59414/hub/session/ec8686e4-422f-4367-9363-0eede45f5b8a/element/{8fdf6004-140a-42d1-9375-3d267994fff8}/clear {"sessionId": "ec8686e4-422f-4367-9363-0eede45f5b8a", "id": "{8fdf6004-140a-42d1-9375-3d267994fff8}"}</msg>
+<msg timestamp="20130722 02:59:38.009" level="DEBUG">POST http://127.0.0.1:59414/hub/session/ec8686e4-422f-4367-9363-0eede45f5b8a/element/{8fdf6004-140a-42d1-9375-3d267994fff8}/value {"sessionId": "ec8686e4-422f-4367-9363-0eede45f5b8a", "id": "{8fdf6004-140a-42d1-9375-3d267994fff8}", "value": ["1", "2", "1", "2", "1", "2", "3", "4", "5", "6", "7"]}</msg>
+<msg timestamp="20130722 02:59:38.059" level="TRACE">Return: None</msg>
+<status status="PASS" endtime="20130722 02:59:38.059" starttime="20130722 02:59:37.963"></status>
+</kw>
+<msg timestamp="20130722 02:59:38.059" level="TRACE">Return: None</msg>
+<status status="PASS" endtime="20130722 02:59:38.059" starttime="20130722 02:59:37.962"></status>
+</kw>
+<kw type="kw" name="resource.And user signup">
+<doc></doc>
+<arguments>
+</arguments>
+<msg timestamp="20130722 02:59:38.060" level="TRACE">Arguments: [  ]</msg>
+<kw type="kw" name="Selenium2Library.Click Button">
+<doc>Clicks a button identified by `locator`.</doc>
+<arguments>
+<arg>signup_button</arg>
+</arguments>
+<msg timestamp="20130722 02:59:38.061" level="TRACE">Arguments: [ u'signup_button' ]</msg>
+<msg timestamp="20130722 02:59:38.061" level="INFO">Clicking button 'signup_button'.</msg>
+<msg timestamp="20130722 02:59:38.061" level="DEBUG">GET http://127.0.0.1:59414/hub/session/ec8686e4-422f-4367-9363-0eede45f5b8a/url {"sessionId": "ec8686e4-422f-4367-9363-0eede45f5b8a"}</msg>
+<msg timestamp="20130722 02:59:38.076" level="DEBUG">POST http://127.0.0.1:59414/hub/session/ec8686e4-422f-4367-9363-0eede45f5b8a/elements {"using": "xpath", "sessionId": "ec8686e4-422f-4367-9363-0eede45f5b8a", "value": "//input[(@id='signup_button' or @name='signup_button' or @value='signup_button' or @src='signup_button' or @src='https://www.interviewstreet.com/recruit2/signup_button')]"}</msg>
+<msg timestamp="20130722 02:59:38.087" level="DEBUG">POST http://127.0.0.1:59414/hub/session/ec8686e4-422f-4367-9363-0eede45f5b8a/elements {"using": "xpath", "sessionId": "ec8686e4-422f-4367-9363-0eede45f5b8a", "value": "//button[(@id='signup_button' or @name='signup_button' or @value='signup_button' or normalize-space(descendant-or-self::text())='signup_button')]"}</msg>
+<msg timestamp="20130722 02:59:38.661" level="DEBUG">POST http://127.0.0.1:59414/hub/session/ec8686e4-422f-4367-9363-0eede45f5b8a/element/{f53d1c27-e702-4c1d-9f58-57c7d5f7f080}/click {"sessionId": "ec8686e4-422f-4367-9363-0eede45f5b8a", "id": "{f53d1c27-e702-4c1d-9f58-57c7d5f7f080}"}</msg>
+<msg timestamp="20130722 02:59:38.827" level="TRACE">Return: None</msg>
+<status status="PASS" endtime="20130722 02:59:38.827" starttime="20130722 02:59:38.061"></status>
+</kw>
+<msg timestamp="20130722 02:59:38.827" level="TRACE">Return: None</msg>
+<status status="PASS" endtime="20130722 02:59:38.827" starttime="20130722 02:59:38.060"></status>
+</kw>
+<kw type="kw" name="resource.Then verification email is sent">
+<doc></doc>
+<arguments>
+<arg>${username}</arg>
+</arguments>
+<msg timestamp="20130722 02:59:38.829" level="TRACE">Arguments: [ ${account}='klctD0130722025917' ]</msg>
+<kw type="kw" name="LoginTestLib.Verification Email Is Received">
+<doc></doc>
+<arguments>
+<arg>${account}</arg>
+</arguments>
+<msg timestamp="20130722 02:59:38.829" level="TRACE">Arguments: [ 'klctD0130722025917' ]</msg>
+<msg timestamp="20130722 03:00:08.831" level="INFO">Starting new HTTP connection (1): klctD0130722025917.mailinator.com</msg>
+<msg timestamp="20130722 03:00:09.391" level="DEBUG">"GET / HTTP/1.1" 302 0</msg>
+<msg timestamp="20130722 03:00:09.393" level="INFO">Starting new HTTP connection (1): www.mailinator.com</msg>
+<msg timestamp="20130722 03:00:09.596" level="DEBUG">"GET /maildir.jsp?email=klctD0130722025917 HTTP/1.1" 200 7258</msg>
+<msg timestamp="20130722 03:00:09.600" level="DEBUG">http://mailinator.com/displayemail1.jsp?email=klctd0130722025917&amp;msgid=1374476403-9450415-klctd0130722025917</msg>
+<msg timestamp="20130722 03:00:09.603" level="INFO">Starting new HTTP connection (1): mailinator.com</msg>
+<msg timestamp="20130722 03:00:09.798" level="DEBUG">"GET /displayemail1.jsp?email=klctd0130722025917&amp;msgid=1374476403-9450415-klctd0130722025917 HTTP/1.1" 200 7765</msg>
+<msg timestamp="20130722 03:00:09.803" level="INFO">Starting new HTTPS connection (1): www.interviewstreet.com</msg>
+<msg timestamp="20130722 03:00:11.267" level="DEBUG">"GET /recruit2/useraccount/activateEmail/?u=klctD0130722025917%40mailinator.com&amp;hu=f83f70ce1723f373c6ed2246dbb3106e HTTP/1.1" 302 20</msg>
+<msg timestamp="20130722 03:00:11.658" level="DEBUG">"GET /recruit2/recruiter HTTP/1.1" 200 19911</msg>
+<msg timestamp="20130722 03:00:11.664" level="TRACE">Return: None</msg>
+<status status="PASS" endtime="20130722 03:00:11.664" starttime="20130722 02:59:38.829"></status>
+</kw>
+<msg timestamp="20130722 03:00:11.665" level="TRACE">Return: None</msg>
+<status status="PASS" endtime="20130722 03:00:11.665" starttime="20130722 02:59:38.828"></status>
+</kw>
+<kw type="teardown" name="Selenium2Library.Close Browser">
+<doc>Closes the current browser.</doc>
+<arguments>
+</arguments>
+<msg timestamp="20130722 03:00:11.667" level="TRACE">Arguments: [  ]</msg>
+<msg timestamp="20130722 03:00:11.668" level="DEBUG">Closing browser with session id ec8686e4-422f-4367-9363-0eede45f5b8a</msg>
+<msg timestamp="20130722 03:00:11.668" level="DEBUG">DELETE http://127.0.0.1:59414/hub/session/ec8686e4-422f-4367-9363-0eede45f5b8a {"sessionId": "ec8686e4-422f-4367-9363-0eede45f5b8a"}</msg>
+<msg timestamp="20130722 03:00:11.848" level="TRACE">Return: None</msg>
+<status status="PASS" endtime="20130722 03:00:11.848" starttime="20130722 03:00:11.667"></status>
+</kw>
+<doc></doc>
+<tags>
+</tags>
+<status status="PASS" endtime="20130722 03:00:11.849" critical="yes" starttime="20130722 02:59:37.526"></status>
+</test>
+<test id="s1-s1-t3" name="Valid Login">
+<kw type="kw" name="resource.Given browser is opened to login page">
+<doc></doc>
+<arguments>
+</arguments>
+<msg timestamp="20130722 03:00:11.853" level="TRACE">Arguments: [  ]</msg>
+<kw type="kw" name="resource.Open Browser To Login Page">
+<doc></doc>
+<arguments>
+</arguments>
+<msg timestamp="20130722 03:00:11.854" level="TRACE">Arguments: [  ]</msg>
+<kw type="kw" name="Selenium2Library.Open Browser">
+<doc>Opens a new browser instance to given URL.</doc>
+<arguments>
+<arg>${LOGIN URL}</arg>
+<arg>${BROWSER}</arg>
+</arguments>
+<msg timestamp="20130722 03:00:11.854" level="TRACE">Arguments: [ u'http://www.interviewstreet.com' | u'Firefox' ]</msg>
+<msg timestamp="20130722 03:00:11.854" level="INFO">Opening browser 'Firefox' to base url 'http://www.interviewstreet.com'</msg>
+<msg timestamp="20130722 03:00:17.258" level="DEBUG">POST http://127.0.0.1:59529/hub/session {"sessionId": null, "desiredCapabilities": {"platform": "ANY", "browserName": "firefox", "version": "", "javascriptEnabled": true}}</msg>
+<msg timestamp="20130722 03:00:17.351" level="DEBUG">POST http://127.0.0.1:59529/hub/session/3586adaf-68e7-47f5-bfee-59116bd4b21e/timeouts/async_script {"sessionId": "3586adaf-68e7-47f5-bfee-59116bd4b21e", "ms": 5000.0}</msg>
+<msg timestamp="20130722 03:00:17.366" level="DEBUG">POST http://127.0.0.1:59529/hub/session/3586adaf-68e7-47f5-bfee-59116bd4b21e/timeouts/implicit_wait {"sessionId": "3586adaf-68e7-47f5-bfee-59116bd4b21e", "ms": 0.0}</msg>
+<msg timestamp="20130722 03:00:17.376" level="DEBUG">POST http://127.0.0.1:59529/hub/session/3586adaf-68e7-47f5-bfee-59116bd4b21e/url {"url": "http://www.interviewstreet.com", "sessionId": "3586adaf-68e7-47f5-bfee-59116bd4b21e"}</msg>
+<msg timestamp="20130722 03:00:23.894" level="DEBUG">Opened browser with session id 3586adaf-68e7-47f5-bfee-59116bd4b21e</msg>
+<msg timestamp="20130722 03:00:23.894" level="TRACE">Return: 2</msg>
+<status status="PASS" endtime="20130722 03:00:23.894" starttime="20130722 03:00:11.854"></status>
+</kw>
+<kw type="kw" name="Selenium2Library.Set Selenium Speed">
+<doc>Sets the delay in seconds that is waited after each Selenium command.</doc>
+<arguments>
+<arg>${DELAY}</arg>
+</arguments>
+<msg timestamp="20130722 03:00:23.895" level="TRACE">Arguments: [ u'0' ]</msg>
+<msg timestamp="20130722 03:00:23.895" level="TRACE">Return: '0 seconds'</msg>
+<status status="PASS" endtime="20130722 03:00:23.895" starttime="20130722 03:00:23.894"></status>
+</kw>
+<kw type="kw" name="resource.Login Page Should Be Open">
+<doc></doc>
+<arguments>
+</arguments>
+<msg timestamp="20130722 03:00:23.897" level="TRACE">Arguments: [  ]</msg>
+<kw type="kw" name="Selenium2Library.Title Should Be">
+<doc>Verifies that current page title equals `title`.</doc>
+<arguments>
+<arg>Programming Test | Hire programmers | Interviewstreet | Dashboard</arg>
+</arguments>
+<msg timestamp="20130722 03:00:23.898" level="TRACE">Arguments: [ u'Programming Test | Hire programmers | Interviewstreet | Dashboard' ]</msg>
+<msg timestamp="20130722 03:00:23.898" level="DEBUG">GET http://127.0.0.1:59529/hub/session/3586adaf-68e7-47f5-bfee-59116bd4b21e/title {"sessionId": "3586adaf-68e7-47f5-bfee-59116bd4b21e"}</msg>
+<msg timestamp="20130722 03:00:26.778" level="INFO">Page title is 'Programming Test | Hire programmers | Interviewstreet | Dashboard'.</msg>
+<msg timestamp="20130722 03:00:26.778" level="TRACE">Return: None</msg>
+<status status="PASS" endtime="20130722 03:00:26.778" starttime="20130722 03:00:23.897"></status>
+</kw>
+<msg timestamp="20130722 03:00:26.779" level="TRACE">Return: None</msg>
+<status status="PASS" endtime="20130722 03:00:26.778" starttime="20130722 03:00:23.896"></status>
+</kw>
+<kw type="kw" name="Selenium2Library.Click Element">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>id=login_button</arg>
+</arguments>
+<msg timestamp="20130722 03:00:26.779" level="TRACE">Arguments: [ u'id=login_button' ]</msg>
+<msg timestamp="20130722 03:00:26.779" level="INFO">Clicking element 'id=login_button'.</msg>
+<msg timestamp="20130722 03:00:26.779" level="DEBUG">POST http://127.0.0.1:59529/hub/session/3586adaf-68e7-47f5-bfee-59116bd4b21e/elements {"using": "id", "sessionId": "3586adaf-68e7-47f5-bfee-59116bd4b21e", "value": "login_button"}</msg>
+<msg timestamp="20130722 03:00:26.830" level="DEBUG">POST http://127.0.0.1:59529/hub/session/3586adaf-68e7-47f5-bfee-59116bd4b21e/element/{8af4782a-3759-4b03-b793-d80cf0096ef8}/click {"sessionId": "3586adaf-68e7-47f5-bfee-59116bd4b21e", "id": "{8af4782a-3759-4b03-b793-d80cf0096ef8}"}</msg>
+<msg timestamp="20130722 03:00:26.916" level="TRACE">Return: None</msg>
+<status status="PASS" endtime="20130722 03:00:26.916" starttime="20130722 03:00:26.779"></status>
+</kw>
+<msg timestamp="20130722 03:00:26.916" level="TRACE">Return: None</msg>
+<status status="PASS" endtime="20130722 03:00:26.916" starttime="20130722 03:00:11.853"></status>
+</kw>
+<msg timestamp="20130722 03:00:26.916" level="TRACE">Return: None</msg>
+<status status="PASS" endtime="20130722 03:00:26.916" starttime="20130722 03:00:11.852"></status>
+</kw>
+<kw type="kw" name="resource.When user &quot;${email}&quot; logs in with password &quot;${VALID PASSWORD}&quot;">
+<doc></doc>
+<arguments>
+</arguments>
+<msg timestamp="20130722 03:00:26.918" level="TRACE">Arguments: [  ]</msg>
+<kw type="kw" name="resource.Input Username">
+<doc></doc>
+<arguments>
+<arg>${username}</arg>
+</arguments>
+<msg timestamp="20130722 03:00:26.919" level="TRACE">Arguments: [ ${username}='klctD0130722025917@mailinator.com' ]</msg>
+<kw type="kw" name="Selenium2Library.Input Text">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>email</arg>
+<arg>${username}</arg>
+</arguments>
+<msg timestamp="20130722 03:00:26.919" level="TRACE">Arguments: [ u'email' | 'klctD0130722025917@mailinator.com' ]</msg>
+<msg timestamp="20130722 03:00:26.919" level="INFO">Typing text 'klctD0130722025917@mailinator.com' into text field 'email'</msg>
+<msg timestamp="20130722 03:00:26.920" level="DEBUG">POST http://127.0.0.1:59529/hub/session/3586adaf-68e7-47f5-bfee-59116bd4b21e/elements {"using": "xpath", "sessionId": "3586adaf-68e7-47f5-bfee-59116bd4b21e", "value": "//*[(@id='email' or @name='email')]"}</msg>
+<msg timestamp="20130722 03:00:26.941" level="DEBUG">POST http://127.0.0.1:59529/hub/session/3586adaf-68e7-47f5-bfee-59116bd4b21e/element/{79cc4f75-645e-43bf-adeb-74ed5960d9ff}/clear {"sessionId": "3586adaf-68e7-47f5-bfee-59116bd4b21e", "id": "{79cc4f75-645e-43bf-adeb-74ed5960d9ff}"}</msg>
+<msg timestamp="20130722 03:00:26.959" level="DEBUG">POST http://127.0.0.1:59529/hub/session/3586adaf-68e7-47f5-bfee-59116bd4b21e/element/{79cc4f75-645e-43bf-adeb-74ed5960d9ff}/value {"sessionId": "3586adaf-68e7-47f5-bfee-59116bd4b21e", "id": "{79cc4f75-645e-43bf-adeb-74ed5960d9ff}", "value": ["k", "l", "c", "t", "D", "0", "1", "3", "0", "7", "2", "2", "0", "2", "5", "9", "1", "7", "@", "m", "a", "i", "l", "i", "n", "a", "t", "o", "r", ".", "c", "o", "m"]}</msg>
+<msg timestamp="20130722 03:00:27.016" level="TRACE">Return: None</msg>
+<status status="PASS" endtime="20130722 03:00:27.016" starttime="20130722 03:00:26.919"></status>
+</kw>
+<msg timestamp="20130722 03:00:27.016" level="TRACE">Return: None</msg>
+<status status="PASS" endtime="20130722 03:00:27.016" starttime="20130722 03:00:26.918"></status>
+</kw>
+<kw type="kw" name="resource.Input Password">
+<doc></doc>
+<arguments>
+<arg>${password}</arg>
+</arguments>
+<msg timestamp="20130722 03:00:27.017" level="TRACE">Arguments: [ ${password}=u'xEYLg1xI' ]</msg>
+<kw type="kw" name="Selenium2Library.Input Text">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>password</arg>
+<arg>${password}</arg>
+</arguments>
+<msg timestamp="20130722 03:00:27.017" level="TRACE">Arguments: [ u'password' | u'xEYLg1xI' ]</msg>
+<msg timestamp="20130722 03:00:27.017" level="INFO">Typing text 'xEYLg1xI' into text field 'password'</msg>
+<msg timestamp="20130722 03:00:27.018" level="DEBUG">POST http://127.0.0.1:59529/hub/session/3586adaf-68e7-47f5-bfee-59116bd4b21e/elements {"using": "xpath", "sessionId": "3586adaf-68e7-47f5-bfee-59116bd4b21e", "value": "//*[(@id='password' or @name='password')]"}</msg>
+<msg timestamp="20130722 03:00:27.031" level="DEBUG">POST http://127.0.0.1:59529/hub/session/3586adaf-68e7-47f5-bfee-59116bd4b21e/element/{6168df66-a142-4f73-93e5-214690b98ad9}/clear {"sessionId": "3586adaf-68e7-47f5-bfee-59116bd4b21e", "id": "{6168df66-a142-4f73-93e5-214690b98ad9}"}</msg>
+<msg timestamp="20130722 03:00:27.048" level="DEBUG">POST http://127.0.0.1:59529/hub/session/3586adaf-68e7-47f5-bfee-59116bd4b21e/element/{6168df66-a142-4f73-93e5-214690b98ad9}/value {"sessionId": "3586adaf-68e7-47f5-bfee-59116bd4b21e", "id": "{6168df66-a142-4f73-93e5-214690b98ad9}", "value": ["x", "E", "Y", "L", "g", "1", "x", "I"]}</msg>
+<msg timestamp="20130722 03:00:27.086" level="TRACE">Return: None</msg>
+<status status="PASS" endtime="20130722 03:00:27.086" starttime="20130722 03:00:27.017"></status>
+</kw>
+<msg timestamp="20130722 03:00:27.086" level="TRACE">Return: None</msg>
+<status status="PASS" endtime="20130722 03:00:27.086" starttime="20130722 03:00:27.016"></status>
+</kw>
+<kw type="kw" name="resource.Submit Credentials">
+<doc></doc>
+<arguments>
+</arguments>
+<msg timestamp="20130722 03:00:27.087" level="TRACE">Arguments: [  ]</msg>
+<kw type="kw" name="Selenium2Library.Click Button">
+<doc>Clicks a button identified by `locator`.</doc>
+<arguments>
+<arg>login_action</arg>
+</arguments>
+<msg timestamp="20130722 03:00:27.087" level="TRACE">Arguments: [ u'login_action' ]</msg>
+<msg timestamp="20130722 03:00:27.087" level="INFO">Clicking button 'login_action'.</msg>
+<msg timestamp="20130722 03:00:27.088" level="DEBUG">GET http://127.0.0.1:59529/hub/session/3586adaf-68e7-47f5-bfee-59116bd4b21e/url {"sessionId": "3586adaf-68e7-47f5-bfee-59116bd4b21e"}</msg>
+<msg timestamp="20130722 03:00:27.099" level="DEBUG">POST http://127.0.0.1:59529/hub/session/3586adaf-68e7-47f5-bfee-59116bd4b21e/elements {"using": "xpath", "sessionId": "3586adaf-68e7-47f5-bfee-59116bd4b21e", "value": "//input[(@id='login_action' or @name='login_action' or @value='login_action' or @src='login_action' or @src='https://www.interviewstreet.com/recruit2/login_action')]"}</msg>
+<msg timestamp="20130722 03:00:27.108" level="DEBUG">POST http://127.0.0.1:59529/hub/session/3586adaf-68e7-47f5-bfee-59116bd4b21e/elements {"using": "xpath", "sessionId": "3586adaf-68e7-47f5-bfee-59116bd4b21e", "value": "//button[(@id='login_action' or @name='login_action' or @value='login_action' or normalize-space(descendant-or-self::text())='login_action')]"}</msg>
+<msg timestamp="20130722 03:00:27.119" level="DEBUG">POST http://127.0.0.1:59529/hub/session/3586adaf-68e7-47f5-bfee-59116bd4b21e/element/{51200288-b8e5-495c-80e4-0491d01f2afa}/click {"sessionId": "3586adaf-68e7-47f5-bfee-59116bd4b21e", "id": "{51200288-b8e5-495c-80e4-0491d01f2afa}"}</msg>
+<msg timestamp="20130722 03:00:27.204" level="TRACE">Return: None</msg>
+<status status="PASS" endtime="20130722 03:00:27.204" starttime="20130722 03:00:27.087"></status>
+</kw>
+<msg timestamp="20130722 03:00:27.204" level="TRACE">Return: None</msg>
+<status status="PASS" endtime="20130722 03:00:27.204" starttime="20130722 03:00:27.086"></status>
+</kw>
+<msg timestamp="20130722 03:00:27.204" level="TRACE">Return: None</msg>
+<status status="PASS" endtime="20130722 03:00:27.204" starttime="20130722 03:00:26.918"></status>
+</kw>
+<kw type="kw" name="resource.Then Account page should be open">
+<doc></doc>
+<arguments>
+<arg>${username}</arg>
+</arguments>
+<msg timestamp="20130722 03:00:27.206" level="TRACE">Arguments: [ ${name}='klctD0130722025917' ]</msg>
+<kw type="kw" name="Selenium2Library.Wait Until Page Contains Element">
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<arguments>
+<arg>css=div.fade.in</arg>
+<arg>20</arg>
+</arguments>
+<msg timestamp="20130722 03:00:27.206" level="TRACE">Arguments: [ u'css=div.fade.in' | u'20' ]</msg>
+<msg timestamp="20130722 03:00:27.207" level="DEBUG">POST http://127.0.0.1:59529/hub/session/3586adaf-68e7-47f5-bfee-59116bd4b21e/elements {"using": "css selector", "sessionId": "3586adaf-68e7-47f5-bfee-59116bd4b21e", "value": "div.fade.in"}</msg>
+<msg timestamp="20130722 03:00:27.420" level="DEBUG">POST http://127.0.0.1:59529/hub/session/3586adaf-68e7-47f5-bfee-59116bd4b21e/elements {"using": "css selector", "sessionId": "3586adaf-68e7-47f5-bfee-59116bd4b21e", "value": "div.fade.in"}</msg>
+<msg timestamp="20130722 03:00:28.878" level="DEBUG">POST http://127.0.0.1:59529/hub/session/3586adaf-68e7-47f5-bfee-59116bd4b21e/elements {"using": "css selector", "sessionId": "3586adaf-68e7-47f5-bfee-59116bd4b21e", "value": "div.fade.in"}</msg>
+<msg timestamp="20130722 03:00:29.100" level="DEBUG">POST http://127.0.0.1:59529/hub/session/3586adaf-68e7-47f5-bfee-59116bd4b21e/elements {"using": "css selector", "sessionId": "3586adaf-68e7-47f5-bfee-59116bd4b21e", "value": "div.fade.in"}</msg>
+<msg timestamp="20130722 03:00:34.024" level="TRACE">Return: None</msg>
+<status status="PASS" endtime="20130722 03:00:34.024" starttime="20130722 03:00:27.206"></status>
+</kw>
+<kw type="kw" name="Selenium2Library.Click Element">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>css=div.fade.in</arg>
+</arguments>
+<msg timestamp="20130722 03:00:34.024" level="TRACE">Arguments: [ u'css=div.fade.in' ]</msg>
+<msg timestamp="20130722 03:00:34.024" level="INFO">Clicking element 'css=div.fade.in'.</msg>
+<msg timestamp="20130722 03:00:34.025" level="DEBUG">POST http://127.0.0.1:59529/hub/session/3586adaf-68e7-47f5-bfee-59116bd4b21e/elements {"using": "css selector", "sessionId": "3586adaf-68e7-47f5-bfee-59116bd4b21e", "value": "div.fade.in"}</msg>
+<msg timestamp="20130722 03:00:34.041" level="DEBUG">POST http://127.0.0.1:59529/hub/session/3586adaf-68e7-47f5-bfee-59116bd4b21e/element/{46d9fa5e-398a-494b-b928-32e28188919a}/click {"sessionId": "3586adaf-68e7-47f5-bfee-59116bd4b21e", "id": "{46d9fa5e-398a-494b-b928-32e28188919a}"}</msg>
+<msg timestamp="20130722 03:00:34.133" level="TRACE">Return: None</msg>
+<status status="PASS" endtime="20130722 03:00:34.133" starttime="20130722 03:00:34.024"></status>
+</kw>
+<kw type="kw" name="Selenium2Library.Title Should Be">
+<doc>Verifies that current page title equals `title`.</doc>
+<arguments>
+<arg>Programming Test | Hire programmers | Interviewstreet | Dashboard</arg>
+</arguments>
+<msg timestamp="20130722 03:00:34.133" level="TRACE">Arguments: [ u'Programming Test | Hire programmers | Interviewstreet | Dashboard' ]</msg>
+<msg timestamp="20130722 03:00:34.134" level="DEBUG">GET http://127.0.0.1:59529/hub/session/3586adaf-68e7-47f5-bfee-59116bd4b21e/title {"sessionId": "3586adaf-68e7-47f5-bfee-59116bd4b21e"}</msg>
+<msg timestamp="20130722 03:00:34.559" level="INFO">Page title is 'Programming Test | Hire programmers | Interviewstreet | Dashboard'.</msg>
+<msg timestamp="20130722 03:00:34.559" level="TRACE">Return: None</msg>
+<status status="PASS" endtime="20130722 03:00:34.559" starttime="20130722 03:00:34.133"></status>
+</kw>
+<kw type="kw" name="Selenium2Library.Page Should Contain Element">
+<doc>Verifies element identified by `locator` is found on the current page.</doc>
+<arguments>
+<arg>link=${name}</arg>
+</arguments>
+<msg timestamp="20130722 03:00:34.560" level="TRACE">Arguments: [ u'link=klctD0130722025917' ]</msg>
+<msg timestamp="20130722 03:00:34.561" level="DEBUG">POST http://127.0.0.1:59529/hub/session/3586adaf-68e7-47f5-bfee-59116bd4b21e/elements {"using": "link text", "sessionId": "3586adaf-68e7-47f5-bfee-59116bd4b21e", "value": "klctD0130722025917"}</msg>
+<msg timestamp="20130722 03:00:34.777" level="INFO">Current page contains element 'link=klctD0130722025917'.</msg>
+<msg timestamp="20130722 03:00:34.777" level="TRACE">Return: None</msg>
+<status status="PASS" endtime="20130722 03:00:34.777" starttime="20130722 03:00:34.560"></status>
+</kw>
+<msg timestamp="20130722 03:00:34.777" level="TRACE">Return: None</msg>
+<status status="PASS" endtime="20130722 03:00:34.777" starttime="20130722 03:00:27.205"></status>
+</kw>
+<doc></doc>
+<tags>
+</tags>
+<status status="PASS" endtime="20130722 03:00:34.778" critical="yes" starttime="20130722 03:00:11.851"></status>
+</test>
+<test id="s1-s1-t4" name="User can see basic info">
+<kw type="kw" name="resource.When user enters settings">
+<doc></doc>
+<arguments>
+<arg>${username}</arg>
+</arguments>
+<msg timestamp="20130722 03:00:34.782" level="TRACE">Arguments: [ ${name}='klctD0130722025917' ]</msg>
+<kw type="kw" name="Selenium2Library.Click Link">
+<doc>Clicks a link identified by locator.</doc>
+<arguments>
+<arg>${name}</arg>
+</arguments>
+<msg timestamp="20130722 03:00:34.782" level="TRACE">Arguments: [ 'klctD0130722025917' ]</msg>
+<msg timestamp="20130722 03:00:34.782" level="INFO">Clicking link 'klctD0130722025917'.</msg>
+<msg timestamp="20130722 03:00:34.782" level="DEBUG">GET http://127.0.0.1:59529/hub/session/3586adaf-68e7-47f5-bfee-59116bd4b21e/url {"sessionId": "3586adaf-68e7-47f5-bfee-59116bd4b21e"}</msg>
+<msg timestamp="20130722 03:00:34.793" level="DEBUG">POST http://127.0.0.1:59529/hub/session/3586adaf-68e7-47f5-bfee-59116bd4b21e/elements {"using": "xpath", "sessionId": "3586adaf-68e7-47f5-bfee-59116bd4b21e", "value": "//a[(@id='klctD0130722025917' or @name='klctD0130722025917' or @href='klctD0130722025917' or normalize-space(descendant-or-self::text())='klctD0130722025917' or @href='https://www.interviewstreet.com/recruit2/klctD0130722025917')]"}</msg>
+<msg timestamp="20130722 03:00:34.804" level="DEBUG">POST http://127.0.0.1:59529/hub/session/3586adaf-68e7-47f5-bfee-59116bd4b21e/element/{183355ac-930f-459a-a118-c5dbf77cb402}/click {"sessionId": "3586adaf-68e7-47f5-bfee-59116bd4b21e", "id": "{183355ac-930f-459a-a118-c5dbf77cb402}"}</msg>
+<msg timestamp="20130722 03:00:34.878" level="TRACE">Return: None</msg>
+<status status="PASS" endtime="20130722 03:00:34.878" starttime="20130722 03:00:34.782"></status>
+</kw>
+<kw type="kw" name="Selenium2Library.Click Element">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>id=link_settings</arg>
+</arguments>
+<msg timestamp="20130722 03:00:34.879" level="TRACE">Arguments: [ u'id=link_settings' ]</msg>
+<msg timestamp="20130722 03:00:34.879" level="INFO">Clicking element 'id=link_settings'.</msg>
+<msg timestamp="20130722 03:00:34.879" level="DEBUG">POST http://127.0.0.1:59529/hub/session/3586adaf-68e7-47f5-bfee-59116bd4b21e/elements {"using": "id", "sessionId": "3586adaf-68e7-47f5-bfee-59116bd4b21e", "value": "link_settings"}</msg>
+<msg timestamp="20130722 03:00:34.896" level="DEBUG">POST http://127.0.0.1:59529/hub/session/3586adaf-68e7-47f5-bfee-59116bd4b21e/element/{de899fc7-78d2-4b52-9001-3b0e41c95055}/click {"sessionId": "3586adaf-68e7-47f5-bfee-59116bd4b21e", "id": "{de899fc7-78d2-4b52-9001-3b0e41c95055}"}</msg>
+<msg timestamp="20130722 03:00:35.010" level="TRACE">Return: None</msg>
+<status status="PASS" endtime="20130722 03:00:35.010" starttime="20130722 03:00:34.879"></status>
+</kw>
+<msg timestamp="20130722 03:00:35.010" level="TRACE">Return: None</msg>
+<status status="PASS" endtime="20130722 03:00:35.010" starttime="20130722 03:00:34.781"></status>
+</kw>
+<kw type="kw" name="resource.Then user see basic info">
+<doc></doc>
+<arguments>
+</arguments>
+<msg timestamp="20130722 03:00:35.012" level="TRACE">Arguments: [  ]</msg>
+<kw type="kw" name="Selenium2Library.Wait Until Page Contains Element">
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<arguments>
+<arg>name=name</arg>
+</arguments>
+<msg timestamp="20130722 03:00:35.012" level="TRACE">Arguments: [ u'name=name' ]</msg>
+<msg timestamp="20130722 03:00:35.012" level="DEBUG">POST http://127.0.0.1:59529/hub/session/3586adaf-68e7-47f5-bfee-59116bd4b21e/elements {"using": "name", "sessionId": "3586adaf-68e7-47f5-bfee-59116bd4b21e", "value": "name"}</msg>
+<msg timestamp="20130722 03:00:35.430" level="TRACE">Return: None</msg>
+<status status="PASS" endtime="20130722 03:00:35.430" starttime="20130722 03:00:35.012"></status>
+</kw>
+<msg timestamp="20130722 03:00:35.431" level="TRACE">Return: None</msg>
+<status status="PASS" endtime="20130722 03:00:35.431" starttime="20130722 03:00:35.011"></status>
+</kw>
+<kw type="kw" name="resource.Then email address Is">
+<doc></doc>
+<arguments>
+<arg>${email}</arg>
+</arguments>
+<msg timestamp="20130722 03:00:35.432" level="TRACE">Arguments: [ ${email}='klctD0130722025917@mailinator.com' ]</msg>
+<kw type="kw" name="Selenium2Library.Textfield Should Contain">
+<doc>Verifies text field identified by `locator` contains text `expected`.</doc>
+<arguments>
+<arg>name</arg>
+<arg>${email}</arg>
+</arguments>
+<msg timestamp="20130722 03:00:35.432" level="TRACE">Arguments: [ u'name' | 'klctD0130722025917@mailinator.com' ]</msg>
+<msg timestamp="20130722 03:00:35.433" level="DEBUG">GET http://127.0.0.1:59529/hub/session/3586adaf-68e7-47f5-bfee-59116bd4b21e/url {"sessionId": "3586adaf-68e7-47f5-bfee-59116bd4b21e"}</msg>
+<msg timestamp="20130722 03:00:35.653" level="DEBUG">POST http://127.0.0.1:59529/hub/session/3586adaf-68e7-47f5-bfee-59116bd4b21e/elements {"using": "xpath", "sessionId": "3586adaf-68e7-47f5-bfee-59116bd4b21e", "value": "//input[@type='text' and (@id='name' or @name='name' or @value='name' or @src='name' or @src='https://www.interviewstreet.com/recruit2/name')]"}</msg>
+<msg timestamp="20130722 03:00:35.687" level="DEBUG">GET http://127.0.0.1:59529/hub/session/3586adaf-68e7-47f5-bfee-59116bd4b21e/element/{c87a7c77-5476-4d02-970c-0fc1a38fdbc8}/attribute/value {"sessionId": "3586adaf-68e7-47f5-bfee-59116bd4b21e", "name": "value", "id": "{c87a7c77-5476-4d02-970c-0fc1a38fdbc8}"}</msg>
+<msg timestamp="20130722 03:00:35.719" level="INFO">Text field 'name' contains text 'klctD0130722025917@mailinator.com'.</msg>
+<msg timestamp="20130722 03:00:35.719" level="TRACE">Return: None</msg>
+<status status="PASS" endtime="20130722 03:00:35.719" starttime="20130722 03:00:35.432"></status>
+</kw>
+<msg timestamp="20130722 03:00:35.720" level="TRACE">Return: None</msg>
+<status status="PASS" endtime="20130722 03:00:35.720" starttime="20130722 03:00:35.431"></status>
+</kw>
+<kw type="kw" name="resource.Then Your Name Is">
+<doc></doc>
+<arguments>
+<arg>${username}</arg>
+</arguments>
+<msg timestamp="20130722 03:00:35.723" level="TRACE">Arguments: [ ${name}='klctD0130722025917' ]</msg>
+<kw type="kw" name="Selenium2Library.Textfield Should Contain">
+<doc>Verifies text field identified by `locator` contains text `expected`.</doc>
+<arguments>
+<arg>xpath=(//input[@name='name'])[2]</arg>
+<arg>${name}</arg>
+</arguments>
+<msg timestamp="20130722 03:00:35.724" level="TRACE">Arguments: [ u"xpath=(//input[@name='name'])[2]" | 'klctD0130722025917' ]</msg>
+<msg timestamp="20130722 03:00:35.725" level="DEBUG">POST http://127.0.0.1:59529/hub/session/3586adaf-68e7-47f5-bfee-59116bd4b21e/elements {"using": "xpath", "sessionId": "3586adaf-68e7-47f5-bfee-59116bd4b21e", "value": "(//input[@name='name'])[2]"}</msg>
+<msg timestamp="20130722 03:00:35.800" level="DEBUG">GET http://127.0.0.1:59529/hub/session/3586adaf-68e7-47f5-bfee-59116bd4b21e/element/{eaee26b1-f1b0-4aa8-904a-d7ddcee80264}/name {"sessionId": "3586adaf-68e7-47f5-bfee-59116bd4b21e", "id": "{eaee26b1-f1b0-4aa8-904a-d7ddcee80264}"}</msg>
+<msg timestamp="20130722 03:00:35.815" level="DEBUG">GET http://127.0.0.1:59529/hub/session/3586adaf-68e7-47f5-bfee-59116bd4b21e/element/{eaee26b1-f1b0-4aa8-904a-d7ddcee80264}/attribute/type {"sessionId": "3586adaf-68e7-47f5-bfee-59116bd4b21e", "name": "type", "id": "{eaee26b1-f1b0-4aa8-904a-d7ddcee80264}"}</msg>
+<msg timestamp="20130722 03:00:35.827" level="DEBUG">GET http://127.0.0.1:59529/hub/session/3586adaf-68e7-47f5-bfee-59116bd4b21e/element/{eaee26b1-f1b0-4aa8-904a-d7ddcee80264}/attribute/value {"sessionId": "3586adaf-68e7-47f5-bfee-59116bd4b21e", "name": "value", "id": "{eaee26b1-f1b0-4aa8-904a-d7ddcee80264}"}</msg>
+<msg timestamp="20130722 03:00:35.837" level="INFO">Text field 'xpath=(//input[@name='name'])[2]' contains text 'klctD0130722025917'.</msg>
+<msg timestamp="20130722 03:00:35.837" level="TRACE">Return: None</msg>
+<status status="PASS" endtime="20130722 03:00:35.837" starttime="20130722 03:00:35.724"></status>
+</kw>
+<msg timestamp="20130722 03:00:35.838" level="TRACE">Return: None</msg>
+<status status="PASS" endtime="20130722 03:00:35.838" starttime="20130722 03:00:35.722"></status>
+</kw>
+<kw type="kw" name="resource.Then Your Company Name Is">
+<doc></doc>
+<arguments>
+<arg>${COMPANY}</arg>
+</arguments>
+<msg timestamp="20130722 03:00:35.839" level="TRACE">Arguments: [ ${company}=u'My Company' ]</msg>
+<kw type="kw" name="Selenium2Library.Textfield Should Contain">
+<doc>Verifies text field identified by `locator` contains text `expected`.</doc>
+<arguments>
+<arg>company</arg>
+<arg>${company}</arg>
+</arguments>
+<msg timestamp="20130722 03:00:35.839" level="TRACE">Arguments: [ u'company' | u'My Company' ]</msg>
+<msg timestamp="20130722 03:00:35.840" level="DEBUG">GET http://127.0.0.1:59529/hub/session/3586adaf-68e7-47f5-bfee-59116bd4b21e/url {"sessionId": "3586adaf-68e7-47f5-bfee-59116bd4b21e"}</msg>
+<msg timestamp="20130722 03:00:35.850" level="DEBUG">POST http://127.0.0.1:59529/hub/session/3586adaf-68e7-47f5-bfee-59116bd4b21e/elements {"using": "xpath", "sessionId": "3586adaf-68e7-47f5-bfee-59116bd4b21e", "value": "//input[@type='text' and (@id='company' or @name='company' or @value='company' or @src='company' or @src='https://www.interviewstreet.com/recruit2/company')]"}</msg>
+<msg timestamp="20130722 03:00:35.863" level="DEBUG">GET http://127.0.0.1:59529/hub/session/3586adaf-68e7-47f5-bfee-59116bd4b21e/element/{38ab6acd-3f26-4a1d-a030-13c95d0c17a2}/attribute/value {"sessionId": "3586adaf-68e7-47f5-bfee-59116bd4b21e", "name": "value", "id": "{38ab6acd-3f26-4a1d-a030-13c95d0c17a2}"}</msg>
+<msg timestamp="20130722 03:00:35.875" level="INFO">Text field 'company' contains text 'My Company'.</msg>
+<msg timestamp="20130722 03:00:35.876" level="TRACE">Return: None</msg>
+<status status="PASS" endtime="20130722 03:00:35.876" starttime="20130722 03:00:35.839"></status>
+</kw>
+<msg timestamp="20130722 03:00:35.876" level="TRACE">Return: None</msg>
+<status status="PASS" endtime="20130722 03:00:35.876" starttime="20130722 03:00:35.839"></status>
+</kw>
+<kw type="kw" name="resource.Then Your Contact Number Is">
+<doc></doc>
+<arguments>
+<arg>${PHONE}</arg>
+</arguments>
+<msg timestamp="20130722 03:00:35.877" level="TRACE">Arguments: [ ${phone}=u'12121234567' ]</msg>
+<kw type="kw" name="Selenium2Library.Textfield Should Contain">
+<doc>Verifies text field identified by `locator` contains text `expected`.</doc>
+<arguments>
+<arg>phone</arg>
+<arg>${phone}</arg>
+</arguments>
+<msg timestamp="20130722 03:00:35.878" level="TRACE">Arguments: [ u'phone' | u'12121234567' ]</msg>
+<msg timestamp="20130722 03:00:35.878" level="DEBUG">GET http://127.0.0.1:59529/hub/session/3586adaf-68e7-47f5-bfee-59116bd4b21e/url {"sessionId": "3586adaf-68e7-47f5-bfee-59116bd4b21e"}</msg>
+<msg timestamp="20130722 03:00:35.889" level="DEBUG">POST http://127.0.0.1:59529/hub/session/3586adaf-68e7-47f5-bfee-59116bd4b21e/elements {"using": "xpath", "sessionId": "3586adaf-68e7-47f5-bfee-59116bd4b21e", "value": "//input[@type='text' and (@id='phone' or @name='phone' or @value='phone' or @src='phone' or @src='https://www.interviewstreet.com/recruit2/phone')]"}</msg>
+<msg timestamp="20130722 03:00:35.902" level="DEBUG">GET http://127.0.0.1:59529/hub/session/3586adaf-68e7-47f5-bfee-59116bd4b21e/element/{e522b186-cc69-4414-a8bf-4019da935d69}/attribute/value {"sessionId": "3586adaf-68e7-47f5-bfee-59116bd4b21e", "name": "value", "id": "{e522b186-cc69-4414-a8bf-4019da935d69}"}</msg>
+<msg timestamp="20130722 03:00:35.914" level="INFO">Text field 'phone' contains text '12121234567'.</msg>
+<msg timestamp="20130722 03:00:35.914" level="TRACE">Return: None</msg>
+<status status="PASS" endtime="20130722 03:00:35.914" starttime="20130722 03:00:35.877"></status>
+</kw>
+<msg timestamp="20130722 03:00:35.914" level="TRACE">Return: None</msg>
+<status status="PASS" endtime="20130722 03:00:35.914" starttime="20130722 03:00:35.877"></status>
+</kw>
+<kw type="kw" name="resource.Then Send invites as Is">
+<doc></doc>
+<arguments>
+<arg>${INVITES_AS}</arg>
+</arguments>
+<msg timestamp="20130722 03:00:35.916" level="TRACE">Arguments: [ ${invites_as}=u'My Company Hiring Team' ]</msg>
+<kw type="kw" name="Selenium2Library.Textfield Should Contain">
+<doc>Verifies text field identified by `locator` contains text `expected`.</doc>
+<arguments>
+<arg>email_from</arg>
+<arg>${invites_as}</arg>
+</arguments>
+<msg timestamp="20130722 03:00:35.916" level="TRACE">Arguments: [ u'email_from' | u'My Company Hiring Team' ]</msg>
+<msg timestamp="20130722 03:00:35.917" level="DEBUG">GET http://127.0.0.1:59529/hub/session/3586adaf-68e7-47f5-bfee-59116bd4b21e/url {"sessionId": "3586adaf-68e7-47f5-bfee-59116bd4b21e"}</msg>
+<msg timestamp="20130722 03:00:35.927" level="DEBUG">POST http://127.0.0.1:59529/hub/session/3586adaf-68e7-47f5-bfee-59116bd4b21e/elements {"using": "xpath", "sessionId": "3586adaf-68e7-47f5-bfee-59116bd4b21e", "value": "//input[@type='text' and (@id='email_from' or @name='email_from' or @value='email_from' or @src='email_from' or @src='https://www.interviewstreet.com/recruit2/email_from')]"}</msg>
+<msg timestamp="20130722 03:00:35.941" level="DEBUG">GET http://127.0.0.1:59529/hub/session/3586adaf-68e7-47f5-bfee-59116bd4b21e/element/{6a265289-b3f7-457b-86e2-cd86f1d6a5ce}/attribute/value {"sessionId": "3586adaf-68e7-47f5-bfee-59116bd4b21e", "name": "value", "id": "{6a265289-b3f7-457b-86e2-cd86f1d6a5ce}"}</msg>
+<msg timestamp="20130722 03:00:35.952" level="INFO">Text field 'email_from' contains text 'My Company Hiring Team'.</msg>
+<msg timestamp="20130722 03:00:35.952" level="TRACE">Return: None</msg>
+<status status="PASS" endtime="20130722 03:00:35.952" starttime="20130722 03:00:35.916"></status>
+</kw>
+<msg timestamp="20130722 03:00:35.952" level="TRACE">Return: None</msg>
+<status status="PASS" endtime="20130722 03:00:35.952" starttime="20130722 03:00:35.915"></status>
+</kw>
+<doc></doc>
+<tags>
+</tags>
+<status status="PASS" endtime="20130722 03:00:35.953" critical="yes" starttime="20130722 03:00:34.780"></status>
+</test>
+<test id="s1-s1-t5" name="User can modify basic info">
+<kw type="kw" name="resource.When user changes name to">
+<doc></doc>
+<arguments>
+<arg>${username1}</arg>
+</arguments>
+<msg timestamp="20130722 03:00:35.957" level="TRACE">Arguments: [ ${name}=u'myNewName' ]</msg>
+<kw type="kw" name="Selenium2Library.Input Text">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>xpath=(//input[@name='name'])[2]</arg>
+<arg>${name}</arg>
+</arguments>
+<msg timestamp="20130722 03:00:35.957" level="TRACE">Arguments: [ u"xpath=(//input[@name='name'])[2]" | u'myNewName' ]</msg>
+<msg timestamp="20130722 03:00:35.957" level="INFO">Typing text 'myNewName' into text field 'xpath=(//input[@name='name'])[2]'</msg>
+<msg timestamp="20130722 03:00:35.958" level="DEBUG">POST http://127.0.0.1:59529/hub/session/3586adaf-68e7-47f5-bfee-59116bd4b21e/elements {"using": "xpath", "sessionId": "3586adaf-68e7-47f5-bfee-59116bd4b21e", "value": "(//input[@name='name'])[2]"}</msg>
+<msg timestamp="20130722 03:00:35.969" level="DEBUG">POST http://127.0.0.1:59529/hub/session/3586adaf-68e7-47f5-bfee-59116bd4b21e/element/{eaee26b1-f1b0-4aa8-904a-d7ddcee80264}/clear {"sessionId": "3586adaf-68e7-47f5-bfee-59116bd4b21e", "id": "{eaee26b1-f1b0-4aa8-904a-d7ddcee80264}"}</msg>
+<msg timestamp="20130722 03:00:35.993" level="DEBUG">POST http://127.0.0.1:59529/hub/session/3586adaf-68e7-47f5-bfee-59116bd4b21e/element/{eaee26b1-f1b0-4aa8-904a-d7ddcee80264}/value {"sessionId": "3586adaf-68e7-47f5-bfee-59116bd4b21e", "id": "{eaee26b1-f1b0-4aa8-904a-d7ddcee80264}", "value": ["m", "y", "N", "e", "w", "N", "a", "m", "e"]}</msg>
+<msg timestamp="20130722 03:00:36.035" level="TRACE">Return: None</msg>
+<status status="PASS" endtime="20130722 03:00:36.035" starttime="20130722 03:00:35.957"></status>
+</kw>
+<msg timestamp="20130722 03:00:36.035" level="TRACE">Return: None</msg>
+<status status="PASS" endtime="20130722 03:00:36.035" starttime="20130722 03:00:35.956"></status>
+</kw>
+<kw type="kw" name="resource.And user changes company name to">
+<doc></doc>
+<arguments>
+<arg>${COMPANY1}</arg>
+</arguments>
+<msg timestamp="20130722 03:00:36.037" level="TRACE">Arguments: [ ${company}=u'My New Company' ]</msg>
+<kw type="kw" name="Selenium2Library.Input Text">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>company</arg>
+<arg>${company}</arg>
+</arguments>
+<msg timestamp="20130722 03:00:36.037" level="TRACE">Arguments: [ u'company' | u'My New Company' ]</msg>
+<msg timestamp="20130722 03:00:36.037" level="INFO">Typing text 'My New Company' into text field 'company'</msg>
+<msg timestamp="20130722 03:00:36.037" level="DEBUG">POST http://127.0.0.1:59529/hub/session/3586adaf-68e7-47f5-bfee-59116bd4b21e/elements {"using": "xpath", "sessionId": "3586adaf-68e7-47f5-bfee-59116bd4b21e", "value": "//*[(@id='company' or @name='company')]"}</msg>
+<msg timestamp="20130722 03:00:36.050" level="DEBUG">POST http://127.0.0.1:59529/hub/session/3586adaf-68e7-47f5-bfee-59116bd4b21e/element/{38ab6acd-3f26-4a1d-a030-13c95d0c17a2}/clear {"sessionId": "3586adaf-68e7-47f5-bfee-59116bd4b21e", "id": "{38ab6acd-3f26-4a1d-a030-13c95d0c17a2}"}</msg>
+<msg timestamp="20130722 03:00:36.071" level="DEBUG">POST http://127.0.0.1:59529/hub/session/3586adaf-68e7-47f5-bfee-59116bd4b21e/element/{38ab6acd-3f26-4a1d-a030-13c95d0c17a2}/value {"sessionId": "3586adaf-68e7-47f5-bfee-59116bd4b21e", "id": "{38ab6acd-3f26-4a1d-a030-13c95d0c17a2}", "value": ["M", "y", " ", "N", "e", "w", " ", "C", "o", "m", "p", "a", "n", "y"]}</msg>
+<msg timestamp="20130722 03:00:36.116" level="TRACE">Return: None</msg>
+<status status="PASS" endtime="20130722 03:00:36.116" starttime="20130722 03:00:36.037"></status>
+</kw>
+<msg timestamp="20130722 03:00:36.117" level="TRACE">Return: None</msg>
+<status status="PASS" endtime="20130722 03:00:36.117" starttime="20130722 03:00:36.036"></status>
+</kw>
+<kw type="kw" name="resource.And user changes contact number to">
+<doc></doc>
+<arguments>
+<arg>${PHONE1}</arg>
+</arguments>
+<msg timestamp="20130722 03:00:36.118" level="TRACE">Arguments: [ ${phone}=u'19141234567' ]</msg>
+<kw type="kw" name="Selenium2Library.Input Text">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>phone</arg>
+<arg>${phone}</arg>
+</arguments>
+<msg timestamp="20130722 03:00:36.118" level="TRACE">Arguments: [ u'phone' | u'19141234567' ]</msg>
+<msg timestamp="20130722 03:00:36.118" level="INFO">Typing text '19141234567' into text field 'phone'</msg>
+<msg timestamp="20130722 03:00:36.119" level="DEBUG">POST http://127.0.0.1:59529/hub/session/3586adaf-68e7-47f5-bfee-59116bd4b21e/elements {"using": "xpath", "sessionId": "3586adaf-68e7-47f5-bfee-59116bd4b21e", "value": "//*[(@id='phone' or @name='phone')]"}</msg>
+<msg timestamp="20130722 03:00:36.133" level="DEBUG">POST http://127.0.0.1:59529/hub/session/3586adaf-68e7-47f5-bfee-59116bd4b21e/element/{e522b186-cc69-4414-a8bf-4019da935d69}/clear {"sessionId": "3586adaf-68e7-47f5-bfee-59116bd4b21e", "id": "{e522b186-cc69-4414-a8bf-4019da935d69}"}</msg>
+<msg timestamp="20130722 03:00:36.158" level="DEBUG">POST http://127.0.0.1:59529/hub/session/3586adaf-68e7-47f5-bfee-59116bd4b21e/element/{e522b186-cc69-4414-a8bf-4019da935d69}/value {"sessionId": "3586adaf-68e7-47f5-bfee-59116bd4b21e", "id": "{e522b186-cc69-4414-a8bf-4019da935d69}", "value": ["1", "9", "1", "4", "1", "2", "3", "4", "5", "6", "7"]}</msg>
+<msg timestamp="20130722 03:00:36.198" level="TRACE">Return: None</msg>
+<status status="PASS" endtime="20130722 03:00:36.198" starttime="20130722 03:00:36.118"></status>
+</kw>
+<msg timestamp="20130722 03:00:36.199" level="TRACE">Return: None</msg>
+<status status="PASS" endtime="20130722 03:00:36.199" starttime="20130722 03:00:36.117"></status>
+</kw>
+<kw type="kw" name="resource.And user changes send invites as to">
+<doc></doc>
+<arguments>
+<arg>${INVITES_AS1}</arg>
+</arguments>
+<msg timestamp="20130722 03:00:36.200" level="TRACE">Arguments: [ ${invites_as}=u'My New Company Hiring Team' ]</msg>
+<kw type="kw" name="Selenium2Library.Input Text">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>email_from</arg>
+<arg>${invites_as}</arg>
+</arguments>
+<msg timestamp="20130722 03:00:36.201" level="TRACE">Arguments: [ u'email_from' | u'My New Company Hiring Team' ]</msg>
+<msg timestamp="20130722 03:00:36.201" level="INFO">Typing text 'My New Company Hiring Team' into text field 'email_from'</msg>
+<msg timestamp="20130722 03:00:36.201" level="DEBUG">POST http://127.0.0.1:59529/hub/session/3586adaf-68e7-47f5-bfee-59116bd4b21e/elements {"using": "xpath", "sessionId": "3586adaf-68e7-47f5-bfee-59116bd4b21e", "value": "//*[(@id='email_from' or @name='email_from')]"}</msg>
+<msg timestamp="20130722 03:00:36.217" level="DEBUG">POST http://127.0.0.1:59529/hub/session/3586adaf-68e7-47f5-bfee-59116bd4b21e/element/{6a265289-b3f7-457b-86e2-cd86f1d6a5ce}/clear {"sessionId": "3586adaf-68e7-47f5-bfee-59116bd4b21e", "id": "{6a265289-b3f7-457b-86e2-cd86f1d6a5ce}"}</msg>
+<msg timestamp="20130722 03:00:36.243" level="DEBUG">POST http://127.0.0.1:59529/hub/session/3586adaf-68e7-47f5-bfee-59116bd4b21e/element/{6a265289-b3f7-457b-86e2-cd86f1d6a5ce}/value {"sessionId": "3586adaf-68e7-47f5-bfee-59116bd4b21e", "id": "{6a265289-b3f7-457b-86e2-cd86f1d6a5ce}", "value": ["M", "y", " ", "N", "e", "w", " ", "C", "o", "m", "p", "a", "n", "y", " ", "H", "i", "r", "i", "n", "g", " ", "T", "e", "a", "m"]}</msg>
+<msg timestamp="20130722 03:00:36.295" level="TRACE">Return: None</msg>
+<status status="PASS" endtime="20130722 03:00:36.295" starttime="20130722 03:00:36.201"></status>
+</kw>
+<msg timestamp="20130722 03:00:36.295" level="TRACE">Return: None</msg>
+<status status="PASS" endtime="20130722 03:00:36.295" starttime="20130722 03:00:36.200"></status>
+</kw>
+<kw type="kw" name="resource.And Save the basic info">
+<doc></doc>
+<arguments>
+</arguments>
+<msg timestamp="20130722 03:00:36.296" level="TRACE">Arguments: [  ]</msg>
+<kw type="kw" name="Selenium2Library.Click Link">
+<doc>Clicks a link identified by locator.</doc>
+<arguments>
+<arg>Save</arg>
+</arguments>
+<msg timestamp="20130722 03:00:36.296" level="TRACE">Arguments: [ u'Save' ]</msg>
+<msg timestamp="20130722 03:00:36.297" level="INFO">Clicking link 'Save'.</msg>
+<msg timestamp="20130722 03:00:36.297" level="DEBUG">GET http://127.0.0.1:59529/hub/session/3586adaf-68e7-47f5-bfee-59116bd4b21e/url {"sessionId": "3586adaf-68e7-47f5-bfee-59116bd4b21e"}</msg>
+<msg timestamp="20130722 03:00:36.311" level="DEBUG">POST http://127.0.0.1:59529/hub/session/3586adaf-68e7-47f5-bfee-59116bd4b21e/elements {"using": "xpath", "sessionId": "3586adaf-68e7-47f5-bfee-59116bd4b21e", "value": "//a[(@id='Save' or @name='Save' or @href='Save' or normalize-space(descendant-or-self::text())='Save' or @href='https://www.interviewstreet.com/recruit2/Save')]"}</msg>
+<msg timestamp="20130722 03:00:36.326" level="DEBUG">POST http://127.0.0.1:59529/hub/session/3586adaf-68e7-47f5-bfee-59116bd4b21e/element/{a813b58a-c417-4468-923d-497cc26015aa}/click {"sessionId": "3586adaf-68e7-47f5-bfee-59116bd4b21e", "id": "{a813b58a-c417-4468-923d-497cc26015aa}"}</msg>
+<msg timestamp="20130722 03:00:36.442" level="TRACE">Return: None</msg>
+<status status="PASS" endtime="20130722 03:00:36.442" starttime="20130722 03:00:36.296"></status>
+</kw>
+<msg timestamp="20130722 03:00:36.443" level="TRACE">Return: None</msg>
+<status status="PASS" endtime="20130722 03:00:36.443" starttime="20130722 03:00:36.296"></status>
+</kw>
+<kw type="kw" name="resource.Then user name is changed">
+<doc></doc>
+<arguments>
+<arg>${username1}</arg>
+</arguments>
+<msg timestamp="20130722 03:00:36.444" level="TRACE">Arguments: [ ${name}=u'myNewName' ]</msg>
+<kw type="kw" name="Selenium2Library.Page Should Contain Element">
+<doc>Verifies element identified by `locator` is found on the current page.</doc>
+<arguments>
+<arg>link=${name}</arg>
+</arguments>
+<msg timestamp="20130722 03:00:36.444" level="TRACE">Arguments: [ u'link=myNewName' ]</msg>
+<msg timestamp="20130722 03:00:36.445" level="DEBUG">POST http://127.0.0.1:59529/hub/session/3586adaf-68e7-47f5-bfee-59116bd4b21e/elements {"using": "link text", "sessionId": "3586adaf-68e7-47f5-bfee-59116bd4b21e", "value": "myNewName"}</msg>
+<msg timestamp="20130722 03:00:36.644" level="INFO">Current page contains element 'link=myNewName'.</msg>
+<msg timestamp="20130722 03:00:36.644" level="TRACE">Return: None</msg>
+<status status="PASS" endtime="20130722 03:00:36.644" starttime="20130722 03:00:36.444"></status>
+</kw>
+<msg timestamp="20130722 03:00:36.645" level="TRACE">Return: None</msg>
+<status status="PASS" endtime="20130722 03:00:36.645" starttime="20130722 03:00:36.443"></status>
+</kw>
+<kw type="teardown" name="Selenium2Library.Close Browser">
+<doc>Closes the current browser.</doc>
+<arguments>
+</arguments>
+<msg timestamp="20130722 03:00:36.646" level="TRACE">Arguments: [  ]</msg>
+<msg timestamp="20130722 03:00:36.646" level="DEBUG">Closing browser with session id 3586adaf-68e7-47f5-bfee-59116bd4b21e</msg>
+<msg timestamp="20130722 03:00:36.646" level="DEBUG">DELETE http://127.0.0.1:59529/hub/session/3586adaf-68e7-47f5-bfee-59116bd4b21e {"sessionId": "3586adaf-68e7-47f5-bfee-59116bd4b21e"}</msg>
+<msg timestamp="20130722 03:00:36.837" level="TRACE">Return: None</msg>
+<status status="PASS" endtime="20130722 03:00:36.837" starttime="20130722 03:00:36.646"></status>
+</kw>
+<doc></doc>
+<tags>
+</tags>
+<status status="PASS" endtime="20130722 03:00:36.837" critical="yes" starttime="20130722 03:00:35.955"></status>
+</test>
+<test id="s1-s1-t6" name="User can see modified basic info">
+<kw type="kw" name="resource.Given browser is opened to login page">
+<doc></doc>
+<arguments>
+</arguments>
+<msg timestamp="20130722 03:00:36.841" level="TRACE">Arguments: [  ]</msg>
+<kw type="kw" name="resource.Open Browser To Login Page">
+<doc></doc>
+<arguments>
+</arguments>
+<msg timestamp="20130722 03:00:36.841" level="TRACE">Arguments: [  ]</msg>
+<kw type="kw" name="Selenium2Library.Open Browser">
+<doc>Opens a new browser instance to given URL.</doc>
+<arguments>
+<arg>${LOGIN URL}</arg>
+<arg>${BROWSER}</arg>
+</arguments>
+<msg timestamp="20130722 03:00:36.842" level="TRACE">Arguments: [ u'http://www.interviewstreet.com' | u'Firefox' ]</msg>
+<msg timestamp="20130722 03:00:36.842" level="INFO">Opening browser 'Firefox' to base url 'http://www.interviewstreet.com'</msg>
+<msg timestamp="20130722 03:00:41.303" level="DEBUG">POST http://127.0.0.1:59656/hub/session {"sessionId": null, "desiredCapabilities": {"platform": "ANY", "browserName": "firefox", "version": "", "javascriptEnabled": true}}</msg>
+<msg timestamp="20130722 03:00:41.543" level="DEBUG">POST http://127.0.0.1:59656/hub/session/337d07ed-37e3-4908-94b3-9c2d3821443b/timeouts/async_script {"sessionId": "337d07ed-37e3-4908-94b3-9c2d3821443b", "ms": 5000.0}</msg>
+<msg timestamp="20130722 03:00:41.553" level="DEBUG">POST http://127.0.0.1:59656/hub/session/337d07ed-37e3-4908-94b3-9c2d3821443b/timeouts/implicit_wait {"sessionId": "337d07ed-37e3-4908-94b3-9c2d3821443b", "ms": 0.0}</msg>
+<msg timestamp="20130722 03:00:41.563" level="DEBUG">POST http://127.0.0.1:59656/hub/session/337d07ed-37e3-4908-94b3-9c2d3821443b/url {"url": "http://www.interviewstreet.com", "sessionId": "337d07ed-37e3-4908-94b3-9c2d3821443b"}</msg>
+<msg timestamp="20130722 03:00:47.966" level="DEBUG">Opened browser with session id 337d07ed-37e3-4908-94b3-9c2d3821443b</msg>
+<msg timestamp="20130722 03:00:47.966" level="TRACE">Return: 3</msg>
+<status status="PASS" endtime="20130722 03:00:47.966" starttime="20130722 03:00:36.842"></status>
+</kw>
+<kw type="kw" name="Selenium2Library.Set Selenium Speed">
+<doc>Sets the delay in seconds that is waited after each Selenium command.</doc>
+<arguments>
+<arg>${DELAY}</arg>
+</arguments>
+<msg timestamp="20130722 03:00:47.966" level="TRACE">Arguments: [ u'0' ]</msg>
+<msg timestamp="20130722 03:00:47.966" level="TRACE">Return: '0 seconds'</msg>
+<status status="PASS" endtime="20130722 03:00:47.966" starttime="20130722 03:00:47.966"></status>
+</kw>
+<kw type="kw" name="resource.Login Page Should Be Open">
+<doc></doc>
+<arguments>
+</arguments>
+<msg timestamp="20130722 03:00:47.967" level="TRACE">Arguments: [  ]</msg>
+<kw type="kw" name="Selenium2Library.Title Should Be">
+<doc>Verifies that current page title equals `title`.</doc>
+<arguments>
+<arg>Programming Test | Hire programmers | Interviewstreet | Dashboard</arg>
+</arguments>
+<msg timestamp="20130722 03:00:47.967" level="TRACE">Arguments: [ u'Programming Test | Hire programmers | Interviewstreet | Dashboard' ]</msg>
+<msg timestamp="20130722 03:00:47.968" level="DEBUG">GET http://127.0.0.1:59656/hub/session/337d07ed-37e3-4908-94b3-9c2d3821443b/title {"sessionId": "337d07ed-37e3-4908-94b3-9c2d3821443b"}</msg>
+<msg timestamp="20130722 03:00:50.386" level="INFO">Page title is 'Programming Test | Hire programmers | Interviewstreet | Dashboard'.</msg>
+<msg timestamp="20130722 03:00:50.386" level="TRACE">Return: None</msg>
+<status status="PASS" endtime="20130722 03:00:50.386" starttime="20130722 03:00:47.967"></status>
+</kw>
+<msg timestamp="20130722 03:00:50.386" level="TRACE">Return: None</msg>
+<status status="PASS" endtime="20130722 03:00:50.386" starttime="20130722 03:00:47.967"></status>
+</kw>
+<kw type="kw" name="Selenium2Library.Click Element">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>id=login_button</arg>
+</arguments>
+<msg timestamp="20130722 03:00:50.387" level="TRACE">Arguments: [ u'id=login_button' ]</msg>
+<msg timestamp="20130722 03:00:50.387" level="INFO">Clicking element 'id=login_button'.</msg>
+<msg timestamp="20130722 03:00:50.388" level="DEBUG">POST http://127.0.0.1:59656/hub/session/337d07ed-37e3-4908-94b3-9c2d3821443b/elements {"using": "id", "sessionId": "337d07ed-37e3-4908-94b3-9c2d3821443b", "value": "login_button"}</msg>
+<msg timestamp="20130722 03:00:50.459" level="DEBUG">POST http://127.0.0.1:59656/hub/session/337d07ed-37e3-4908-94b3-9c2d3821443b/element/{294c3ad0-01bb-4f8b-bbde-97ffa04c26ea}/click {"sessionId": "337d07ed-37e3-4908-94b3-9c2d3821443b", "id": "{294c3ad0-01bb-4f8b-bbde-97ffa04c26ea}"}</msg>
+<msg timestamp="20130722 03:00:50.590" level="TRACE">Return: None</msg>
+<status status="PASS" endtime="20130722 03:00:50.590" starttime="20130722 03:00:50.387"></status>
+</kw>
+<msg timestamp="20130722 03:00:50.590" level="TRACE">Return: None</msg>
+<status status="PASS" endtime="20130722 03:00:50.590" starttime="20130722 03:00:36.841"></status>
+</kw>
+<msg timestamp="20130722 03:00:50.590" level="TRACE">Return: None</msg>
+<status status="PASS" endtime="20130722 03:00:50.590" starttime="20130722 03:00:36.840"></status>
+</kw>
+<kw type="kw" name="resource.When user &quot;${email}&quot; logs in with password &quot;${VALID PASSWORD}&quot;">
+<doc></doc>
+<arguments>
+</arguments>
+<msg timestamp="20130722 03:00:50.592" level="TRACE">Arguments: [  ]</msg>
+<kw type="kw" name="resource.Input Username">
+<doc></doc>
+<arguments>
+<arg>${username}</arg>
+</arguments>
+<msg timestamp="20130722 03:00:50.593" level="TRACE">Arguments: [ ${username}='klctD0130722025917@mailinator.com' ]</msg>
+<kw type="kw" name="Selenium2Library.Input Text">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>email</arg>
+<arg>${username}</arg>
+</arguments>
+<msg timestamp="20130722 03:00:50.593" level="TRACE">Arguments: [ u'email' | 'klctD0130722025917@mailinator.com' ]</msg>
+<msg timestamp="20130722 03:00:50.593" level="INFO">Typing text 'klctD0130722025917@mailinator.com' into text field 'email'</msg>
+<msg timestamp="20130722 03:00:50.593" level="DEBUG">POST http://127.0.0.1:59656/hub/session/337d07ed-37e3-4908-94b3-9c2d3821443b/elements {"using": "xpath", "sessionId": "337d07ed-37e3-4908-94b3-9c2d3821443b", "value": "//*[(@id='email' or @name='email')]"}</msg>
+<msg timestamp="20130722 03:00:50.608" level="DEBUG">POST http://127.0.0.1:59656/hub/session/337d07ed-37e3-4908-94b3-9c2d3821443b/element/{6650f9bf-4b5b-4cc9-8365-67b207959cef}/clear {"sessionId": "337d07ed-37e3-4908-94b3-9c2d3821443b", "id": "{6650f9bf-4b5b-4cc9-8365-67b207959cef}"}</msg>
+<msg timestamp="20130722 03:00:50.628" level="DEBUG">POST http://127.0.0.1:59656/hub/session/337d07ed-37e3-4908-94b3-9c2d3821443b/element/{6650f9bf-4b5b-4cc9-8365-67b207959cef}/value {"sessionId": "337d07ed-37e3-4908-94b3-9c2d3821443b", "id": "{6650f9bf-4b5b-4cc9-8365-67b207959cef}", "value": ["k", "l", "c", "t", "D", "0", "1", "3", "0", "7", "2", "2", "0", "2", "5", "9", "1", "7", "@", "m", "a", "i", "l", "i", "n", "a", "t", "o", "r", ".", "c", "o", "m"]}</msg>
+<msg timestamp="20130722 03:00:50.695" level="TRACE">Return: None</msg>
+<status status="PASS" endtime="20130722 03:00:50.695" starttime="20130722 03:00:50.593"></status>
+</kw>
+<msg timestamp="20130722 03:00:50.695" level="TRACE">Return: None</msg>
+<status status="PASS" endtime="20130722 03:00:50.695" starttime="20130722 03:00:50.592"></status>
+</kw>
+<kw type="kw" name="resource.Input Password">
+<doc></doc>
+<arguments>
+<arg>${password}</arg>
+</arguments>
+<msg timestamp="20130722 03:00:50.696" level="TRACE">Arguments: [ ${password}=u'xEYLg1xI' ]</msg>
+<kw type="kw" name="Selenium2Library.Input Text">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>password</arg>
+<arg>${password}</arg>
+</arguments>
+<msg timestamp="20130722 03:00:50.696" level="TRACE">Arguments: [ u'password' | u'xEYLg1xI' ]</msg>
+<msg timestamp="20130722 03:00:50.696" level="INFO">Typing text 'xEYLg1xI' into text field 'password'</msg>
+<msg timestamp="20130722 03:00:50.696" level="DEBUG">POST http://127.0.0.1:59656/hub/session/337d07ed-37e3-4908-94b3-9c2d3821443b/elements {"using": "xpath", "sessionId": "337d07ed-37e3-4908-94b3-9c2d3821443b", "value": "//*[(@id='password' or @name='password')]"}</msg>
+<msg timestamp="20130722 03:00:50.710" level="DEBUG">POST http://127.0.0.1:59656/hub/session/337d07ed-37e3-4908-94b3-9c2d3821443b/element/{7889bae8-99cb-41c6-9537-b6a77a8b461c}/clear {"sessionId": "337d07ed-37e3-4908-94b3-9c2d3821443b", "id": "{7889bae8-99cb-41c6-9537-b6a77a8b461c}"}</msg>
+<msg timestamp="20130722 03:00:50.729" level="DEBUG">POST http://127.0.0.1:59656/hub/session/337d07ed-37e3-4908-94b3-9c2d3821443b/element/{7889bae8-99cb-41c6-9537-b6a77a8b461c}/value {"sessionId": "337d07ed-37e3-4908-94b3-9c2d3821443b", "id": "{7889bae8-99cb-41c6-9537-b6a77a8b461c}", "value": ["x", "E", "Y", "L", "g", "1", "x", "I"]}</msg>
+<msg timestamp="20130722 03:00:50.777" level="TRACE">Return: None</msg>
+<status status="PASS" endtime="20130722 03:00:50.777" starttime="20130722 03:00:50.696"></status>
+</kw>
+<msg timestamp="20130722 03:00:50.777" level="TRACE">Return: None</msg>
+<status status="PASS" endtime="20130722 03:00:50.777" starttime="20130722 03:00:50.695"></status>
+</kw>
+<kw type="kw" name="resource.Submit Credentials">
+<doc></doc>
+<arguments>
+</arguments>
+<msg timestamp="20130722 03:00:50.778" level="TRACE">Arguments: [  ]</msg>
+<kw type="kw" name="Selenium2Library.Click Button">
+<doc>Clicks a button identified by `locator`.</doc>
+<arguments>
+<arg>login_action</arg>
+</arguments>
+<msg timestamp="20130722 03:00:50.778" level="TRACE">Arguments: [ u'login_action' ]</msg>
+<msg timestamp="20130722 03:00:50.778" level="INFO">Clicking button 'login_action'.</msg>
+<msg timestamp="20130722 03:00:50.778" level="DEBUG">GET http://127.0.0.1:59656/hub/session/337d07ed-37e3-4908-94b3-9c2d3821443b/url {"sessionId": "337d07ed-37e3-4908-94b3-9c2d3821443b"}</msg>
+<msg timestamp="20130722 03:00:50.792" level="DEBUG">POST http://127.0.0.1:59656/hub/session/337d07ed-37e3-4908-94b3-9c2d3821443b/elements {"using": "xpath", "sessionId": "337d07ed-37e3-4908-94b3-9c2d3821443b", "value": "//input[(@id='login_action' or @name='login_action' or @value='login_action' or @src='login_action' or @src='https://www.interviewstreet.com/recruit2/login_action')]"}</msg>
+<msg timestamp="20130722 03:00:50.807" level="DEBUG">POST http://127.0.0.1:59656/hub/session/337d07ed-37e3-4908-94b3-9c2d3821443b/elements {"using": "xpath", "sessionId": "337d07ed-37e3-4908-94b3-9c2d3821443b", "value": "//button[(@id='login_action' or @name='login_action' or @value='login_action' or normalize-space(descendant-or-self::text())='login_action')]"}</msg>
+<msg timestamp="20130722 03:00:50.821" level="DEBUG">POST http://127.0.0.1:59656/hub/session/337d07ed-37e3-4908-94b3-9c2d3821443b/element/{b562c65f-ca41-4b5f-8d7d-d05fd883c6d1}/click {"sessionId": "337d07ed-37e3-4908-94b3-9c2d3821443b", "id": "{b562c65f-ca41-4b5f-8d7d-d05fd883c6d1}"}</msg>
+<msg timestamp="20130722 03:00:50.906" level="TRACE">Return: None</msg>
+<status status="PASS" endtime="20130722 03:00:50.906" starttime="20130722 03:00:50.778"></status>
+</kw>
+<msg timestamp="20130722 03:00:50.906" level="TRACE">Return: None</msg>
+<status status="PASS" endtime="20130722 03:00:50.906" starttime="20130722 03:00:50.777"></status>
+</kw>
+<msg timestamp="20130722 03:00:50.906" level="TRACE">Return: None</msg>
+<status status="PASS" endtime="20130722 03:00:50.906" starttime="20130722 03:00:50.591"></status>
+</kw>
+<kw type="kw" name="resource.Then Account page should be open">
+<doc></doc>
+<arguments>
+<arg>${username1}</arg>
+</arguments>
+<msg timestamp="20130722 03:00:50.908" level="TRACE">Arguments: [ ${name}=u'myNewName' ]</msg>
+<kw type="kw" name="Selenium2Library.Wait Until Page Contains Element">
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<arguments>
+<arg>css=div.fade.in</arg>
+<arg>20</arg>
+</arguments>
+<msg timestamp="20130722 03:00:50.909" level="TRACE">Arguments: [ u'css=div.fade.in' | u'20' ]</msg>
+<msg timestamp="20130722 03:00:50.909" level="DEBUG">POST http://127.0.0.1:59656/hub/session/337d07ed-37e3-4908-94b3-9c2d3821443b/elements {"using": "css selector", "sessionId": "337d07ed-37e3-4908-94b3-9c2d3821443b", "value": "div.fade.in"}</msg>
+<msg timestamp="20130722 03:00:51.125" level="DEBUG">POST http://127.0.0.1:59656/hub/session/337d07ed-37e3-4908-94b3-9c2d3821443b/elements {"using": "css selector", "sessionId": "337d07ed-37e3-4908-94b3-9c2d3821443b", "value": "div.fade.in"}</msg>
+<msg timestamp="20130722 03:00:52.384" level="DEBUG">POST http://127.0.0.1:59656/hub/session/337d07ed-37e3-4908-94b3-9c2d3821443b/elements {"using": "css selector", "sessionId": "337d07ed-37e3-4908-94b3-9c2d3821443b", "value": "div.fade.in"}</msg>
+<msg timestamp="20130722 03:00:52.606" level="DEBUG">POST http://127.0.0.1:59656/hub/session/337d07ed-37e3-4908-94b3-9c2d3821443b/elements {"using": "css selector", "sessionId": "337d07ed-37e3-4908-94b3-9c2d3821443b", "value": "div.fade.in"}</msg>
+<msg timestamp="20130722 03:00:55.877" level="DEBUG">POST http://127.0.0.1:59656/hub/session/337d07ed-37e3-4908-94b3-9c2d3821443b/elements {"using": "css selector", "sessionId": "337d07ed-37e3-4908-94b3-9c2d3821443b", "value": "div.fade.in"}</msg>
+<msg timestamp="20130722 03:00:57.677" level="TRACE">Return: None</msg>
+<status status="PASS" endtime="20130722 03:00:57.677" starttime="20130722 03:00:50.908"></status>
+</kw>
+<kw type="kw" name="Selenium2Library.Click Element">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>css=div.fade.in</arg>
+</arguments>
+<msg timestamp="20130722 03:00:57.678" level="TRACE">Arguments: [ u'css=div.fade.in' ]</msg>
+<msg timestamp="20130722 03:00:57.678" level="INFO">Clicking element 'css=div.fade.in'.</msg>
+<msg timestamp="20130722 03:00:57.678" level="DEBUG">POST http://127.0.0.1:59656/hub/session/337d07ed-37e3-4908-94b3-9c2d3821443b/elements {"using": "css selector", "sessionId": "337d07ed-37e3-4908-94b3-9c2d3821443b", "value": "div.fade.in"}</msg>
+<msg timestamp="20130722 03:00:57.694" level="DEBUG">POST http://127.0.0.1:59656/hub/session/337d07ed-37e3-4908-94b3-9c2d3821443b/element/{bb36bac5-644c-45a2-b1c1-5fa9735f49a0}/click {"sessionId": "337d07ed-37e3-4908-94b3-9c2d3821443b", "id": "{bb36bac5-644c-45a2-b1c1-5fa9735f49a0}"}</msg>
+<msg timestamp="20130722 03:00:57.799" level="TRACE">Return: None</msg>
+<status status="PASS" endtime="20130722 03:00:57.799" starttime="20130722 03:00:57.677"></status>
+</kw>
+<kw type="kw" name="Selenium2Library.Title Should Be">
+<doc>Verifies that current page title equals `title`.</doc>
+<arguments>
+<arg>Programming Test | Hire programmers | Interviewstreet | Dashboard</arg>
+</arguments>
+<msg timestamp="20130722 03:00:57.799" level="TRACE">Arguments: [ u'Programming Test | Hire programmers | Interviewstreet | Dashboard' ]</msg>
+<msg timestamp="20130722 03:00:57.800" level="DEBUG">GET http://127.0.0.1:59656/hub/session/337d07ed-37e3-4908-94b3-9c2d3821443b/title {"sessionId": "337d07ed-37e3-4908-94b3-9c2d3821443b"}</msg>
+<msg timestamp="20130722 03:00:58.237" level="INFO">Page title is 'Programming Test | Hire programmers | Interviewstreet | Dashboard'.</msg>
+<msg timestamp="20130722 03:00:58.237" level="TRACE">Return: None</msg>
+<status status="PASS" endtime="20130722 03:00:58.237" starttime="20130722 03:00:57.799"></status>
+</kw>
+<kw type="kw" name="Selenium2Library.Page Should Contain Element">
+<doc>Verifies element identified by `locator` is found on the current page.</doc>
+<arguments>
+<arg>link=${name}</arg>
+</arguments>
+<msg timestamp="20130722 03:00:58.239" level="TRACE">Arguments: [ u'link=myNewName' ]</msg>
+<msg timestamp="20130722 03:00:58.239" level="DEBUG">POST http://127.0.0.1:59656/hub/session/337d07ed-37e3-4908-94b3-9c2d3821443b/elements {"using": "link text", "sessionId": "337d07ed-37e3-4908-94b3-9c2d3821443b", "value": "myNewName"}</msg>
+<msg timestamp="20130722 03:00:58.454" level="INFO">Current page contains element 'link=myNewName'.</msg>
+<msg timestamp="20130722 03:00:58.454" level="TRACE">Return: None</msg>
+<status status="PASS" endtime="20130722 03:00:58.454" starttime="20130722 03:00:58.238"></status>
+</kw>
+<msg timestamp="20130722 03:00:58.455" level="TRACE">Return: None</msg>
+<status status="PASS" endtime="20130722 03:00:58.455" starttime="20130722 03:00:50.908"></status>
+</kw>
+<kw type="kw" name="resource.When user enters settings">
+<doc></doc>
+<arguments>
+<arg>${username1}</arg>
+</arguments>
+<msg timestamp="20130722 03:00:58.456" level="TRACE">Arguments: [ ${name}=u'myNewName' ]</msg>
+<kw type="kw" name="Selenium2Library.Click Link">
+<doc>Clicks a link identified by locator.</doc>
+<arguments>
+<arg>${name}</arg>
+</arguments>
+<msg timestamp="20130722 03:00:58.456" level="TRACE">Arguments: [ u'myNewName' ]</msg>
+<msg timestamp="20130722 03:00:58.457" level="INFO">Clicking link 'myNewName'.</msg>
+<msg timestamp="20130722 03:00:58.457" level="DEBUG">GET http://127.0.0.1:59656/hub/session/337d07ed-37e3-4908-94b3-9c2d3821443b/url {"sessionId": "337d07ed-37e3-4908-94b3-9c2d3821443b"}</msg>
+<msg timestamp="20130722 03:00:58.467" level="DEBUG">POST http://127.0.0.1:59656/hub/session/337d07ed-37e3-4908-94b3-9c2d3821443b/elements {"using": "xpath", "sessionId": "337d07ed-37e3-4908-94b3-9c2d3821443b", "value": "//a[(@id='myNewName' or @name='myNewName' or @href='myNewName' or normalize-space(descendant-or-self::text())='myNewName' or @href='https://www.interviewstreet.com/recruit2/myNewName')]"}</msg>
+<msg timestamp="20130722 03:00:58.477" level="DEBUG">POST http://127.0.0.1:59656/hub/session/337d07ed-37e3-4908-94b3-9c2d3821443b/element/{ce1ee1a3-1f8e-4cb5-a5be-68a46da9086b}/click {"sessionId": "337d07ed-37e3-4908-94b3-9c2d3821443b", "id": "{ce1ee1a3-1f8e-4cb5-a5be-68a46da9086b}"}</msg>
+<msg timestamp="20130722 03:00:58.549" level="TRACE">Return: None</msg>
+<status status="PASS" endtime="20130722 03:00:58.549" starttime="20130722 03:00:58.456"></status>
+</kw>
+<kw type="kw" name="Selenium2Library.Click Element">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>id=link_settings</arg>
+</arguments>
+<msg timestamp="20130722 03:00:58.549" level="TRACE">Arguments: [ u'id=link_settings' ]</msg>
+<msg timestamp="20130722 03:00:58.549" level="INFO">Clicking element 'id=link_settings'.</msg>
+<msg timestamp="20130722 03:00:58.549" level="DEBUG">POST http://127.0.0.1:59656/hub/session/337d07ed-37e3-4908-94b3-9c2d3821443b/elements {"using": "id", "sessionId": "337d07ed-37e3-4908-94b3-9c2d3821443b", "value": "link_settings"}</msg>
+<msg timestamp="20130722 03:00:58.568" level="DEBUG">POST http://127.0.0.1:59656/hub/session/337d07ed-37e3-4908-94b3-9c2d3821443b/element/{62895332-43d0-4430-bc40-4aa56459bb47}/click {"sessionId": "337d07ed-37e3-4908-94b3-9c2d3821443b", "id": "{62895332-43d0-4430-bc40-4aa56459bb47}"}</msg>
+<msg timestamp="20130722 03:00:58.684" level="TRACE">Return: None</msg>
+<status status="PASS" endtime="20130722 03:00:58.684" starttime="20130722 03:00:58.549"></status>
+</kw>
+<msg timestamp="20130722 03:00:58.684" level="TRACE">Return: None</msg>
+<status status="PASS" endtime="20130722 03:00:58.684" starttime="20130722 03:00:58.455"></status>
+</kw>
+<kw type="kw" name="resource.Then user see basic info">
+<doc></doc>
+<arguments>
+</arguments>
+<msg timestamp="20130722 03:00:58.685" level="TRACE">Arguments: [  ]</msg>
+<kw type="kw" name="Selenium2Library.Wait Until Page Contains Element">
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<arguments>
+<arg>name=name</arg>
+</arguments>
+<msg timestamp="20130722 03:00:58.686" level="TRACE">Arguments: [ u'name=name' ]</msg>
+<msg timestamp="20130722 03:00:58.686" level="DEBUG">POST http://127.0.0.1:59656/hub/session/337d07ed-37e3-4908-94b3-9c2d3821443b/elements {"using": "name", "sessionId": "337d07ed-37e3-4908-94b3-9c2d3821443b", "value": "name"}</msg>
+<msg timestamp="20130722 03:00:59.052" level="TRACE">Return: None</msg>
+<status status="PASS" endtime="20130722 03:00:59.052" starttime="20130722 03:00:58.686"></status>
+</kw>
+<msg timestamp="20130722 03:00:59.052" level="TRACE">Return: None</msg>
+<status status="PASS" endtime="20130722 03:00:59.052" starttime="20130722 03:00:58.685"></status>
+</kw>
+<kw type="kw" name="resource.Then email address Is">
+<doc></doc>
+<arguments>
+<arg>${email}</arg>
+</arguments>
+<msg timestamp="20130722 03:00:59.055" level="TRACE">Arguments: [ ${email}='klctD0130722025917@mailinator.com' ]</msg>
+<kw type="kw" name="Selenium2Library.Textfield Should Contain">
+<doc>Verifies text field identified by `locator` contains text `expected`.</doc>
+<arguments>
+<arg>name</arg>
+<arg>${email}</arg>
+</arguments>
+<msg timestamp="20130722 03:00:59.055" level="TRACE">Arguments: [ u'name' | 'klctD0130722025917@mailinator.com' ]</msg>
+<msg timestamp="20130722 03:00:59.056" level="DEBUG">GET http://127.0.0.1:59656/hub/session/337d07ed-37e3-4908-94b3-9c2d3821443b/url {"sessionId": "337d07ed-37e3-4908-94b3-9c2d3821443b"}</msg>
+<msg timestamp="20130722 03:00:59.273" level="DEBUG">POST http://127.0.0.1:59656/hub/session/337d07ed-37e3-4908-94b3-9c2d3821443b/elements {"using": "xpath", "sessionId": "337d07ed-37e3-4908-94b3-9c2d3821443b", "value": "//input[@type='text' and (@id='name' or @name='name' or @value='name' or @src='name' or @src='https://www.interviewstreet.com/recruit2/name')]"}</msg>
+<msg timestamp="20130722 03:00:59.298" level="DEBUG">GET http://127.0.0.1:59656/hub/session/337d07ed-37e3-4908-94b3-9c2d3821443b/element/{6f25af30-cb25-46f1-b35b-615718bb42d9}/attribute/value {"sessionId": "337d07ed-37e3-4908-94b3-9c2d3821443b", "name": "value", "id": "{6f25af30-cb25-46f1-b35b-615718bb42d9}"}</msg>
+<msg timestamp="20130722 03:00:59.325" level="INFO">Text field 'name' contains text 'klctD0130722025917@mailinator.com'.</msg>
+<msg timestamp="20130722 03:00:59.325" level="TRACE">Return: None</msg>
+<status status="PASS" endtime="20130722 03:00:59.325" starttime="20130722 03:00:59.055"></status>
+</kw>
+<msg timestamp="20130722 03:00:59.326" level="TRACE">Return: None</msg>
+<status status="PASS" endtime="20130722 03:00:59.326" starttime="20130722 03:00:59.054"></status>
+</kw>
+<kw type="kw" name="resource.Then Your Name Is">
+<doc></doc>
+<arguments>
+<arg>${username1}</arg>
+</arguments>
+<msg timestamp="20130722 03:00:59.330" level="TRACE">Arguments: [ ${name}=u'myNewName' ]</msg>
+<kw type="kw" name="Selenium2Library.Textfield Should Contain">
+<doc>Verifies text field identified by `locator` contains text `expected`.</doc>
+<arguments>
+<arg>xpath=(//input[@name='name'])[2]</arg>
+<arg>${name}</arg>
+</arguments>
+<msg timestamp="20130722 03:00:59.331" level="TRACE">Arguments: [ u"xpath=(//input[@name='name'])[2]" | u'myNewName' ]</msg>
+<msg timestamp="20130722 03:00:59.331" level="DEBUG">POST http://127.0.0.1:59656/hub/session/337d07ed-37e3-4908-94b3-9c2d3821443b/elements {"using": "xpath", "sessionId": "337d07ed-37e3-4908-94b3-9c2d3821443b", "value": "(//input[@name='name'])[2]"}</msg>
+<msg timestamp="20130722 03:00:59.364" level="DEBUG">GET http://127.0.0.1:59656/hub/session/337d07ed-37e3-4908-94b3-9c2d3821443b/element/{fc1ded37-df3f-4c53-9732-774b4a8f5413}/name {"sessionId": "337d07ed-37e3-4908-94b3-9c2d3821443b", "id": "{fc1ded37-df3f-4c53-9732-774b4a8f5413}"}</msg>
+<msg timestamp="20130722 03:00:59.396" level="DEBUG">GET http://127.0.0.1:59656/hub/session/337d07ed-37e3-4908-94b3-9c2d3821443b/element/{fc1ded37-df3f-4c53-9732-774b4a8f5413}/attribute/type {"sessionId": "337d07ed-37e3-4908-94b3-9c2d3821443b", "name": "type", "id": "{fc1ded37-df3f-4c53-9732-774b4a8f5413}"}</msg>
+<msg timestamp="20130722 03:00:59.426" level="DEBUG">GET http://127.0.0.1:59656/hub/session/337d07ed-37e3-4908-94b3-9c2d3821443b/element/{fc1ded37-df3f-4c53-9732-774b4a8f5413}/attribute/value {"sessionId": "337d07ed-37e3-4908-94b3-9c2d3821443b", "name": "value", "id": "{fc1ded37-df3f-4c53-9732-774b4a8f5413}"}</msg>
+<msg timestamp="20130722 03:00:59.460" level="INFO">Text field 'xpath=(//input[@name='name'])[2]' contains text 'myNewName'.</msg>
+<msg timestamp="20130722 03:00:59.460" level="TRACE">Return: None</msg>
+<status status="PASS" endtime="20130722 03:00:59.460" starttime="20130722 03:00:59.330"></status>
+</kw>
+<msg timestamp="20130722 03:00:59.460" level="TRACE">Return: None</msg>
+<status status="PASS" endtime="20130722 03:00:59.460" starttime="20130722 03:00:59.328"></status>
+</kw>
+<kw type="kw" name="resource.Then Your Company Name Is">
+<doc></doc>
+<arguments>
+<arg>${COMPANY1}</arg>
+</arguments>
+<msg timestamp="20130722 03:00:59.464" level="TRACE">Arguments: [ ${company}=u'My New Company' ]</msg>
+<kw type="kw" name="Selenium2Library.Textfield Should Contain">
+<doc>Verifies text field identified by `locator` contains text `expected`.</doc>
+<arguments>
+<arg>company</arg>
+<arg>${company}</arg>
+</arguments>
+<msg timestamp="20130722 03:00:59.465" level="TRACE">Arguments: [ u'company' | u'My New Company' ]</msg>
+<msg timestamp="20130722 03:00:59.465" level="DEBUG">GET http://127.0.0.1:59656/hub/session/337d07ed-37e3-4908-94b3-9c2d3821443b/url {"sessionId": "337d07ed-37e3-4908-94b3-9c2d3821443b"}</msg>
+<msg timestamp="20130722 03:00:59.497" level="DEBUG">POST http://127.0.0.1:59656/hub/session/337d07ed-37e3-4908-94b3-9c2d3821443b/elements {"using": "xpath", "sessionId": "337d07ed-37e3-4908-94b3-9c2d3821443b", "value": "//input[@type='text' and (@id='company' or @name='company' or @value='company' or @src='company' or @src='https://www.interviewstreet.com/recruit2/company')]"}</msg>
+<msg timestamp="20130722 03:00:59.530" level="DEBUG">GET http://127.0.0.1:59656/hub/session/337d07ed-37e3-4908-94b3-9c2d3821443b/element/{7ebfabce-85c2-4730-904e-664e80530a17}/attribute/value {"sessionId": "337d07ed-37e3-4908-94b3-9c2d3821443b", "name": "value", "id": "{7ebfabce-85c2-4730-904e-664e80530a17}"}</msg>
+<msg timestamp="20130722 03:00:59.564" level="INFO">Text field 'company' contains text 'My New Company'.</msg>
+<msg timestamp="20130722 03:00:59.565" level="TRACE">Return: None</msg>
+<status status="PASS" endtime="20130722 03:00:59.564" starttime="20130722 03:00:59.464"></status>
+</kw>
+<msg timestamp="20130722 03:00:59.565" level="TRACE">Return: None</msg>
+<status status="PASS" endtime="20130722 03:00:59.565" starttime="20130722 03:00:59.462"></status>
+</kw>
+<kw type="kw" name="resource.Then Your Contact Number Is">
+<doc></doc>
+<arguments>
+<arg>${PHONE1}</arg>
+</arguments>
+<msg timestamp="20130722 03:00:59.569" level="TRACE">Arguments: [ ${phone}=u'19141234567' ]</msg>
+<kw type="kw" name="Selenium2Library.Textfield Should Contain">
+<doc>Verifies text field identified by `locator` contains text `expected`.</doc>
+<arguments>
+<arg>phone</arg>
+<arg>${phone}</arg>
+</arguments>
+<msg timestamp="20130722 03:00:59.570" level="TRACE">Arguments: [ u'phone' | u'19141234567' ]</msg>
+<msg timestamp="20130722 03:00:59.570" level="DEBUG">GET http://127.0.0.1:59656/hub/session/337d07ed-37e3-4908-94b3-9c2d3821443b/url {"sessionId": "337d07ed-37e3-4908-94b3-9c2d3821443b"}</msg>
+<msg timestamp="20130722 03:00:59.588" level="DEBUG">POST http://127.0.0.1:59656/hub/session/337d07ed-37e3-4908-94b3-9c2d3821443b/elements {"using": "xpath", "sessionId": "337d07ed-37e3-4908-94b3-9c2d3821443b", "value": "//input[@type='text' and (@id='phone' or @name='phone' or @value='phone' or @src='phone' or @src='https://www.interviewstreet.com/recruit2/phone')]"}</msg>
+<msg timestamp="20130722 03:00:59.608" level="DEBUG">GET http://127.0.0.1:59656/hub/session/337d07ed-37e3-4908-94b3-9c2d3821443b/element/{fde8f74a-32c4-49f8-935a-46fa0f3ba8f6}/attribute/value {"sessionId": "337d07ed-37e3-4908-94b3-9c2d3821443b", "name": "value", "id": "{fde8f74a-32c4-49f8-935a-46fa0f3ba8f6}"}</msg>
+<msg timestamp="20130722 03:00:59.624" level="INFO">Text field 'phone' contains text '19141234567'.</msg>
+<msg timestamp="20130722 03:00:59.624" level="TRACE">Return: None</msg>
+<status status="PASS" endtime="20130722 03:00:59.624" starttime="20130722 03:00:59.569"></status>
+</kw>
+<msg timestamp="20130722 03:00:59.625" level="TRACE">Return: None</msg>
+<status status="PASS" endtime="20130722 03:00:59.624" starttime="20130722 03:00:59.567"></status>
+</kw>
+<kw type="kw" name="resource.Then Send invites as Is">
+<doc></doc>
+<arguments>
+<arg>${INVITES_AS1}</arg>
+</arguments>
+<msg timestamp="20130722 03:00:59.628" level="TRACE">Arguments: [ ${invites_as}=u'My New Company Hiring Team' ]</msg>
+<kw type="kw" name="Selenium2Library.Textfield Should Contain">
+<doc>Verifies text field identified by `locator` contains text `expected`.</doc>
+<arguments>
+<arg>email_from</arg>
+<arg>${invites_as}</arg>
+</arguments>
+<msg timestamp="20130722 03:00:59.629" level="TRACE">Arguments: [ u'email_from' | u'My New Company Hiring Team' ]</msg>
+<msg timestamp="20130722 03:00:59.629" level="DEBUG">GET http://127.0.0.1:59656/hub/session/337d07ed-37e3-4908-94b3-9c2d3821443b/url {"sessionId": "337d07ed-37e3-4908-94b3-9c2d3821443b"}</msg>
+<msg timestamp="20130722 03:00:59.647" level="DEBUG">POST http://127.0.0.1:59656/hub/session/337d07ed-37e3-4908-94b3-9c2d3821443b/elements {"using": "xpath", "sessionId": "337d07ed-37e3-4908-94b3-9c2d3821443b", "value": "//input[@type='text' and (@id='email_from' or @name='email_from' or @value='email_from' or @src='email_from' or @src='https://www.interviewstreet.com/recruit2/email_from')]"}</msg>
+<msg timestamp="20130722 03:00:59.665" level="DEBUG">GET http://127.0.0.1:59656/hub/session/337d07ed-37e3-4908-94b3-9c2d3821443b/element/{e2ae152e-e3d1-444e-bb4c-71cc22a897d3}/attribute/value {"sessionId": "337d07ed-37e3-4908-94b3-9c2d3821443b", "name": "value", "id": "{e2ae152e-e3d1-444e-bb4c-71cc22a897d3}"}</msg>
+<msg timestamp="20130722 03:00:59.681" level="INFO">Text field 'email_from' contains text 'My New Company Hiring Team'.</msg>
+<msg timestamp="20130722 03:00:59.682" level="TRACE">Return: None</msg>
+<status status="PASS" endtime="20130722 03:00:59.682" starttime="20130722 03:00:59.629"></status>
+</kw>
+<msg timestamp="20130722 03:00:59.682" level="TRACE">Return: None</msg>
+<status status="PASS" endtime="20130722 03:00:59.682" starttime="20130722 03:00:59.627"></status>
+</kw>
+<doc></doc>
+<tags>
+</tags>
+<status status="PASS" endtime="20130722 03:00:59.684" critical="yes" starttime="20130722 03:00:36.839"></status>
+</test>
+<test id="s1-s1-t7" name="User can logout">
+<kw type="kw" name="resource.When user logout">
+<doc></doc>
+<arguments>
+<arg>${username1}</arg>
+</arguments>
+<msg timestamp="20130722 03:00:59.689" level="TRACE">Arguments: [ ${name}=u'myNewName' ]</msg>
+<kw type="kw" name="Selenium2Library.Click Link">
+<doc>Clicks a link identified by locator.</doc>
+<arguments>
+<arg>${name}</arg>
+</arguments>
+<msg timestamp="20130722 03:00:59.689" level="TRACE">Arguments: [ u'myNewName' ]</msg>
+<msg timestamp="20130722 03:00:59.689" level="INFO">Clicking link 'myNewName'.</msg>
+<msg timestamp="20130722 03:00:59.690" level="DEBUG">GET http://127.0.0.1:59656/hub/session/337d07ed-37e3-4908-94b3-9c2d3821443b/url {"sessionId": "337d07ed-37e3-4908-94b3-9c2d3821443b"}</msg>
+<msg timestamp="20130722 03:00:59.709" level="DEBUG">POST http://127.0.0.1:59656/hub/session/337d07ed-37e3-4908-94b3-9c2d3821443b/elements {"using": "xpath", "sessionId": "337d07ed-37e3-4908-94b3-9c2d3821443b", "value": "//a[(@id='myNewName' or @name='myNewName' or @href='myNewName' or normalize-space(descendant-or-self::text())='myNewName' or @href='https://www.interviewstreet.com/recruit2/myNewName')]"}</msg>
+<msg timestamp="20130722 03:00:59.732" level="DEBUG">POST http://127.0.0.1:59656/hub/session/337d07ed-37e3-4908-94b3-9c2d3821443b/element/{a33de276-44c0-4dc1-9092-2ac9174f3ad0}/click {"sessionId": "337d07ed-37e3-4908-94b3-9c2d3821443b", "id": "{a33de276-44c0-4dc1-9092-2ac9174f3ad0}"}</msg>
+<msg timestamp="20130722 03:00:59.831" level="TRACE">Return: None</msg>
+<status status="PASS" endtime="20130722 03:00:59.831" starttime="20130722 03:00:59.689"></status>
+</kw>
+<kw type="kw" name="Selenium2Library.Click Link">
+<doc>Clicks a link identified by locator.</doc>
+<arguments>
+<arg>Logout</arg>
+</arguments>
+<msg timestamp="20130722 03:00:59.831" level="TRACE">Arguments: [ u'Logout' ]</msg>
+<msg timestamp="20130722 03:00:59.831" level="INFO">Clicking link 'Logout'.</msg>
+<msg timestamp="20130722 03:00:59.831" level="DEBUG">GET http://127.0.0.1:59656/hub/session/337d07ed-37e3-4908-94b3-9c2d3821443b/url {"sessionId": "337d07ed-37e3-4908-94b3-9c2d3821443b"}</msg>
+<msg timestamp="20130722 03:00:59.842" level="DEBUG">POST http://127.0.0.1:59656/hub/session/337d07ed-37e3-4908-94b3-9c2d3821443b/elements {"using": "xpath", "sessionId": "337d07ed-37e3-4908-94b3-9c2d3821443b", "value": "//a[(@id='Logout' or @name='Logout' or @href='Logout' or normalize-space(descendant-or-self::text())='Logout' or @href='https://www.interviewstreet.com/recruit2/Logout')]"}</msg>
+<msg timestamp="20130722 03:00:59.856" level="DEBUG">POST http://127.0.0.1:59656/hub/session/337d07ed-37e3-4908-94b3-9c2d3821443b/element/{c610f185-7137-40a1-80d2-e13f7a26dad9}/click {"sessionId": "337d07ed-37e3-4908-94b3-9c2d3821443b", "id": "{c610f185-7137-40a1-80d2-e13f7a26dad9}"}</msg>
+<msg timestamp="20130722 03:01:02.322" level="TRACE">Return: None</msg>
+<status status="PASS" endtime="20130722 03:01:02.321" starttime="20130722 03:00:59.831"></status>
+</kw>
+<msg timestamp="20130722 03:01:02.322" level="TRACE">Return: None</msg>
+<status status="PASS" endtime="20130722 03:01:02.322" starttime="20130722 03:00:59.688"></status>
+</kw>
+<kw type="kw" name="resource.Then user see login page">
+<doc></doc>
+<arguments>
+</arguments>
+<msg timestamp="20130722 03:01:02.323" level="TRACE">Arguments: [  ]</msg>
+<kw type="kw" name="Selenium2Library.Page Should Contain">
+<doc>Verifies that current page contains `text`.</doc>
+<arguments>
+<arg>The best way to hire programmers</arg>
+</arguments>
+<msg timestamp="20130722 03:01:02.324" level="TRACE">Arguments: [ u'The best way to hire programmers' ]</msg>
+<msg timestamp="20130722 03:01:02.324" level="DEBUG">POST http://127.0.0.1:59656/hub/session/337d07ed-37e3-4908-94b3-9c2d3821443b/frame {"sessionId": "337d07ed-37e3-4908-94b3-9c2d3821443b", "id": null}</msg>
+<msg timestamp="20130722 03:01:03.371" level="DEBUG">POST http://127.0.0.1:59656/hub/session/337d07ed-37e3-4908-94b3-9c2d3821443b/elements {"using": "xpath", "sessionId": "337d07ed-37e3-4908-94b3-9c2d3821443b", "value": "//*[contains(., 'The best way to hire programmers')]"}</msg>
+<msg timestamp="20130722 03:01:03.401" level="INFO">Current page contains text 'The best way to hire programmers'.</msg>
+<msg timestamp="20130722 03:01:03.402" level="TRACE">Return: None</msg>
+<status status="PASS" endtime="20130722 03:01:03.402" starttime="20130722 03:01:02.324"></status>
+</kw>
+<msg timestamp="20130722 03:01:03.402" level="TRACE">Return: None</msg>
+<status status="PASS" endtime="20130722 03:01:03.402" starttime="20130722 03:01:02.323"></status>
+</kw>
+<kw type="teardown" name="Selenium2Library.Close Browser">
+<doc>Closes the current browser.</doc>
+<arguments>
+</arguments>
+<msg timestamp="20130722 03:01:03.405" level="TRACE">Arguments: [  ]</msg>
+<msg timestamp="20130722 03:01:03.405" level="DEBUG">Closing browser with session id 337d07ed-37e3-4908-94b3-9c2d3821443b</msg>
+<msg timestamp="20130722 03:01:03.405" level="DEBUG">DELETE http://127.0.0.1:59656/hub/session/337d07ed-37e3-4908-94b3-9c2d3821443b {"sessionId": "337d07ed-37e3-4908-94b3-9c2d3821443b"}</msg>
+<msg timestamp="20130722 03:01:03.598" level="TRACE">Return: None</msg>
+<status status="PASS" endtime="20130722 03:01:03.598" starttime="20130722 03:01:03.405"></status>
+</kw>
+<doc></doc>
+<tags>
+</tags>
+<status status="PASS" endtime="20130722 03:01:03.599" critical="yes" starttime="20130722 03:00:59.686"></status>
+</test>
+<test id="s1-s1-t8" name="Login With Invalid Username">
+<kw type="kw" name="resource.Given browser is opened to login page">
+<doc></doc>
+<arguments>
+</arguments>
+<msg timestamp="20130722 03:01:03.602" level="TRACE">Arguments: [  ]</msg>
+<kw type="kw" name="resource.Open Browser To Login Page">
+<doc></doc>
+<arguments>
+</arguments>
+<msg timestamp="20130722 03:01:03.603" level="TRACE">Arguments: [  ]</msg>
+<kw type="kw" name="Selenium2Library.Open Browser">
+<doc>Opens a new browser instance to given URL.</doc>
+<arguments>
+<arg>${LOGIN URL}</arg>
+<arg>${BROWSER}</arg>
+</arguments>
+<msg timestamp="20130722 03:01:03.603" level="TRACE">Arguments: [ u'http://www.interviewstreet.com' | u'Firefox' ]</msg>
+<msg timestamp="20130722 03:01:03.603" level="INFO">Opening browser 'Firefox' to base url 'http://www.interviewstreet.com'</msg>
+<msg timestamp="20130722 03:01:09.335" level="DEBUG">POST http://127.0.0.1:59785/hub/session {"sessionId": null, "desiredCapabilities": {"platform": "ANY", "browserName": "firefox", "version": "", "javascriptEnabled": true}}</msg>
+<msg timestamp="20130722 03:01:09.423" level="DEBUG">POST http://127.0.0.1:59785/hub/session/3e08c92b-56e1-4d0c-be8b-925d0f941067/timeouts/async_script {"sessionId": "3e08c92b-56e1-4d0c-be8b-925d0f941067", "ms": 5000.0}</msg>
+<msg timestamp="20130722 03:01:09.432" level="DEBUG">POST http://127.0.0.1:59785/hub/session/3e08c92b-56e1-4d0c-be8b-925d0f941067/timeouts/implicit_wait {"sessionId": "3e08c92b-56e1-4d0c-be8b-925d0f941067", "ms": 0.0}</msg>
+<msg timestamp="20130722 03:01:09.441" level="DEBUG">POST http://127.0.0.1:59785/hub/session/3e08c92b-56e1-4d0c-be8b-925d0f941067/url {"url": "http://www.interviewstreet.com", "sessionId": "3e08c92b-56e1-4d0c-be8b-925d0f941067"}</msg>
+<msg timestamp="20130722 03:01:14.862" level="DEBUG">Opened browser with session id 3e08c92b-56e1-4d0c-be8b-925d0f941067</msg>
+<msg timestamp="20130722 03:01:14.863" level="TRACE">Return: 4</msg>
+<status status="PASS" endtime="20130722 03:01:14.863" starttime="20130722 03:01:03.603"></status>
+</kw>
+<kw type="kw" name="Selenium2Library.Set Selenium Speed">
+<doc>Sets the delay in seconds that is waited after each Selenium command.</doc>
+<arguments>
+<arg>${DELAY}</arg>
+</arguments>
+<msg timestamp="20130722 03:01:14.863" level="TRACE">Arguments: [ u'0' ]</msg>
+<msg timestamp="20130722 03:01:14.863" level="TRACE">Return: '0 seconds'</msg>
+<status status="PASS" endtime="20130722 03:01:14.863" starttime="20130722 03:01:14.863"></status>
+</kw>
+<kw type="kw" name="resource.Login Page Should Be Open">
+<doc></doc>
+<arguments>
+</arguments>
+<msg timestamp="20130722 03:01:14.864" level="TRACE">Arguments: [  ]</msg>
+<kw type="kw" name="Selenium2Library.Title Should Be">
+<doc>Verifies that current page title equals `title`.</doc>
+<arguments>
+<arg>Programming Test | Hire programmers | Interviewstreet | Dashboard</arg>
+</arguments>
+<msg timestamp="20130722 03:01:14.864" level="TRACE">Arguments: [ u'Programming Test | Hire programmers | Interviewstreet | Dashboard' ]</msg>
+<msg timestamp="20130722 03:01:14.864" level="DEBUG">GET http://127.0.0.1:59785/hub/session/3e08c92b-56e1-4d0c-be8b-925d0f941067/title {"sessionId": "3e08c92b-56e1-4d0c-be8b-925d0f941067"}</msg>
+<msg timestamp="20130722 03:01:17.138" level="INFO">Page title is 'Programming Test | Hire programmers | Interviewstreet | Dashboard'.</msg>
+<msg timestamp="20130722 03:01:17.138" level="TRACE">Return: None</msg>
+<status status="PASS" endtime="20130722 03:01:17.138" starttime="20130722 03:01:14.864"></status>
+</kw>
+<msg timestamp="20130722 03:01:17.139" level="TRACE">Return: None</msg>
+<status status="PASS" endtime="20130722 03:01:17.138" starttime="20130722 03:01:14.863"></status>
+</kw>
+<kw type="kw" name="Selenium2Library.Click Element">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>id=login_button</arg>
+</arguments>
+<msg timestamp="20130722 03:01:17.139" level="TRACE">Arguments: [ u'id=login_button' ]</msg>
+<msg timestamp="20130722 03:01:17.140" level="INFO">Clicking element 'id=login_button'.</msg>
+<msg timestamp="20130722 03:01:17.140" level="DEBUG">POST http://127.0.0.1:59785/hub/session/3e08c92b-56e1-4d0c-be8b-925d0f941067/elements {"using": "id", "sessionId": "3e08c92b-56e1-4d0c-be8b-925d0f941067", "value": "login_button"}</msg>
+<msg timestamp="20130722 03:01:17.232" level="DEBUG">POST http://127.0.0.1:59785/hub/session/3e08c92b-56e1-4d0c-be8b-925d0f941067/element/{35edb587-a9cd-44c2-904a-d50460fbff34}/click {"sessionId": "3e08c92b-56e1-4d0c-be8b-925d0f941067", "id": "{35edb587-a9cd-44c2-904a-d50460fbff34}"}</msg>
+<msg timestamp="20130722 03:01:17.327" level="TRACE">Return: None</msg>
+<status status="PASS" endtime="20130722 03:01:17.327" starttime="20130722 03:01:17.139"></status>
+</kw>
+<msg timestamp="20130722 03:01:17.327" level="TRACE">Return: None</msg>
+<status status="PASS" endtime="20130722 03:01:17.327" starttime="20130722 03:01:03.602"></status>
+</kw>
+<msg timestamp="20130722 03:01:17.328" level="TRACE">Return: None</msg>
+<status status="PASS" endtime="20130722 03:01:17.328" starttime="20130722 03:01:03.602"></status>
+</kw>
+<kw type="kw" name="resource.When user &quot;invalid&quot; logs in with password &quot;${VALID PASSWORD}&quot;">
+<doc></doc>
+<arguments>
+</arguments>
+<msg timestamp="20130722 03:01:17.330" level="TRACE">Arguments: [  ]</msg>
+<kw type="kw" name="resource.Input Username">
+<doc></doc>
+<arguments>
+<arg>${username}</arg>
+</arguments>
+<msg timestamp="20130722 03:01:17.330" level="TRACE">Arguments: [ ${username}=u'invalid' ]</msg>
+<kw type="kw" name="Selenium2Library.Input Text">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>email</arg>
+<arg>${username}</arg>
+</arguments>
+<msg timestamp="20130722 03:01:17.331" level="TRACE">Arguments: [ u'email' | u'invalid' ]</msg>
+<msg timestamp="20130722 03:01:17.331" level="INFO">Typing text 'invalid' into text field 'email'</msg>
+<msg timestamp="20130722 03:01:17.331" level="DEBUG">POST http://127.0.0.1:59785/hub/session/3e08c92b-56e1-4d0c-be8b-925d0f941067/elements {"using": "xpath", "sessionId": "3e08c92b-56e1-4d0c-be8b-925d0f941067", "value": "//*[(@id='email' or @name='email')]"}</msg>
+<msg timestamp="20130722 03:01:17.360" level="DEBUG">POST http://127.0.0.1:59785/hub/session/3e08c92b-56e1-4d0c-be8b-925d0f941067/element/{bd6f7f08-09c5-4acf-a600-034300fd3da9}/clear {"sessionId": "3e08c92b-56e1-4d0c-be8b-925d0f941067", "id": "{bd6f7f08-09c5-4acf-a600-034300fd3da9}"}</msg>
+<msg timestamp="20130722 03:01:17.380" level="DEBUG">POST http://127.0.0.1:59785/hub/session/3e08c92b-56e1-4d0c-be8b-925d0f941067/element/{bd6f7f08-09c5-4acf-a600-034300fd3da9}/value {"sessionId": "3e08c92b-56e1-4d0c-be8b-925d0f941067", "id": "{bd6f7f08-09c5-4acf-a600-034300fd3da9}", "value": ["i", "n", "v", "a", "l", "i", "d"]}</msg>
+<msg timestamp="20130722 03:01:17.420" level="TRACE">Return: None</msg>
+<status status="PASS" endtime="20130722 03:01:17.420" starttime="20130722 03:01:17.330"></status>
+</kw>
+<msg timestamp="20130722 03:01:17.420" level="TRACE">Return: None</msg>
+<status status="PASS" endtime="20130722 03:01:17.420" starttime="20130722 03:01:17.330"></status>
+</kw>
+<kw type="kw" name="resource.Input Password">
+<doc></doc>
+<arguments>
+<arg>${password}</arg>
+</arguments>
+<msg timestamp="20130722 03:01:17.421" level="TRACE">Arguments: [ ${password}=u'xEYLg1xI' ]</msg>
+<kw type="kw" name="Selenium2Library.Input Text">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>password</arg>
+<arg>${password}</arg>
+</arguments>
+<msg timestamp="20130722 03:01:17.421" level="TRACE">Arguments: [ u'password' | u'xEYLg1xI' ]</msg>
+<msg timestamp="20130722 03:01:17.421" level="INFO">Typing text 'xEYLg1xI' into text field 'password'</msg>
+<msg timestamp="20130722 03:01:17.422" level="DEBUG">POST http://127.0.0.1:59785/hub/session/3e08c92b-56e1-4d0c-be8b-925d0f941067/elements {"using": "xpath", "sessionId": "3e08c92b-56e1-4d0c-be8b-925d0f941067", "value": "//*[(@id='password' or @name='password')]"}</msg>
+<msg timestamp="20130722 03:01:17.434" level="DEBUG">POST http://127.0.0.1:59785/hub/session/3e08c92b-56e1-4d0c-be8b-925d0f941067/element/{7de8901f-72ad-486b-8fac-4e4b944a462c}/clear {"sessionId": "3e08c92b-56e1-4d0c-be8b-925d0f941067", "id": "{7de8901f-72ad-486b-8fac-4e4b944a462c}"}</msg>
+<msg timestamp="20130722 03:01:17.461" level="DEBUG">POST http://127.0.0.1:59785/hub/session/3e08c92b-56e1-4d0c-be8b-925d0f941067/element/{7de8901f-72ad-486b-8fac-4e4b944a462c}/value {"sessionId": "3e08c92b-56e1-4d0c-be8b-925d0f941067", "id": "{7de8901f-72ad-486b-8fac-4e4b944a462c}", "value": ["x", "E", "Y", "L", "g", "1", "x", "I"]}</msg>
+<msg timestamp="20130722 03:01:17.503" level="TRACE">Return: None</msg>
+<status status="PASS" endtime="20130722 03:01:17.503" starttime="20130722 03:01:17.421"></status>
+</kw>
+<msg timestamp="20130722 03:01:17.503" level="TRACE">Return: None</msg>
+<status status="PASS" endtime="20130722 03:01:17.503" starttime="20130722 03:01:17.420"></status>
+</kw>
+<kw type="kw" name="resource.Submit Credentials">
+<doc></doc>
+<arguments>
+</arguments>
+<msg timestamp="20130722 03:01:17.504" level="TRACE">Arguments: [  ]</msg>
+<kw type="kw" name="Selenium2Library.Click Button">
+<doc>Clicks a button identified by `locator`.</doc>
+<arguments>
+<arg>login_action</arg>
+</arguments>
+<msg timestamp="20130722 03:01:17.504" level="TRACE">Arguments: [ u'login_action' ]</msg>
+<msg timestamp="20130722 03:01:17.504" level="INFO">Clicking button 'login_action'.</msg>
+<msg timestamp="20130722 03:01:17.504" level="DEBUG">GET http://127.0.0.1:59785/hub/session/3e08c92b-56e1-4d0c-be8b-925d0f941067/url {"sessionId": "3e08c92b-56e1-4d0c-be8b-925d0f941067"}</msg>
+<msg timestamp="20130722 03:01:17.517" level="DEBUG">POST http://127.0.0.1:59785/hub/session/3e08c92b-56e1-4d0c-be8b-925d0f941067/elements {"using": "xpath", "sessionId": "3e08c92b-56e1-4d0c-be8b-925d0f941067", "value": "//input[(@id='login_action' or @name='login_action' or @value='login_action' or @src='login_action' or @src='https://www.interviewstreet.com/recruit2/login_action')]"}</msg>
+<msg timestamp="20130722 03:01:17.583" level="DEBUG">POST http://127.0.0.1:59785/hub/session/3e08c92b-56e1-4d0c-be8b-925d0f941067/elements {"using": "xpath", "sessionId": "3e08c92b-56e1-4d0c-be8b-925d0f941067", "value": "//button[(@id='login_action' or @name='login_action' or @value='login_action' or normalize-space(descendant-or-self::text())='login_action')]"}</msg>
+<msg timestamp="20130722 03:01:17.598" level="DEBUG">POST http://127.0.0.1:59785/hub/session/3e08c92b-56e1-4d0c-be8b-925d0f941067/element/{d230790d-6019-42a5-af6d-52f339c6ac0d}/click {"sessionId": "3e08c92b-56e1-4d0c-be8b-925d0f941067", "id": "{d230790d-6019-42a5-af6d-52f339c6ac0d}"}</msg>
+<msg timestamp="20130722 03:01:17.688" level="TRACE">Return: None</msg>
+<status status="PASS" endtime="20130722 03:01:17.688" starttime="20130722 03:01:17.504"></status>
+</kw>
+<msg timestamp="20130722 03:01:17.688" level="TRACE">Return: None</msg>
+<status status="PASS" endtime="20130722 03:01:17.688" starttime="20130722 03:01:17.503"></status>
+</kw>
+<msg timestamp="20130722 03:01:17.688" level="TRACE">Return: None</msg>
+<status status="PASS" endtime="20130722 03:01:17.688" starttime="20130722 03:01:17.329"></status>
+</kw>
+<kw type="kw" name="resource.Then Login Should Have Failed">
+<doc></doc>
+<arguments>
+</arguments>
+<msg timestamp="20130722 03:01:17.690" level="TRACE">Arguments: [  ]</msg>
+<kw type="kw" name="Selenium2Library.Wait Until Page Contains">
+<doc>Waits until `text` appears on current page.</doc>
+<arguments>
+<arg>Login Failed. Please check username/password.</arg>
+</arguments>
+<msg timestamp="20130722 03:01:17.690" level="TRACE">Arguments: [ u'Login Failed. Please check username/password.' ]</msg>
+<msg timestamp="20130722 03:01:17.690" level="DEBUG">POST http://127.0.0.1:59785/hub/session/3e08c92b-56e1-4d0c-be8b-925d0f941067/elements {"using": "xpath", "sessionId": "3e08c92b-56e1-4d0c-be8b-925d0f941067", "value": "//*[contains(., 'Login Failed. Please check username/password.')]"}</msg>
+<msg timestamp="20130722 03:01:17.903" level="DEBUG">POST http://127.0.0.1:59785/hub/session/3e08c92b-56e1-4d0c-be8b-925d0f941067/elements {"using": "xpath", "sessionId": "3e08c92b-56e1-4d0c-be8b-925d0f941067", "value": "//*[contains(., 'Login Failed. Please check username/password.')]"}</msg>
+<msg timestamp="20130722 03:01:17.937" level="TRACE">Return: None</msg>
+<status status="PASS" endtime="20130722 03:01:17.937" starttime="20130722 03:01:17.690"></status>
+</kw>
+<msg timestamp="20130722 03:01:17.938" level="TRACE">Return: None</msg>
+<status status="PASS" endtime="20130722 03:01:17.938" starttime="20130722 03:01:17.689"></status>
+</kw>
+<kw type="teardown" name="Selenium2Library.Close Browser">
+<doc>Closes the current browser.</doc>
+<arguments>
+</arguments>
+<msg timestamp="20130722 03:01:17.939" level="TRACE">Arguments: [  ]</msg>
+<msg timestamp="20130722 03:01:17.939" level="DEBUG">Closing browser with session id 3e08c92b-56e1-4d0c-be8b-925d0f941067</msg>
+<msg timestamp="20130722 03:01:17.940" level="DEBUG">DELETE http://127.0.0.1:59785/hub/session/3e08c92b-56e1-4d0c-be8b-925d0f941067 {"sessionId": "3e08c92b-56e1-4d0c-be8b-925d0f941067"}</msg>
+<msg timestamp="20130722 03:01:18.053" level="TRACE">Return: None</msg>
+<status status="PASS" endtime="20130722 03:01:18.053" starttime="20130722 03:01:17.939"></status>
+</kw>
+<doc></doc>
+<tags>
+</tags>
+<status status="PASS" endtime="20130722 03:01:18.054" critical="yes" starttime="20130722 03:01:03.600"></status>
+</test>
+<test id="s1-s1-t9" name="Login With Invalid Password">
+<kw type="kw" name="resource.Given browser is opened to login page">
+<doc></doc>
+<arguments>
+</arguments>
+<msg timestamp="20130722 03:01:18.058" level="TRACE">Arguments: [  ]</msg>
+<kw type="kw" name="resource.Open Browser To Login Page">
+<doc></doc>
+<arguments>
+</arguments>
+<msg timestamp="20130722 03:01:18.058" level="TRACE">Arguments: [  ]</msg>
+<kw type="kw" name="Selenium2Library.Open Browser">
+<doc>Opens a new browser instance to given URL.</doc>
+<arguments>
+<arg>${LOGIN URL}</arg>
+<arg>${BROWSER}</arg>
+</arguments>
+<msg timestamp="20130722 03:01:18.059" level="TRACE">Arguments: [ u'http://www.interviewstreet.com' | u'Firefox' ]</msg>
+<msg timestamp="20130722 03:01:18.059" level="INFO">Opening browser 'Firefox' to base url 'http://www.interviewstreet.com'</msg>
+<msg timestamp="20130722 03:01:23.541" level="DEBUG">POST http://127.0.0.1:59851/hub/session {"sessionId": null, "desiredCapabilities": {"platform": "ANY", "browserName": "firefox", "version": "", "javascriptEnabled": true}}</msg>
+<msg timestamp="20130722 03:01:23.641" level="DEBUG">POST http://127.0.0.1:59851/hub/session/7564cc7a-8468-4632-bd74-fd1762211a5d/timeouts/async_script {"sessionId": "7564cc7a-8468-4632-bd74-fd1762211a5d", "ms": 5000.0}</msg>
+<msg timestamp="20130722 03:01:23.650" level="DEBUG">POST http://127.0.0.1:59851/hub/session/7564cc7a-8468-4632-bd74-fd1762211a5d/timeouts/implicit_wait {"sessionId": "7564cc7a-8468-4632-bd74-fd1762211a5d", "ms": 0.0}</msg>
+<msg timestamp="20130722 03:01:23.659" level="DEBUG">POST http://127.0.0.1:59851/hub/session/7564cc7a-8468-4632-bd74-fd1762211a5d/url {"url": "http://www.interviewstreet.com", "sessionId": "7564cc7a-8468-4632-bd74-fd1762211a5d"}</msg>
+<msg timestamp="20130722 03:01:29.824" level="DEBUG">Opened browser with session id 7564cc7a-8468-4632-bd74-fd1762211a5d</msg>
+<msg timestamp="20130722 03:01:29.824" level="TRACE">Return: 5</msg>
+<status status="PASS" endtime="20130722 03:01:29.824" starttime="20130722 03:01:18.058"></status>
+</kw>
+<kw type="kw" name="Selenium2Library.Set Selenium Speed">
+<doc>Sets the delay in seconds that is waited after each Selenium command.</doc>
+<arguments>
+<arg>${DELAY}</arg>
+</arguments>
+<msg timestamp="20130722 03:01:29.825" level="TRACE">Arguments: [ u'0' ]</msg>
+<msg timestamp="20130722 03:01:29.825" level="TRACE">Return: '0 seconds'</msg>
+<status status="PASS" endtime="20130722 03:01:29.825" starttime="20130722 03:01:29.824"></status>
+</kw>
+<kw type="kw" name="resource.Login Page Should Be Open">
+<doc></doc>
+<arguments>
+</arguments>
+<msg timestamp="20130722 03:01:29.825" level="TRACE">Arguments: [  ]</msg>
+<kw type="kw" name="Selenium2Library.Title Should Be">
+<doc>Verifies that current page title equals `title`.</doc>
+<arguments>
+<arg>Programming Test | Hire programmers | Interviewstreet | Dashboard</arg>
+</arguments>
+<msg timestamp="20130722 03:01:29.826" level="TRACE">Arguments: [ u'Programming Test | Hire programmers | Interviewstreet | Dashboard' ]</msg>
+<msg timestamp="20130722 03:01:29.826" level="DEBUG">GET http://127.0.0.1:59851/hub/session/7564cc7a-8468-4632-bd74-fd1762211a5d/title {"sessionId": "7564cc7a-8468-4632-bd74-fd1762211a5d"}</msg>
+<msg timestamp="20130722 03:01:32.013" level="INFO">Page title is 'Programming Test | Hire programmers | Interviewstreet | Dashboard'.</msg>
+<msg timestamp="20130722 03:01:32.013" level="TRACE">Return: None</msg>
+<status status="PASS" endtime="20130722 03:01:32.013" starttime="20130722 03:01:29.826"></status>
+</kw>
+<msg timestamp="20130722 03:01:32.014" level="TRACE">Return: None</msg>
+<status status="PASS" endtime="20130722 03:01:32.014" starttime="20130722 03:01:29.825"></status>
+</kw>
+<kw type="kw" name="Selenium2Library.Click Element">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>id=login_button</arg>
+</arguments>
+<msg timestamp="20130722 03:01:32.015" level="TRACE">Arguments: [ u'id=login_button' ]</msg>
+<msg timestamp="20130722 03:01:32.015" level="INFO">Clicking element 'id=login_button'.</msg>
+<msg timestamp="20130722 03:01:32.015" level="DEBUG">POST http://127.0.0.1:59851/hub/session/7564cc7a-8468-4632-bd74-fd1762211a5d/elements {"using": "id", "sessionId": "7564cc7a-8468-4632-bd74-fd1762211a5d", "value": "login_button"}</msg>
+<msg timestamp="20130722 03:01:32.099" level="DEBUG">POST http://127.0.0.1:59851/hub/session/7564cc7a-8468-4632-bd74-fd1762211a5d/element/{c5bebd12-555a-4000-8ea1-155bea1856a8}/click {"sessionId": "7564cc7a-8468-4632-bd74-fd1762211a5d", "id": "{c5bebd12-555a-4000-8ea1-155bea1856a8}"}</msg>
+<msg timestamp="20130722 03:01:32.192" level="TRACE">Return: None</msg>
+<status status="PASS" endtime="20130722 03:01:32.192" starttime="20130722 03:01:32.014"></status>
+</kw>
+<msg timestamp="20130722 03:01:32.192" level="TRACE">Return: None</msg>
+<status status="PASS" endtime="20130722 03:01:32.192" starttime="20130722 03:01:18.058"></status>
+</kw>
+<msg timestamp="20130722 03:01:32.193" level="TRACE">Return: None</msg>
+<status status="PASS" endtime="20130722 03:01:32.193" starttime="20130722 03:01:18.057"></status>
+</kw>
+<kw type="kw" name="resource.When user &quot;${email}&quot; logs in with password &quot;invalid&quot;">
+<doc></doc>
+<arguments>
+</arguments>
+<msg timestamp="20130722 03:01:32.194" level="TRACE">Arguments: [  ]</msg>
+<kw type="kw" name="resource.Input Username">
+<doc></doc>
+<arguments>
+<arg>${username}</arg>
+</arguments>
+<msg timestamp="20130722 03:01:32.195" level="TRACE">Arguments: [ ${username}='klctD0130722025917@mailinator.com' ]</msg>
+<kw type="kw" name="Selenium2Library.Input Text">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>email</arg>
+<arg>${username}</arg>
+</arguments>
+<msg timestamp="20130722 03:01:32.195" level="TRACE">Arguments: [ u'email' | 'klctD0130722025917@mailinator.com' ]</msg>
+<msg timestamp="20130722 03:01:32.195" level="INFO">Typing text 'klctD0130722025917@mailinator.com' into text field 'email'</msg>
+<msg timestamp="20130722 03:01:32.196" level="DEBUG">POST http://127.0.0.1:59851/hub/session/7564cc7a-8468-4632-bd74-fd1762211a5d/elements {"using": "xpath", "sessionId": "7564cc7a-8468-4632-bd74-fd1762211a5d", "value": "//*[(@id='email' or @name='email')]"}</msg>
+<msg timestamp="20130722 03:01:32.270" level="DEBUG">POST http://127.0.0.1:59851/hub/session/7564cc7a-8468-4632-bd74-fd1762211a5d/element/{0a0684dc-bc4f-41ff-bf37-baae4c6daa38}/clear {"sessionId": "7564cc7a-8468-4632-bd74-fd1762211a5d", "id": "{0a0684dc-bc4f-41ff-bf37-baae4c6daa38}"}</msg>
+<msg timestamp="20130722 03:01:32.299" level="DEBUG">POST http://127.0.0.1:59851/hub/session/7564cc7a-8468-4632-bd74-fd1762211a5d/element/{0a0684dc-bc4f-41ff-bf37-baae4c6daa38}/value {"sessionId": "7564cc7a-8468-4632-bd74-fd1762211a5d", "id": "{0a0684dc-bc4f-41ff-bf37-baae4c6daa38}", "value": ["k", "l", "c", "t", "D", "0", "1", "3", "0", "7", "2", "2", "0", "2", "5", "9", "1", "7", "@", "m", "a", "i", "l", "i", "n", "a", "t", "o", "r", ".", "c", "o", "m"]}</msg>
+<msg timestamp="20130722 03:01:32.366" level="TRACE">Return: None</msg>
+<status status="PASS" endtime="20130722 03:01:32.366" starttime="20130722 03:01:32.195"></status>
+</kw>
+<msg timestamp="20130722 03:01:32.367" level="TRACE">Return: None</msg>
+<status status="PASS" endtime="20130722 03:01:32.367" starttime="20130722 03:01:32.194"></status>
+</kw>
+<kw type="kw" name="resource.Input Password">
+<doc></doc>
+<arguments>
+<arg>${password}</arg>
+</arguments>
+<msg timestamp="20130722 03:01:32.367" level="TRACE">Arguments: [ ${password}=u'invalid' ]</msg>
+<kw type="kw" name="Selenium2Library.Input Text">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>password</arg>
+<arg>${password}</arg>
+</arguments>
+<msg timestamp="20130722 03:01:32.368" level="TRACE">Arguments: [ u'password' | u'invalid' ]</msg>
+<msg timestamp="20130722 03:01:32.368" level="INFO">Typing text 'invalid' into text field 'password'</msg>
+<msg timestamp="20130722 03:01:32.368" level="DEBUG">POST http://127.0.0.1:59851/hub/session/7564cc7a-8468-4632-bd74-fd1762211a5d/elements {"using": "xpath", "sessionId": "7564cc7a-8468-4632-bd74-fd1762211a5d", "value": "//*[(@id='password' or @name='password')]"}</msg>
+<msg timestamp="20130722 03:01:32.379" level="DEBUG">POST http://127.0.0.1:59851/hub/session/7564cc7a-8468-4632-bd74-fd1762211a5d/element/{44da5461-eac7-44e2-8b86-63e65fe97c42}/clear {"sessionId": "7564cc7a-8468-4632-bd74-fd1762211a5d", "id": "{44da5461-eac7-44e2-8b86-63e65fe97c42}"}</msg>
+<msg timestamp="20130722 03:01:32.405" level="DEBUG">POST http://127.0.0.1:59851/hub/session/7564cc7a-8468-4632-bd74-fd1762211a5d/element/{44da5461-eac7-44e2-8b86-63e65fe97c42}/value {"sessionId": "7564cc7a-8468-4632-bd74-fd1762211a5d", "id": "{44da5461-eac7-44e2-8b86-63e65fe97c42}", "value": ["i", "n", "v", "a", "l", "i", "d"]}</msg>
+<msg timestamp="20130722 03:01:32.454" level="TRACE">Return: None</msg>
+<status status="PASS" endtime="20130722 03:01:32.454" starttime="20130722 03:01:32.367"></status>
+</kw>
+<msg timestamp="20130722 03:01:32.454" level="TRACE">Return: None</msg>
+<status status="PASS" endtime="20130722 03:01:32.454" starttime="20130722 03:01:32.367"></status>
+</kw>
+<kw type="kw" name="resource.Submit Credentials">
+<doc></doc>
+<arguments>
+</arguments>
+<msg timestamp="20130722 03:01:32.455" level="TRACE">Arguments: [  ]</msg>
+<kw type="kw" name="Selenium2Library.Click Button">
+<doc>Clicks a button identified by `locator`.</doc>
+<arguments>
+<arg>login_action</arg>
+</arguments>
+<msg timestamp="20130722 03:01:32.455" level="TRACE">Arguments: [ u'login_action' ]</msg>
+<msg timestamp="20130722 03:01:32.455" level="INFO">Clicking button 'login_action'.</msg>
+<msg timestamp="20130722 03:01:32.456" level="DEBUG">GET http://127.0.0.1:59851/hub/session/7564cc7a-8468-4632-bd74-fd1762211a5d/url {"sessionId": "7564cc7a-8468-4632-bd74-fd1762211a5d"}</msg>
+<msg timestamp="20130722 03:01:32.473" level="DEBUG">POST http://127.0.0.1:59851/hub/session/7564cc7a-8468-4632-bd74-fd1762211a5d/elements {"using": "xpath", "sessionId": "7564cc7a-8468-4632-bd74-fd1762211a5d", "value": "//input[(@id='login_action' or @name='login_action' or @value='login_action' or @src='login_action' or @src='https://www.interviewstreet.com/recruit2/login_action')]"}</msg>
+<msg timestamp="20130722 03:01:32.488" level="DEBUG">POST http://127.0.0.1:59851/hub/session/7564cc7a-8468-4632-bd74-fd1762211a5d/elements {"using": "xpath", "sessionId": "7564cc7a-8468-4632-bd74-fd1762211a5d", "value": "//button[(@id='login_action' or @name='login_action' or @value='login_action' or normalize-space(descendant-or-self::text())='login_action')]"}</msg>
+<msg timestamp="20130722 03:01:32.503" level="DEBUG">POST http://127.0.0.1:59851/hub/session/7564cc7a-8468-4632-bd74-fd1762211a5d/element/{05f4db01-f479-48d3-9b7e-200a52dc8d76}/click {"sessionId": "7564cc7a-8468-4632-bd74-fd1762211a5d", "id": "{05f4db01-f479-48d3-9b7e-200a52dc8d76}"}</msg>
+<msg timestamp="20130722 03:01:32.591" level="TRACE">Return: None</msg>
+<status status="PASS" endtime="20130722 03:01:32.591" starttime="20130722 03:01:32.455"></status>
+</kw>
+<msg timestamp="20130722 03:01:32.591" level="TRACE">Return: None</msg>
+<status status="PASS" endtime="20130722 03:01:32.591" starttime="20130722 03:01:32.454"></status>
+</kw>
+<msg timestamp="20130722 03:01:32.591" level="TRACE">Return: None</msg>
+<status status="PASS" endtime="20130722 03:01:32.591" starttime="20130722 03:01:32.194"></status>
+</kw>
+<kw type="kw" name="resource.Then Login Should Have Failed">
+<doc></doc>
+<arguments>
+</arguments>
+<msg timestamp="20130722 03:01:32.593" level="TRACE">Arguments: [  ]</msg>
+<kw type="kw" name="Selenium2Library.Wait Until Page Contains">
+<doc>Waits until `text` appears on current page.</doc>
+<arguments>
+<arg>Login Failed. Please check username/password.</arg>
+</arguments>
+<msg timestamp="20130722 03:01:32.593" level="TRACE">Arguments: [ u'Login Failed. Please check username/password.' ]</msg>
+<msg timestamp="20130722 03:01:32.593" level="DEBUG">POST http://127.0.0.1:59851/hub/session/7564cc7a-8468-4632-bd74-fd1762211a5d/elements {"using": "xpath", "sessionId": "7564cc7a-8468-4632-bd74-fd1762211a5d", "value": "//*[contains(., 'Login Failed. Please check username/password.')]"}</msg>
+<msg timestamp="20130722 03:01:32.813" level="DEBUG">POST http://127.0.0.1:59851/hub/session/7564cc7a-8468-4632-bd74-fd1762211a5d/elements {"using": "xpath", "sessionId": "7564cc7a-8468-4632-bd74-fd1762211a5d", "value": "//*[contains(., 'Login Failed. Please check username/password.')]"}</msg>
+<msg timestamp="20130722 03:01:32.974" level="TRACE">Return: None</msg>
+<status status="PASS" endtime="20130722 03:01:32.974" starttime="20130722 03:01:32.593"></status>
+</kw>
+<msg timestamp="20130722 03:01:32.975" level="TRACE">Return: None</msg>
+<status status="PASS" endtime="20130722 03:01:32.975" starttime="20130722 03:01:32.592"></status>
+</kw>
+<kw type="teardown" name="Selenium2Library.Close Browser">
+<doc>Closes the current browser.</doc>
+<arguments>
+</arguments>
+<msg timestamp="20130722 03:01:32.976" level="TRACE">Arguments: [  ]</msg>
+<msg timestamp="20130722 03:01:32.976" level="DEBUG">Closing browser with session id 7564cc7a-8468-4632-bd74-fd1762211a5d</msg>
+<msg timestamp="20130722 03:01:32.976" level="DEBUG">DELETE http://127.0.0.1:59851/hub/session/7564cc7a-8468-4632-bd74-fd1762211a5d {"sessionId": "7564cc7a-8468-4632-bd74-fd1762211a5d"}</msg>
+<msg timestamp="20130722 03:01:33.115" level="TRACE">Return: None</msg>
+<status status="PASS" endtime="20130722 03:01:33.115" starttime="20130722 03:01:32.976"></status>
+</kw>
+<doc></doc>
+<tags>
+</tags>
+<status status="PASS" endtime="20130722 03:01:33.116" critical="yes" starttime="20130722 03:01:18.056"></status>
+</test>
+<test id="s1-s1-t10" name="Login With Invalid Username And Password">
+<kw type="kw" name="resource.Given browser is opened to login page">
+<doc></doc>
+<arguments>
+</arguments>
+<msg timestamp="20130722 03:01:33.120" level="TRACE">Arguments: [  ]</msg>
+<kw type="kw" name="resource.Open Browser To Login Page">
+<doc></doc>
+<arguments>
+</arguments>
+<msg timestamp="20130722 03:01:33.121" level="TRACE">Arguments: [  ]</msg>
+<kw type="kw" name="Selenium2Library.Open Browser">
+<doc>Opens a new browser instance to given URL.</doc>
+<arguments>
+<arg>${LOGIN URL}</arg>
+<arg>${BROWSER}</arg>
+</arguments>
+<msg timestamp="20130722 03:01:33.121" level="TRACE">Arguments: [ u'http://www.interviewstreet.com' | u'Firefox' ]</msg>
+<msg timestamp="20130722 03:01:33.121" level="INFO">Opening browser 'Firefox' to base url 'http://www.interviewstreet.com'</msg>
+<msg timestamp="20130722 03:01:38.300" level="DEBUG">POST http://127.0.0.1:59915/hub/session {"sessionId": null, "desiredCapabilities": {"platform": "ANY", "browserName": "firefox", "version": "", "javascriptEnabled": true}}</msg>
+<msg timestamp="20130722 03:01:38.412" level="DEBUG">POST http://127.0.0.1:59915/hub/session/c0f6daa4-32c5-44e1-a6e6-8761272c9d0d/timeouts/async_script {"sessionId": "c0f6daa4-32c5-44e1-a6e6-8761272c9d0d", "ms": 5000.0}</msg>
+<msg timestamp="20130722 03:01:38.421" level="DEBUG">POST http://127.0.0.1:59915/hub/session/c0f6daa4-32c5-44e1-a6e6-8761272c9d0d/timeouts/implicit_wait {"sessionId": "c0f6daa4-32c5-44e1-a6e6-8761272c9d0d", "ms": 0.0}</msg>
+<msg timestamp="20130722 03:01:38.429" level="DEBUG">POST http://127.0.0.1:59915/hub/session/c0f6daa4-32c5-44e1-a6e6-8761272c9d0d/url {"url": "http://www.interviewstreet.com", "sessionId": "c0f6daa4-32c5-44e1-a6e6-8761272c9d0d"}</msg>
+<msg timestamp="20130722 03:01:43.734" level="DEBUG">Opened browser with session id c0f6daa4-32c5-44e1-a6e6-8761272c9d0d</msg>
+<msg timestamp="20130722 03:01:43.735" level="TRACE">Return: 6</msg>
+<status status="PASS" endtime="20130722 03:01:43.735" starttime="20130722 03:01:33.121"></status>
+</kw>
+<kw type="kw" name="Selenium2Library.Set Selenium Speed">
+<doc>Sets the delay in seconds that is waited after each Selenium command.</doc>
+<arguments>
+<arg>${DELAY}</arg>
+</arguments>
+<msg timestamp="20130722 03:01:43.735" level="TRACE">Arguments: [ u'0' ]</msg>
+<msg timestamp="20130722 03:01:43.735" level="TRACE">Return: '0 seconds'</msg>
+<status status="PASS" endtime="20130722 03:01:43.735" starttime="20130722 03:01:43.735"></status>
+</kw>
+<kw type="kw" name="resource.Login Page Should Be Open">
+<doc></doc>
+<arguments>
+</arguments>
+<msg timestamp="20130722 03:01:43.736" level="TRACE">Arguments: [  ]</msg>
+<kw type="kw" name="Selenium2Library.Title Should Be">
+<doc>Verifies that current page title equals `title`.</doc>
+<arguments>
+<arg>Programming Test | Hire programmers | Interviewstreet | Dashboard</arg>
+</arguments>
+<msg timestamp="20130722 03:01:43.736" level="TRACE">Arguments: [ u'Programming Test | Hire programmers | Interviewstreet | Dashboard' ]</msg>
+<msg timestamp="20130722 03:01:43.736" level="DEBUG">GET http://127.0.0.1:59915/hub/session/c0f6daa4-32c5-44e1-a6e6-8761272c9d0d/title {"sessionId": "c0f6daa4-32c5-44e1-a6e6-8761272c9d0d"}</msg>
+<msg timestamp="20130722 03:01:46.208" level="INFO">Page title is 'Programming Test | Hire programmers | Interviewstreet | Dashboard'.</msg>
+<msg timestamp="20130722 03:01:46.208" level="TRACE">Return: None</msg>
+<status status="PASS" endtime="20130722 03:01:46.208" starttime="20130722 03:01:43.736"></status>
+</kw>
+<msg timestamp="20130722 03:01:46.209" level="TRACE">Return: None</msg>
+<status status="PASS" endtime="20130722 03:01:46.209" starttime="20130722 03:01:43.735"></status>
+</kw>
+<kw type="kw" name="Selenium2Library.Click Element">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>id=login_button</arg>
+</arguments>
+<msg timestamp="20130722 03:01:46.210" level="TRACE">Arguments: [ u'id=login_button' ]</msg>
+<msg timestamp="20130722 03:01:46.210" level="INFO">Clicking element 'id=login_button'.</msg>
+<msg timestamp="20130722 03:01:46.210" level="DEBUG">POST http://127.0.0.1:59915/hub/session/c0f6daa4-32c5-44e1-a6e6-8761272c9d0d/elements {"using": "id", "sessionId": "c0f6daa4-32c5-44e1-a6e6-8761272c9d0d", "value": "login_button"}</msg>
+<msg timestamp="20130722 03:01:46.299" level="DEBUG">POST http://127.0.0.1:59915/hub/session/c0f6daa4-32c5-44e1-a6e6-8761272c9d0d/element/{d177682c-e76d-475a-acec-d014983e076d}/click {"sessionId": "c0f6daa4-32c5-44e1-a6e6-8761272c9d0d", "id": "{d177682c-e76d-475a-acec-d014983e076d}"}</msg>
+<msg timestamp="20130722 03:01:46.394" level="TRACE">Return: None</msg>
+<status status="PASS" endtime="20130722 03:01:46.394" starttime="20130722 03:01:46.209"></status>
+</kw>
+<msg timestamp="20130722 03:01:46.395" level="TRACE">Return: None</msg>
+<status status="PASS" endtime="20130722 03:01:46.395" starttime="20130722 03:01:33.120"></status>
+</kw>
+<msg timestamp="20130722 03:01:46.395" level="TRACE">Return: None</msg>
+<status status="PASS" endtime="20130722 03:01:46.395" starttime="20130722 03:01:33.120"></status>
+</kw>
+<kw type="kw" name="resource.When user &quot;invalid&quot; logs in with password &quot;whatever&quot;">
+<doc></doc>
+<arguments>
+</arguments>
+<msg timestamp="20130722 03:01:46.397" level="TRACE">Arguments: [  ]</msg>
+<kw type="kw" name="resource.Input Username">
+<doc></doc>
+<arguments>
+<arg>${username}</arg>
+</arguments>
+<msg timestamp="20130722 03:01:46.397" level="TRACE">Arguments: [ ${username}=u'invalid' ]</msg>
+<kw type="kw" name="Selenium2Library.Input Text">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>email</arg>
+<arg>${username}</arg>
+</arguments>
+<msg timestamp="20130722 03:01:46.398" level="TRACE">Arguments: [ u'email' | u'invalid' ]</msg>
+<msg timestamp="20130722 03:01:46.398" level="INFO">Typing text 'invalid' into text field 'email'</msg>
+<msg timestamp="20130722 03:01:46.398" level="DEBUG">POST http://127.0.0.1:59915/hub/session/c0f6daa4-32c5-44e1-a6e6-8761272c9d0d/elements {"using": "xpath", "sessionId": "c0f6daa4-32c5-44e1-a6e6-8761272c9d0d", "value": "//*[(@id='email' or @name='email')]"}</msg>
+<msg timestamp="20130722 03:01:46.412" level="DEBUG">POST http://127.0.0.1:59915/hub/session/c0f6daa4-32c5-44e1-a6e6-8761272c9d0d/element/{9e9bb3e6-a394-4ffe-aaeb-038f94c7d413}/clear {"sessionId": "c0f6daa4-32c5-44e1-a6e6-8761272c9d0d", "id": "{9e9bb3e6-a394-4ffe-aaeb-038f94c7d413}"}</msg>
+<msg timestamp="20130722 03:01:46.431" level="DEBUG">POST http://127.0.0.1:59915/hub/session/c0f6daa4-32c5-44e1-a6e6-8761272c9d0d/element/{9e9bb3e6-a394-4ffe-aaeb-038f94c7d413}/value {"sessionId": "c0f6daa4-32c5-44e1-a6e6-8761272c9d0d", "id": "{9e9bb3e6-a394-4ffe-aaeb-038f94c7d413}", "value": ["i", "n", "v", "a", "l", "i", "d"]}</msg>
+<msg timestamp="20130722 03:01:46.470" level="TRACE">Return: None</msg>
+<status status="PASS" endtime="20130722 03:01:46.470" starttime="20130722 03:01:46.397"></status>
+</kw>
+<msg timestamp="20130722 03:01:46.470" level="TRACE">Return: None</msg>
+<status status="PASS" endtime="20130722 03:01:46.470" starttime="20130722 03:01:46.397"></status>
+</kw>
+<kw type="kw" name="resource.Input Password">
+<doc></doc>
+<arguments>
+<arg>${password}</arg>
+</arguments>
+<msg timestamp="20130722 03:01:46.471" level="TRACE">Arguments: [ ${password}=u'whatever' ]</msg>
+<kw type="kw" name="Selenium2Library.Input Text">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>password</arg>
+<arg>${password}</arg>
+</arguments>
+<msg timestamp="20130722 03:01:46.471" level="TRACE">Arguments: [ u'password' | u'whatever' ]</msg>
+<msg timestamp="20130722 03:01:46.471" level="INFO">Typing text 'whatever' into text field 'password'</msg>
+<msg timestamp="20130722 03:01:46.472" level="DEBUG">POST http://127.0.0.1:59915/hub/session/c0f6daa4-32c5-44e1-a6e6-8761272c9d0d/elements {"using": "xpath", "sessionId": "c0f6daa4-32c5-44e1-a6e6-8761272c9d0d", "value": "//*[(@id='password' or @name='password')]"}</msg>
+<msg timestamp="20130722 03:01:46.484" level="DEBUG">POST http://127.0.0.1:59915/hub/session/c0f6daa4-32c5-44e1-a6e6-8761272c9d0d/element/{2e5132e1-c2f3-4cc1-b456-2fb50cdd9216}/clear {"sessionId": "c0f6daa4-32c5-44e1-a6e6-8761272c9d0d", "id": "{2e5132e1-c2f3-4cc1-b456-2fb50cdd9216}"}</msg>
+<msg timestamp="20130722 03:01:46.562" level="DEBUG">POST http://127.0.0.1:59915/hub/session/c0f6daa4-32c5-44e1-a6e6-8761272c9d0d/element/{2e5132e1-c2f3-4cc1-b456-2fb50cdd9216}/value {"sessionId": "c0f6daa4-32c5-44e1-a6e6-8761272c9d0d", "id": "{2e5132e1-c2f3-4cc1-b456-2fb50cdd9216}", "value": ["w", "h", "a", "t", "e", "v", "e", "r"]}</msg>
+<msg timestamp="20130722 03:01:46.605" level="TRACE">Return: None</msg>
+<status status="PASS" endtime="20130722 03:01:46.605" starttime="20130722 03:01:46.471"></status>
+</kw>
+<msg timestamp="20130722 03:01:46.605" level="TRACE">Return: None</msg>
+<status status="PASS" endtime="20130722 03:01:46.605" starttime="20130722 03:01:46.470"></status>
+</kw>
+<kw type="kw" name="resource.Submit Credentials">
+<doc></doc>
+<arguments>
+</arguments>
+<msg timestamp="20130722 03:01:46.605" level="TRACE">Arguments: [  ]</msg>
+<kw type="kw" name="Selenium2Library.Click Button">
+<doc>Clicks a button identified by `locator`.</doc>
+<arguments>
+<arg>login_action</arg>
+</arguments>
+<msg timestamp="20130722 03:01:46.606" level="TRACE">Arguments: [ u'login_action' ]</msg>
+<msg timestamp="20130722 03:01:46.606" level="INFO">Clicking button 'login_action'.</msg>
+<msg timestamp="20130722 03:01:46.606" level="DEBUG">GET http://127.0.0.1:59915/hub/session/c0f6daa4-32c5-44e1-a6e6-8761272c9d0d/url {"sessionId": "c0f6daa4-32c5-44e1-a6e6-8761272c9d0d"}</msg>
+<msg timestamp="20130722 03:01:46.617" level="DEBUG">POST http://127.0.0.1:59915/hub/session/c0f6daa4-32c5-44e1-a6e6-8761272c9d0d/elements {"using": "xpath", "sessionId": "c0f6daa4-32c5-44e1-a6e6-8761272c9d0d", "value": "//input[(@id='login_action' or @name='login_action' or @value='login_action' or @src='login_action' or @src='https://www.interviewstreet.com/recruit2/login_action')]"}</msg>
+<msg timestamp="20130722 03:01:46.631" level="DEBUG">POST http://127.0.0.1:59915/hub/session/c0f6daa4-32c5-44e1-a6e6-8761272c9d0d/elements {"using": "xpath", "sessionId": "c0f6daa4-32c5-44e1-a6e6-8761272c9d0d", "value": "//button[(@id='login_action' or @name='login_action' or @value='login_action' or normalize-space(descendant-or-self::text())='login_action')]"}</msg>
+<msg timestamp="20130722 03:01:46.645" level="DEBUG">POST http://127.0.0.1:59915/hub/session/c0f6daa4-32c5-44e1-a6e6-8761272c9d0d/element/{26882909-33d5-4dc3-a923-0dbff718a3c8}/click {"sessionId": "c0f6daa4-32c5-44e1-a6e6-8761272c9d0d", "id": "{26882909-33d5-4dc3-a923-0dbff718a3c8}"}</msg>
+<msg timestamp="20130722 03:01:46.735" level="TRACE">Return: None</msg>
+<status status="PASS" endtime="20130722 03:01:46.735" starttime="20130722 03:01:46.606"></status>
+</kw>
+<msg timestamp="20130722 03:01:46.735" level="TRACE">Return: None</msg>
+<status status="PASS" endtime="20130722 03:01:46.735" starttime="20130722 03:01:46.605"></status>
+</kw>
+<msg timestamp="20130722 03:01:46.735" level="TRACE">Return: None</msg>
+<status status="PASS" endtime="20130722 03:01:46.735" starttime="20130722 03:01:46.396"></status>
+</kw>
+<kw type="kw" name="resource.Then Login Should Have Failed">
+<doc></doc>
+<arguments>
+</arguments>
+<msg timestamp="20130722 03:01:46.737" level="TRACE">Arguments: [  ]</msg>
+<kw type="kw" name="Selenium2Library.Wait Until Page Contains">
+<doc>Waits until `text` appears on current page.</doc>
+<arguments>
+<arg>Login Failed. Please check username/password.</arg>
+</arguments>
+<msg timestamp="20130722 03:01:46.738" level="TRACE">Arguments: [ u'Login Failed. Please check username/password.' ]</msg>
+<msg timestamp="20130722 03:01:46.738" level="DEBUG">POST http://127.0.0.1:59915/hub/session/c0f6daa4-32c5-44e1-a6e6-8761272c9d0d/elements {"using": "xpath", "sessionId": "c0f6daa4-32c5-44e1-a6e6-8761272c9d0d", "value": "//*[contains(., 'Login Failed. Please check username/password.')]"}</msg>
+<msg timestamp="20130722 03:01:46.996" level="DEBUG">POST http://127.0.0.1:59915/hub/session/c0f6daa4-32c5-44e1-a6e6-8761272c9d0d/elements {"using": "xpath", "sessionId": "c0f6daa4-32c5-44e1-a6e6-8761272c9d0d", "value": "//*[contains(., 'Login Failed. Please check username/password.')]"}</msg>
+<msg timestamp="20130722 03:01:47.029" level="TRACE">Return: None</msg>
+<status status="PASS" endtime="20130722 03:01:47.029" starttime="20130722 03:01:46.737"></status>
+</kw>
+<msg timestamp="20130722 03:01:47.029" level="TRACE">Return: None</msg>
+<status status="PASS" endtime="20130722 03:01:47.029" starttime="20130722 03:01:46.737"></status>
+</kw>
+<kw type="teardown" name="Selenium2Library.Close Browser">
+<doc>Closes the current browser.</doc>
+<arguments>
+</arguments>
+<msg timestamp="20130722 03:01:47.032" level="TRACE">Arguments: [  ]</msg>
+<msg timestamp="20130722 03:01:47.032" level="DEBUG">Closing browser with session id c0f6daa4-32c5-44e1-a6e6-8761272c9d0d</msg>
+<msg timestamp="20130722 03:01:47.032" level="DEBUG">DELETE http://127.0.0.1:59915/hub/session/c0f6daa4-32c5-44e1-a6e6-8761272c9d0d {"sessionId": "c0f6daa4-32c5-44e1-a6e6-8761272c9d0d"}</msg>
+<msg timestamp="20130722 03:01:47.186" level="TRACE">Return: None</msg>
+<status status="PASS" endtime="20130722 03:01:47.186" starttime="20130722 03:01:47.032"></status>
+</kw>
+<doc></doc>
+<tags>
+</tags>
+<status status="PASS" endtime="20130722 03:01:47.186" critical="yes" starttime="20130722 03:01:33.118"></status>
+</test>
+<test id="s1-s1-t11" name="Login With Empty Password">
+<kw type="kw" name="resource.Given browser is opened to login page">
+<doc></doc>
+<arguments>
+</arguments>
+<msg timestamp="20130722 03:01:47.189" level="TRACE">Arguments: [  ]</msg>
+<kw type="kw" name="resource.Open Browser To Login Page">
+<doc></doc>
+<arguments>
+</arguments>
+<msg timestamp="20130722 03:01:47.190" level="TRACE">Arguments: [  ]</msg>
+<kw type="kw" name="Selenium2Library.Open Browser">
+<doc>Opens a new browser instance to given URL.</doc>
+<arguments>
+<arg>${LOGIN URL}</arg>
+<arg>${BROWSER}</arg>
+</arguments>
+<msg timestamp="20130722 03:01:47.191" level="TRACE">Arguments: [ u'http://www.interviewstreet.com' | u'Firefox' ]</msg>
+<msg timestamp="20130722 03:01:47.191" level="INFO">Opening browser 'Firefox' to base url 'http://www.interviewstreet.com'</msg>
+<msg timestamp="20130722 03:01:51.546" level="DEBUG">POST http://127.0.0.1:59983/hub/session {"sessionId": null, "desiredCapabilities": {"platform": "ANY", "browserName": "firefox", "version": "", "javascriptEnabled": true}}</msg>
+<msg timestamp="20130722 03:01:51.836" level="DEBUG">POST http://127.0.0.1:59983/hub/session/3a43af94-b92e-44b3-85f8-26c954eef355/timeouts/async_script {"sessionId": "3a43af94-b92e-44b3-85f8-26c954eef355", "ms": 5000.0}</msg>
+<msg timestamp="20130722 03:01:51.846" level="DEBUG">POST http://127.0.0.1:59983/hub/session/3a43af94-b92e-44b3-85f8-26c954eef355/timeouts/implicit_wait {"sessionId": "3a43af94-b92e-44b3-85f8-26c954eef355", "ms": 0.0}</msg>
+<msg timestamp="20130722 03:01:51.855" level="DEBUG">POST http://127.0.0.1:59983/hub/session/3a43af94-b92e-44b3-85f8-26c954eef355/url {"url": "http://www.interviewstreet.com", "sessionId": "3a43af94-b92e-44b3-85f8-26c954eef355"}</msg>
+<msg timestamp="20130722 03:01:57.032" level="DEBUG">Opened browser with session id 3a43af94-b92e-44b3-85f8-26c954eef355</msg>
+<msg timestamp="20130722 03:01:57.032" level="TRACE">Return: 7</msg>
+<status status="PASS" endtime="20130722 03:01:57.032" starttime="20130722 03:01:47.190"></status>
+</kw>
+<kw type="kw" name="Selenium2Library.Set Selenium Speed">
+<doc>Sets the delay in seconds that is waited after each Selenium command.</doc>
+<arguments>
+<arg>${DELAY}</arg>
+</arguments>
+<msg timestamp="20130722 03:01:57.033" level="TRACE">Arguments: [ u'0' ]</msg>
+<msg timestamp="20130722 03:01:57.033" level="TRACE">Return: '0 seconds'</msg>
+<status status="PASS" endtime="20130722 03:01:57.033" starttime="20130722 03:01:57.032"></status>
+</kw>
+<kw type="kw" name="resource.Login Page Should Be Open">
+<doc></doc>
+<arguments>
+</arguments>
+<msg timestamp="20130722 03:01:57.033" level="TRACE">Arguments: [  ]</msg>
+<kw type="kw" name="Selenium2Library.Title Should Be">
+<doc>Verifies that current page title equals `title`.</doc>
+<arguments>
+<arg>Programming Test | Hire programmers | Interviewstreet | Dashboard</arg>
+</arguments>
+<msg timestamp="20130722 03:01:57.034" level="TRACE">Arguments: [ u'Programming Test | Hire programmers | Interviewstreet | Dashboard' ]</msg>
+<msg timestamp="20130722 03:01:57.034" level="DEBUG">GET http://127.0.0.1:59983/hub/session/3a43af94-b92e-44b3-85f8-26c954eef355/title {"sessionId": "3a43af94-b92e-44b3-85f8-26c954eef355"}</msg>
+<msg timestamp="20130722 03:01:59.285" level="INFO">Page title is 'Programming Test | Hire programmers | Interviewstreet | Dashboard'.</msg>
+<msg timestamp="20130722 03:01:59.285" level="TRACE">Return: None</msg>
+<status status="PASS" endtime="20130722 03:01:59.285" starttime="20130722 03:01:57.033"></status>
+</kw>
+<msg timestamp="20130722 03:01:59.285" level="TRACE">Return: None</msg>
+<status status="PASS" endtime="20130722 03:01:59.285" starttime="20130722 03:01:57.033"></status>
+</kw>
+<kw type="kw" name="Selenium2Library.Click Element">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>id=login_button</arg>
+</arguments>
+<msg timestamp="20130722 03:01:59.286" level="TRACE">Arguments: [ u'id=login_button' ]</msg>
+<msg timestamp="20130722 03:01:59.286" level="INFO">Clicking element 'id=login_button'.</msg>
+<msg timestamp="20130722 03:01:59.287" level="DEBUG">POST http://127.0.0.1:59983/hub/session/3a43af94-b92e-44b3-85f8-26c954eef355/elements {"using": "id", "sessionId": "3a43af94-b92e-44b3-85f8-26c954eef355", "value": "login_button"}</msg>
+<msg timestamp="20130722 03:01:59.374" level="DEBUG">POST http://127.0.0.1:59983/hub/session/3a43af94-b92e-44b3-85f8-26c954eef355/element/{1f1a7004-1ffd-4014-8fd7-625a5660ce05}/click {"sessionId": "3a43af94-b92e-44b3-85f8-26c954eef355", "id": "{1f1a7004-1ffd-4014-8fd7-625a5660ce05}"}</msg>
+<msg timestamp="20130722 03:01:59.469" level="TRACE">Return: None</msg>
+<status status="PASS" endtime="20130722 03:01:59.469" starttime="20130722 03:01:59.286"></status>
+</kw>
+<msg timestamp="20130722 03:01:59.469" level="TRACE">Return: None</msg>
+<status status="PASS" endtime="20130722 03:01:59.469" starttime="20130722 03:01:47.190"></status>
+</kw>
+<msg timestamp="20130722 03:01:59.469" level="TRACE">Return: None</msg>
+<status status="PASS" endtime="20130722 03:01:59.469" starttime="20130722 03:01:47.189"></status>
+</kw>
+<kw type="kw" name="resource.When user &quot;${email}&quot; logs in with password &quot;${EMPTY}&quot;">
+<doc></doc>
+<arguments>
+</arguments>
+<msg timestamp="20130722 03:01:59.472" level="TRACE">Arguments: [  ]</msg>
+<kw type="kw" name="resource.Input Username">
+<doc></doc>
+<arguments>
+<arg>${username}</arg>
+</arguments>
+<msg timestamp="20130722 03:01:59.472" level="TRACE">Arguments: [ ${username}='klctD0130722025917@mailinator.com' ]</msg>
+<kw type="kw" name="Selenium2Library.Input Text">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>email</arg>
+<arg>${username}</arg>
+</arguments>
+<msg timestamp="20130722 03:01:59.473" level="TRACE">Arguments: [ u'email' | 'klctD0130722025917@mailinator.com' ]</msg>
+<msg timestamp="20130722 03:01:59.473" level="INFO">Typing text 'klctD0130722025917@mailinator.com' into text field 'email'</msg>
+<msg timestamp="20130722 03:01:59.473" level="DEBUG">POST http://127.0.0.1:59983/hub/session/3a43af94-b92e-44b3-85f8-26c954eef355/elements {"using": "xpath", "sessionId": "3a43af94-b92e-44b3-85f8-26c954eef355", "value": "//*[(@id='email' or @name='email')]"}</msg>
+<msg timestamp="20130722 03:01:59.486" level="DEBUG">POST http://127.0.0.1:59983/hub/session/3a43af94-b92e-44b3-85f8-26c954eef355/element/{3c3ab942-dba8-4c76-80b6-e6470c7e9d1b}/clear {"sessionId": "3a43af94-b92e-44b3-85f8-26c954eef355", "id": "{3c3ab942-dba8-4c76-80b6-e6470c7e9d1b}"}</msg>
+<msg timestamp="20130722 03:01:59.505" level="DEBUG">POST http://127.0.0.1:59983/hub/session/3a43af94-b92e-44b3-85f8-26c954eef355/element/{3c3ab942-dba8-4c76-80b6-e6470c7e9d1b}/value {"sessionId": "3a43af94-b92e-44b3-85f8-26c954eef355", "id": "{3c3ab942-dba8-4c76-80b6-e6470c7e9d1b}", "value": ["k", "l", "c", "t", "D", "0", "1", "3", "0", "7", "2", "2", "0", "2", "5", "9", "1", "7", "@", "m", "a", "i", "l", "i", "n", "a", "t", "o", "r", ".", "c", "o", "m"]}</msg>
+<msg timestamp="20130722 03:01:59.560" level="TRACE">Return: None</msg>
+<status status="PASS" endtime="20130722 03:01:59.560" starttime="20130722 03:01:59.472"></status>
+</kw>
+<msg timestamp="20130722 03:01:59.560" level="TRACE">Return: None</msg>
+<status status="PASS" endtime="20130722 03:01:59.560" starttime="20130722 03:01:59.472"></status>
+</kw>
+<kw type="kw" name="resource.Input Password">
+<doc></doc>
+<arguments>
+<arg>${password}</arg>
+</arguments>
+<msg timestamp="20130722 03:01:59.561" level="TRACE">Arguments: [ ${password}='' ]</msg>
+<kw type="kw" name="Selenium2Library.Input Text">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>password</arg>
+<arg>${password}</arg>
+</arguments>
+<msg timestamp="20130722 03:01:59.561" level="TRACE">Arguments: [ u'password' | '' ]</msg>
+<msg timestamp="20130722 03:01:59.561" level="INFO">Typing text '' into text field 'password'</msg>
+<msg timestamp="20130722 03:01:59.562" level="DEBUG">POST http://127.0.0.1:59983/hub/session/3a43af94-b92e-44b3-85f8-26c954eef355/elements {"using": "xpath", "sessionId": "3a43af94-b92e-44b3-85f8-26c954eef355", "value": "//*[(@id='password' or @name='password')]"}</msg>
+<msg timestamp="20130722 03:01:59.577" level="DEBUG">POST http://127.0.0.1:59983/hub/session/3a43af94-b92e-44b3-85f8-26c954eef355/element/{3a5b50b7-3fe6-4014-8cfb-bd1d520ed8aa}/clear {"sessionId": "3a43af94-b92e-44b3-85f8-26c954eef355", "id": "{3a5b50b7-3fe6-4014-8cfb-bd1d520ed8aa}"}</msg>
+<msg timestamp="20130722 03:01:59.603" level="DEBUG">POST http://127.0.0.1:59983/hub/session/3a43af94-b92e-44b3-85f8-26c954eef355/element/{3a5b50b7-3fe6-4014-8cfb-bd1d520ed8aa}/value {"sessionId": "3a43af94-b92e-44b3-85f8-26c954eef355", "id": "{3a5b50b7-3fe6-4014-8cfb-bd1d520ed8aa}", "value": []}</msg>
+<msg timestamp="20130722 03:01:59.679" level="TRACE">Return: None</msg>
+<status status="PASS" endtime="20130722 03:01:59.679" starttime="20130722 03:01:59.561"></status>
+</kw>
+<msg timestamp="20130722 03:01:59.679" level="TRACE">Return: None</msg>
+<status status="PASS" endtime="20130722 03:01:59.679" starttime="20130722 03:01:59.560"></status>
+</kw>
+<kw type="kw" name="resource.Submit Credentials">
+<doc></doc>
+<arguments>
+</arguments>
+<msg timestamp="20130722 03:01:59.680" level="TRACE">Arguments: [  ]</msg>
+<kw type="kw" name="Selenium2Library.Click Button">
+<doc>Clicks a button identified by `locator`.</doc>
+<arguments>
+<arg>login_action</arg>
+</arguments>
+<msg timestamp="20130722 03:01:59.680" level="TRACE">Arguments: [ u'login_action' ]</msg>
+<msg timestamp="20130722 03:01:59.681" level="INFO">Clicking button 'login_action'.</msg>
+<msg timestamp="20130722 03:01:59.681" level="DEBUG">GET http://127.0.0.1:59983/hub/session/3a43af94-b92e-44b3-85f8-26c954eef355/url {"sessionId": "3a43af94-b92e-44b3-85f8-26c954eef355"}</msg>
+<msg timestamp="20130722 03:01:59.705" level="DEBUG">POST http://127.0.0.1:59983/hub/session/3a43af94-b92e-44b3-85f8-26c954eef355/elements {"using": "xpath", "sessionId": "3a43af94-b92e-44b3-85f8-26c954eef355", "value": "//input[(@id='login_action' or @name='login_action' or @value='login_action' or @src='login_action' or @src='https://www.interviewstreet.com/recruit2/login_action')]"}</msg>
+<msg timestamp="20130722 03:01:59.726" level="DEBUG">POST http://127.0.0.1:59983/hub/session/3a43af94-b92e-44b3-85f8-26c954eef355/elements {"using": "xpath", "sessionId": "3a43af94-b92e-44b3-85f8-26c954eef355", "value": "//button[(@id='login_action' or @name='login_action' or @value='login_action' or normalize-space(descendant-or-self::text())='login_action')]"}</msg>
+<msg timestamp="20130722 03:01:59.746" level="DEBUG">POST http://127.0.0.1:59983/hub/session/3a43af94-b92e-44b3-85f8-26c954eef355/element/{45e81eff-4585-4a97-aa56-23fba6280510}/click {"sessionId": "3a43af94-b92e-44b3-85f8-26c954eef355", "id": "{45e81eff-4585-4a97-aa56-23fba6280510}"}</msg>
+<msg timestamp="20130722 03:01:59.831" level="TRACE">Return: None</msg>
+<status status="PASS" endtime="20130722 03:01:59.831" starttime="20130722 03:01:59.680"></status>
+</kw>
+<msg timestamp="20130722 03:01:59.832" level="TRACE">Return: None</msg>
+<status status="PASS" endtime="20130722 03:01:59.832" starttime="20130722 03:01:59.679"></status>
+</kw>
+<msg timestamp="20130722 03:01:59.832" level="TRACE">Return: None</msg>
+<status status="PASS" endtime="20130722 03:01:59.832" starttime="20130722 03:01:59.471"></status>
+</kw>
+<kw type="kw" name="resource.Then Login Should Have Failed Password Is required">
+<doc></doc>
+<arguments>
+</arguments>
+<msg timestamp="20130722 03:01:59.833" level="TRACE">Arguments: [  ]</msg>
+<kw type="kw" name="Selenium2Library.Wait Until Page Contains">
+<doc>Waits until `text` appears on current page.</doc>
+<arguments>
+<arg>Please enter a password.</arg>
+</arguments>
+<msg timestamp="20130722 03:01:59.833" level="TRACE">Arguments: [ u'Please enter a password.' ]</msg>
+<msg timestamp="20130722 03:01:59.834" level="DEBUG">POST http://127.0.0.1:59983/hub/session/3a43af94-b92e-44b3-85f8-26c954eef355/elements {"using": "xpath", "sessionId": "3a43af94-b92e-44b3-85f8-26c954eef355", "value": "//*[contains(., 'Please enter a password.')]"}</msg>
+<msg timestamp="20130722 03:02:00.046" level="DEBUG">POST http://127.0.0.1:59983/hub/session/3a43af94-b92e-44b3-85f8-26c954eef355/elements {"using": "xpath", "sessionId": "3a43af94-b92e-44b3-85f8-26c954eef355", "value": "//*[contains(., 'Please enter a password.')]"}</msg>
+<msg timestamp="20130722 03:02:00.075" level="TRACE">Return: None</msg>
+<status status="PASS" endtime="20130722 03:02:00.075" starttime="20130722 03:01:59.833"></status>
+</kw>
+<msg timestamp="20130722 03:02:00.075" level="TRACE">Return: None</msg>
+<status status="PASS" endtime="20130722 03:02:00.075" starttime="20130722 03:01:59.833"></status>
+</kw>
+<kw type="teardown" name="Selenium2Library.Close Browser">
+<doc>Closes the current browser.</doc>
+<arguments>
+</arguments>
+<msg timestamp="20130722 03:02:00.078" level="TRACE">Arguments: [  ]</msg>
+<msg timestamp="20130722 03:02:00.078" level="DEBUG">Closing browser with session id 3a43af94-b92e-44b3-85f8-26c954eef355</msg>
+<msg timestamp="20130722 03:02:00.078" level="DEBUG">DELETE http://127.0.0.1:59983/hub/session/3a43af94-b92e-44b3-85f8-26c954eef355 {"sessionId": "3a43af94-b92e-44b3-85f8-26c954eef355"}</msg>
+<msg timestamp="20130722 03:02:00.239" level="TRACE">Return: None</msg>
+<status status="PASS" endtime="20130722 03:02:00.239" starttime="20130722 03:02:00.078"></status>
+</kw>
+<doc></doc>
+<tags>
+</tags>
+<status status="PASS" endtime="20130722 03:02:00.240" critical="yes" starttime="20130722 03:01:47.188"></status>
+</test>
+<test id="s1-s1-t12" name="Login With Empty Username">
+<kw type="kw" name="resource.Given browser is opened to login page">
+<doc></doc>
+<arguments>
+</arguments>
+<msg timestamp="20130722 03:02:00.244" level="TRACE">Arguments: [  ]</msg>
+<kw type="kw" name="resource.Open Browser To Login Page">
+<doc></doc>
+<arguments>
+</arguments>
+<msg timestamp="20130722 03:02:00.244" level="TRACE">Arguments: [  ]</msg>
+<kw type="kw" name="Selenium2Library.Open Browser">
+<doc>Opens a new browser instance to given URL.</doc>
+<arguments>
+<arg>${LOGIN URL}</arg>
+<arg>${BROWSER}</arg>
+</arguments>
+<msg timestamp="20130722 03:02:00.245" level="TRACE">Arguments: [ u'http://www.interviewstreet.com' | u'Firefox' ]</msg>
+<msg timestamp="20130722 03:02:00.245" level="INFO">Opening browser 'Firefox' to base url 'http://www.interviewstreet.com'</msg>
+<msg timestamp="20130722 03:02:05.709" level="DEBUG">POST http://127.0.0.1:60048/hub/session {"sessionId": null, "desiredCapabilities": {"platform": "ANY", "browserName": "firefox", "version": "", "javascriptEnabled": true}}</msg>
+<msg timestamp="20130722 03:02:05.788" level="DEBUG">POST http://127.0.0.1:60048/hub/session/79e026f3-290e-446e-be57-1f8088ed1608/timeouts/async_script {"sessionId": "79e026f3-290e-446e-be57-1f8088ed1608", "ms": 5000.0}</msg>
+<msg timestamp="20130722 03:02:05.797" level="DEBUG">POST http://127.0.0.1:60048/hub/session/79e026f3-290e-446e-be57-1f8088ed1608/timeouts/implicit_wait {"sessionId": "79e026f3-290e-446e-be57-1f8088ed1608", "ms": 0.0}</msg>
+<msg timestamp="20130722 03:02:05.805" level="DEBUG">POST http://127.0.0.1:60048/hub/session/79e026f3-290e-446e-be57-1f8088ed1608/url {"url": "http://www.interviewstreet.com", "sessionId": "79e026f3-290e-446e-be57-1f8088ed1608"}</msg>
+<msg timestamp="20130722 03:02:11.432" level="DEBUG">Opened browser with session id 79e026f3-290e-446e-be57-1f8088ed1608</msg>
+<msg timestamp="20130722 03:02:11.432" level="TRACE">Return: 8</msg>
+<status status="PASS" endtime="20130722 03:02:11.432" starttime="20130722 03:02:00.244"></status>
+</kw>
+<kw type="kw" name="Selenium2Library.Set Selenium Speed">
+<doc>Sets the delay in seconds that is waited after each Selenium command.</doc>
+<arguments>
+<arg>${DELAY}</arg>
+</arguments>
+<msg timestamp="20130722 03:02:11.433" level="TRACE">Arguments: [ u'0' ]</msg>
+<msg timestamp="20130722 03:02:11.433" level="TRACE">Return: '0 seconds'</msg>
+<status status="PASS" endtime="20130722 03:02:11.433" starttime="20130722 03:02:11.432"></status>
+</kw>
+<kw type="kw" name="resource.Login Page Should Be Open">
+<doc></doc>
+<arguments>
+</arguments>
+<msg timestamp="20130722 03:02:11.433" level="TRACE">Arguments: [  ]</msg>
+<kw type="kw" name="Selenium2Library.Title Should Be">
+<doc>Verifies that current page title equals `title`.</doc>
+<arguments>
+<arg>Programming Test | Hire programmers | Interviewstreet | Dashboard</arg>
+</arguments>
+<msg timestamp="20130722 03:02:11.434" level="TRACE">Arguments: [ u'Programming Test | Hire programmers | Interviewstreet | Dashboard' ]</msg>
+<msg timestamp="20130722 03:02:11.434" level="DEBUG">GET http://127.0.0.1:60048/hub/session/79e026f3-290e-446e-be57-1f8088ed1608/title {"sessionId": "79e026f3-290e-446e-be57-1f8088ed1608"}</msg>
+<msg timestamp="20130722 03:02:13.680" level="INFO">Page title is 'Programming Test | Hire programmers | Interviewstreet | Dashboard'.</msg>
+<msg timestamp="20130722 03:02:13.680" level="TRACE">Return: None</msg>
+<status status="PASS" endtime="20130722 03:02:13.680" starttime="20130722 03:02:11.434"></status>
+</kw>
+<msg timestamp="20130722 03:02:13.681" level="TRACE">Return: None</msg>
+<status status="PASS" endtime="20130722 03:02:13.681" starttime="20130722 03:02:11.433"></status>
+</kw>
+<kw type="kw" name="Selenium2Library.Click Element">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>id=login_button</arg>
+</arguments>
+<msg timestamp="20130722 03:02:13.682" level="TRACE">Arguments: [ u'id=login_button' ]</msg>
+<msg timestamp="20130722 03:02:13.682" level="INFO">Clicking element 'id=login_button'.</msg>
+<msg timestamp="20130722 03:02:13.682" level="DEBUG">POST http://127.0.0.1:60048/hub/session/79e026f3-290e-446e-be57-1f8088ed1608/elements {"using": "id", "sessionId": "79e026f3-290e-446e-be57-1f8088ed1608", "value": "login_button"}</msg>
+<msg timestamp="20130722 03:02:13.769" level="DEBUG">POST http://127.0.0.1:60048/hub/session/79e026f3-290e-446e-be57-1f8088ed1608/element/{53d6c092-4051-436c-84df-441c1485195a}/click {"sessionId": "79e026f3-290e-446e-be57-1f8088ed1608", "id": "{53d6c092-4051-436c-84df-441c1485195a}"}</msg>
+<msg timestamp="20130722 03:02:13.970" level="TRACE">Return: None</msg>
+<status status="PASS" endtime="20130722 03:02:13.970" starttime="20130722 03:02:13.681"></status>
+</kw>
+<msg timestamp="20130722 03:02:13.971" level="TRACE">Return: None</msg>
+<status status="PASS" endtime="20130722 03:02:13.971" starttime="20130722 03:02:00.244"></status>
+</kw>
+<msg timestamp="20130722 03:02:13.971" level="TRACE">Return: None</msg>
+<status status="PASS" endtime="20130722 03:02:13.971" starttime="20130722 03:02:00.243"></status>
+</kw>
+<kw type="kw" name="resource.When user &quot;${EMPTY}&quot; logs in with password &quot;${VALID PASSWORD}&quot;">
+<doc></doc>
+<arguments>
+</arguments>
+<msg timestamp="20130722 03:02:13.973" level="TRACE">Arguments: [  ]</msg>
+<kw type="kw" name="resource.Input Username">
+<doc></doc>
+<arguments>
+<arg>${username}</arg>
+</arguments>
+<msg timestamp="20130722 03:02:13.974" level="TRACE">Arguments: [ ${username}='' ]</msg>
+<kw type="kw" name="Selenium2Library.Input Text">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>email</arg>
+<arg>${username}</arg>
+</arguments>
+<msg timestamp="20130722 03:02:13.974" level="TRACE">Arguments: [ u'email' | '' ]</msg>
+<msg timestamp="20130722 03:02:13.974" level="INFO">Typing text '' into text field 'email'</msg>
+<msg timestamp="20130722 03:02:13.974" level="DEBUG">POST http://127.0.0.1:60048/hub/session/79e026f3-290e-446e-be57-1f8088ed1608/elements {"using": "xpath", "sessionId": "79e026f3-290e-446e-be57-1f8088ed1608", "value": "//*[(@id='email' or @name='email')]"}</msg>
+<msg timestamp="20130722 03:02:13.988" level="DEBUG">POST http://127.0.0.1:60048/hub/session/79e026f3-290e-446e-be57-1f8088ed1608/element/{50039ad8-5e7d-4393-a080-4907fe1c2661}/clear {"sessionId": "79e026f3-290e-446e-be57-1f8088ed1608", "id": "{50039ad8-5e7d-4393-a080-4907fe1c2661}"}</msg>
+<msg timestamp="20130722 03:02:14.008" level="DEBUG">POST http://127.0.0.1:60048/hub/session/79e026f3-290e-446e-be57-1f8088ed1608/element/{50039ad8-5e7d-4393-a080-4907fe1c2661}/value {"sessionId": "79e026f3-290e-446e-be57-1f8088ed1608", "id": "{50039ad8-5e7d-4393-a080-4907fe1c2661}", "value": []}</msg>
+<msg timestamp="20130722 03:02:14.041" level="TRACE">Return: None</msg>
+<status status="PASS" endtime="20130722 03:02:14.041" starttime="20130722 03:02:13.974"></status>
+</kw>
+<msg timestamp="20130722 03:02:14.041" level="TRACE">Return: None</msg>
+<status status="PASS" endtime="20130722 03:02:14.041" starttime="20130722 03:02:13.973"></status>
+</kw>
+<kw type="kw" name="resource.Input Password">
+<doc></doc>
+<arguments>
+<arg>${password}</arg>
+</arguments>
+<msg timestamp="20130722 03:02:14.042" level="TRACE">Arguments: [ ${password}=u'xEYLg1xI' ]</msg>
+<kw type="kw" name="Selenium2Library.Input Text">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>password</arg>
+<arg>${password}</arg>
+</arguments>
+<msg timestamp="20130722 03:02:14.042" level="TRACE">Arguments: [ u'password' | u'xEYLg1xI' ]</msg>
+<msg timestamp="20130722 03:02:14.043" level="INFO">Typing text 'xEYLg1xI' into text field 'password'</msg>
+<msg timestamp="20130722 03:02:14.043" level="DEBUG">POST http://127.0.0.1:60048/hub/session/79e026f3-290e-446e-be57-1f8088ed1608/elements {"using": "xpath", "sessionId": "79e026f3-290e-446e-be57-1f8088ed1608", "value": "//*[(@id='password' or @name='password')]"}</msg>
+<msg timestamp="20130722 03:02:14.053" level="DEBUG">POST http://127.0.0.1:60048/hub/session/79e026f3-290e-446e-be57-1f8088ed1608/element/{3be38fb4-1cb6-4bef-9648-5d50707c20fd}/clear {"sessionId": "79e026f3-290e-446e-be57-1f8088ed1608", "id": "{3be38fb4-1cb6-4bef-9648-5d50707c20fd}"}</msg>
+<msg timestamp="20130722 03:02:14.072" level="DEBUG">POST http://127.0.0.1:60048/hub/session/79e026f3-290e-446e-be57-1f8088ed1608/element/{3be38fb4-1cb6-4bef-9648-5d50707c20fd}/value {"sessionId": "79e026f3-290e-446e-be57-1f8088ed1608", "id": "{3be38fb4-1cb6-4bef-9648-5d50707c20fd}", "value": ["x", "E", "Y", "L", "g", "1", "x", "I"]}</msg>
+<msg timestamp="20130722 03:02:14.139" level="TRACE">Return: None</msg>
+<status status="PASS" endtime="20130722 03:02:14.139" starttime="20130722 03:02:14.042"></status>
+</kw>
+<msg timestamp="20130722 03:02:14.140" level="TRACE">Return: None</msg>
+<status status="PASS" endtime="20130722 03:02:14.140" starttime="20130722 03:02:14.042"></status>
+</kw>
+<kw type="kw" name="resource.Submit Credentials">
+<doc></doc>
+<arguments>
+</arguments>
+<msg timestamp="20130722 03:02:14.140" level="TRACE">Arguments: [  ]</msg>
+<kw type="kw" name="Selenium2Library.Click Button">
+<doc>Clicks a button identified by `locator`.</doc>
+<arguments>
+<arg>login_action</arg>
+</arguments>
+<msg timestamp="20130722 03:02:14.141" level="TRACE">Arguments: [ u'login_action' ]</msg>
+<msg timestamp="20130722 03:02:14.141" level="INFO">Clicking button 'login_action'.</msg>
+<msg timestamp="20130722 03:02:14.141" level="DEBUG">GET http://127.0.0.1:60048/hub/session/79e026f3-290e-446e-be57-1f8088ed1608/url {"sessionId": "79e026f3-290e-446e-be57-1f8088ed1608"}</msg>
+<msg timestamp="20130722 03:02:14.153" level="DEBUG">POST http://127.0.0.1:60048/hub/session/79e026f3-290e-446e-be57-1f8088ed1608/elements {"using": "xpath", "sessionId": "79e026f3-290e-446e-be57-1f8088ed1608", "value": "//input[(@id='login_action' or @name='login_action' or @value='login_action' or @src='login_action' or @src='https://www.interviewstreet.com/recruit2/login_action')]"}</msg>
+<msg timestamp="20130722 03:02:14.167" level="DEBUG">POST http://127.0.0.1:60048/hub/session/79e026f3-290e-446e-be57-1f8088ed1608/elements {"using": "xpath", "sessionId": "79e026f3-290e-446e-be57-1f8088ed1608", "value": "//button[(@id='login_action' or @name='login_action' or @value='login_action' or normalize-space(descendant-or-self::text())='login_action')]"}</msg>
+<msg timestamp="20130722 03:02:14.181" level="DEBUG">POST http://127.0.0.1:60048/hub/session/79e026f3-290e-446e-be57-1f8088ed1608/element/{92fb98e9-ddcb-445b-8d4e-3cfeae03ca66}/click {"sessionId": "79e026f3-290e-446e-be57-1f8088ed1608", "id": "{92fb98e9-ddcb-445b-8d4e-3cfeae03ca66}"}</msg>
+<msg timestamp="20130722 03:02:14.267" level="TRACE">Return: None</msg>
+<status status="PASS" endtime="20130722 03:02:14.267" starttime="20130722 03:02:14.140"></status>
+</kw>
+<msg timestamp="20130722 03:02:14.267" level="TRACE">Return: None</msg>
+<status status="PASS" endtime="20130722 03:02:14.267" starttime="20130722 03:02:14.140"></status>
+</kw>
+<msg timestamp="20130722 03:02:14.267" level="TRACE">Return: None</msg>
+<status status="PASS" endtime="20130722 03:02:14.267" starttime="20130722 03:02:13.972"></status>
+</kw>
+<kw type="kw" name="resource.Then Login Should Have Failed Email Is Required">
+<doc></doc>
+<arguments>
+</arguments>
+<msg timestamp="20130722 03:02:14.269" level="TRACE">Arguments: [  ]</msg>
+<kw type="kw" name="Selenium2Library.Wait Until Page Contains">
+<doc>Waits until `text` appears on current page.</doc>
+<arguments>
+<arg>Please enter your registered e-mail address.</arg>
+</arguments>
+<msg timestamp="20130722 03:02:14.269" level="TRACE">Arguments: [ u'Please enter your registered e-mail address.' ]</msg>
+<msg timestamp="20130722 03:02:14.270" level="DEBUG">POST http://127.0.0.1:60048/hub/session/79e026f3-290e-446e-be57-1f8088ed1608/elements {"using": "xpath", "sessionId": "79e026f3-290e-446e-be57-1f8088ed1608", "value": "//*[contains(., 'Please enter your registered e-mail address.')]"}</msg>
+<msg timestamp="20130722 03:02:14.486" level="DEBUG">POST http://127.0.0.1:60048/hub/session/79e026f3-290e-446e-be57-1f8088ed1608/elements {"using": "xpath", "sessionId": "79e026f3-290e-446e-be57-1f8088ed1608", "value": "//*[contains(., 'Please enter your registered e-mail address.')]"}</msg>
+<msg timestamp="20130722 03:02:14.516" level="TRACE">Return: None</msg>
+<status status="PASS" endtime="20130722 03:02:14.516" starttime="20130722 03:02:14.269"></status>
+</kw>
+<msg timestamp="20130722 03:02:14.516" level="TRACE">Return: None</msg>
+<status status="PASS" endtime="20130722 03:02:14.516" starttime="20130722 03:02:14.269"></status>
+</kw>
+<kw type="teardown" name="Selenium2Library.Close Browser">
+<doc>Closes the current browser.</doc>
+<arguments>
+</arguments>
+<msg timestamp="20130722 03:02:14.518" level="TRACE">Arguments: [  ]</msg>
+<msg timestamp="20130722 03:02:14.518" level="DEBUG">Closing browser with session id 79e026f3-290e-446e-be57-1f8088ed1608</msg>
+<msg timestamp="20130722 03:02:14.519" level="DEBUG">DELETE http://127.0.0.1:60048/hub/session/79e026f3-290e-446e-be57-1f8088ed1608 {"sessionId": "79e026f3-290e-446e-be57-1f8088ed1608"}</msg>
+<msg timestamp="20130722 03:02:14.674" level="TRACE">Return: None</msg>
+<status status="PASS" endtime="20130722 03:02:14.674" starttime="20130722 03:02:14.518"></status>
+</kw>
+<doc></doc>
+<tags>
+</tags>
+<status status="PASS" endtime="20130722 03:02:14.675" critical="yes" starttime="20130722 03:02:00.242"></status>
+</test>
+<test id="s1-s1-t13" name="Login With Empty Username And Password">
+<kw type="kw" name="resource.Given browser is opened to login page">
+<doc></doc>
+<arguments>
+</arguments>
+<msg timestamp="20130722 03:02:14.678" level="TRACE">Arguments: [  ]</msg>
+<kw type="kw" name="resource.Open Browser To Login Page">
+<doc></doc>
+<arguments>
+</arguments>
+<msg timestamp="20130722 03:02:14.679" level="TRACE">Arguments: [  ]</msg>
+<kw type="kw" name="Selenium2Library.Open Browser">
+<doc>Opens a new browser instance to given URL.</doc>
+<arguments>
+<arg>${LOGIN URL}</arg>
+<arg>${BROWSER}</arg>
+</arguments>
+<msg timestamp="20130722 03:02:14.679" level="TRACE">Arguments: [ u'http://www.interviewstreet.com' | u'Firefox' ]</msg>
+<msg timestamp="20130722 03:02:14.680" level="INFO">Opening browser 'Firefox' to base url 'http://www.interviewstreet.com'</msg>
+<msg timestamp="20130722 03:02:20.231" level="DEBUG">POST http://127.0.0.1:60113/hub/session {"sessionId": null, "desiredCapabilities": {"platform": "ANY", "browserName": "firefox", "version": "", "javascriptEnabled": true}}</msg>
+<msg timestamp="20130722 03:02:20.307" level="DEBUG">POST http://127.0.0.1:60113/hub/session/da19fdc0-ac0f-43a3-b5d7-4635f81493e7/timeouts/async_script {"sessionId": "da19fdc0-ac0f-43a3-b5d7-4635f81493e7", "ms": 5000.0}</msg>
+<msg timestamp="20130722 03:02:20.315" level="DEBUG">POST http://127.0.0.1:60113/hub/session/da19fdc0-ac0f-43a3-b5d7-4635f81493e7/timeouts/implicit_wait {"sessionId": "da19fdc0-ac0f-43a3-b5d7-4635f81493e7", "ms": 0.0}</msg>
+<msg timestamp="20130722 03:02:20.323" level="DEBUG">POST http://127.0.0.1:60113/hub/session/da19fdc0-ac0f-43a3-b5d7-4635f81493e7/url {"url": "http://www.interviewstreet.com", "sessionId": "da19fdc0-ac0f-43a3-b5d7-4635f81493e7"}</msg>
+<msg timestamp="20130722 03:02:25.440" level="DEBUG">Opened browser with session id da19fdc0-ac0f-43a3-b5d7-4635f81493e7</msg>
+<msg timestamp="20130722 03:02:25.440" level="TRACE">Return: 9</msg>
+<status status="PASS" endtime="20130722 03:02:25.440" starttime="20130722 03:02:14.679"></status>
+</kw>
+<kw type="kw" name="Selenium2Library.Set Selenium Speed">
+<doc>Sets the delay in seconds that is waited after each Selenium command.</doc>
+<arguments>
+<arg>${DELAY}</arg>
+</arguments>
+<msg timestamp="20130722 03:02:25.441" level="TRACE">Arguments: [ u'0' ]</msg>
+<msg timestamp="20130722 03:02:25.441" level="TRACE">Return: '0 seconds'</msg>
+<status status="PASS" endtime="20130722 03:02:25.441" starttime="20130722 03:02:25.441"></status>
+</kw>
+<kw type="kw" name="resource.Login Page Should Be Open">
+<doc></doc>
+<arguments>
+</arguments>
+<msg timestamp="20130722 03:02:25.442" level="TRACE">Arguments: [  ]</msg>
+<kw type="kw" name="Selenium2Library.Title Should Be">
+<doc>Verifies that current page title equals `title`.</doc>
+<arguments>
+<arg>Programming Test | Hire programmers | Interviewstreet | Dashboard</arg>
+</arguments>
+<msg timestamp="20130722 03:02:25.442" level="TRACE">Arguments: [ u'Programming Test | Hire programmers | Interviewstreet | Dashboard' ]</msg>
+<msg timestamp="20130722 03:02:25.442" level="DEBUG">GET http://127.0.0.1:60113/hub/session/da19fdc0-ac0f-43a3-b5d7-4635f81493e7/title {"sessionId": "da19fdc0-ac0f-43a3-b5d7-4635f81493e7"}</msg>
+<msg timestamp="20130722 03:02:27.715" level="INFO">Page title is 'Programming Test | Hire programmers | Interviewstreet | Dashboard'.</msg>
+<msg timestamp="20130722 03:02:27.715" level="TRACE">Return: None</msg>
+<status status="PASS" endtime="20130722 03:02:27.715" starttime="20130722 03:02:25.442"></status>
+</kw>
+<msg timestamp="20130722 03:02:27.715" level="TRACE">Return: None</msg>
+<status status="PASS" endtime="20130722 03:02:27.715" starttime="20130722 03:02:25.441"></status>
+</kw>
+<kw type="kw" name="Selenium2Library.Click Element">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>id=login_button</arg>
+</arguments>
+<msg timestamp="20130722 03:02:27.716" level="TRACE">Arguments: [ u'id=login_button' ]</msg>
+<msg timestamp="20130722 03:02:27.716" level="INFO">Clicking element 'id=login_button'.</msg>
+<msg timestamp="20130722 03:02:27.717" level="DEBUG">POST http://127.0.0.1:60113/hub/session/da19fdc0-ac0f-43a3-b5d7-4635f81493e7/elements {"using": "id", "sessionId": "da19fdc0-ac0f-43a3-b5d7-4635f81493e7", "value": "login_button"}</msg>
+<msg timestamp="20130722 03:02:27.804" level="DEBUG">POST http://127.0.0.1:60113/hub/session/da19fdc0-ac0f-43a3-b5d7-4635f81493e7/element/{4e6ea092-6a63-4c5b-89ab-a379910ba983}/click {"sessionId": "da19fdc0-ac0f-43a3-b5d7-4635f81493e7", "id": "{4e6ea092-6a63-4c5b-89ab-a379910ba983}"}</msg>
+<msg timestamp="20130722 03:02:27.908" level="TRACE">Return: None</msg>
+<status status="PASS" endtime="20130722 03:02:27.908" starttime="20130722 03:02:27.716"></status>
+</kw>
+<msg timestamp="20130722 03:02:27.909" level="TRACE">Return: None</msg>
+<status status="PASS" endtime="20130722 03:02:27.909" starttime="20130722 03:02:14.679"></status>
+</kw>
+<msg timestamp="20130722 03:02:27.909" level="TRACE">Return: None</msg>
+<status status="PASS" endtime="20130722 03:02:27.909" starttime="20130722 03:02:14.678"></status>
+</kw>
+<kw type="kw" name="resource.When user &quot;${EMPTY}&quot; logs in with password &quot;${EMPTY}&quot;">
+<doc></doc>
+<arguments>
+</arguments>
+<msg timestamp="20130722 03:02:27.911" level="TRACE">Arguments: [  ]</msg>
+<kw type="kw" name="resource.Input Username">
+<doc></doc>
+<arguments>
+<arg>${username}</arg>
+</arguments>
+<msg timestamp="20130722 03:02:27.911" level="TRACE">Arguments: [ ${username}='' ]</msg>
+<kw type="kw" name="Selenium2Library.Input Text">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>email</arg>
+<arg>${username}</arg>
+</arguments>
+<msg timestamp="20130722 03:02:27.912" level="TRACE">Arguments: [ u'email' | '' ]</msg>
+<msg timestamp="20130722 03:02:27.912" level="INFO">Typing text '' into text field 'email'</msg>
+<msg timestamp="20130722 03:02:27.912" level="DEBUG">POST http://127.0.0.1:60113/hub/session/da19fdc0-ac0f-43a3-b5d7-4635f81493e7/elements {"using": "xpath", "sessionId": "da19fdc0-ac0f-43a3-b5d7-4635f81493e7", "value": "//*[(@id='email' or @name='email')]"}</msg>
+<msg timestamp="20130722 03:02:27.922" level="DEBUG">POST http://127.0.0.1:60113/hub/session/da19fdc0-ac0f-43a3-b5d7-4635f81493e7/element/{707ceb34-2236-4054-aa34-36a9408701aa}/clear {"sessionId": "da19fdc0-ac0f-43a3-b5d7-4635f81493e7", "id": "{707ceb34-2236-4054-aa34-36a9408701aa}"}</msg>
+<msg timestamp="20130722 03:02:27.942" level="DEBUG">POST http://127.0.0.1:60113/hub/session/da19fdc0-ac0f-43a3-b5d7-4635f81493e7/element/{707ceb34-2236-4054-aa34-36a9408701aa}/value {"sessionId": "da19fdc0-ac0f-43a3-b5d7-4635f81493e7", "id": "{707ceb34-2236-4054-aa34-36a9408701aa}", "value": []}</msg>
+<msg timestamp="20130722 03:02:27.999" level="TRACE">Return: None</msg>
+<status status="PASS" endtime="20130722 03:02:27.998" starttime="20130722 03:02:27.911"></status>
+</kw>
+<msg timestamp="20130722 03:02:27.999" level="TRACE">Return: None</msg>
+<status status="PASS" endtime="20130722 03:02:27.999" starttime="20130722 03:02:27.911"></status>
+</kw>
+<kw type="kw" name="resource.Input Password">
+<doc></doc>
+<arguments>
+<arg>${password}</arg>
+</arguments>
+<msg timestamp="20130722 03:02:27.999" level="TRACE">Arguments: [ ${password}='' ]</msg>
+<kw type="kw" name="Selenium2Library.Input Text">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>password</arg>
+<arg>${password}</arg>
+</arguments>
+<msg timestamp="20130722 03:02:28.000" level="TRACE">Arguments: [ u'password' | '' ]</msg>
+<msg timestamp="20130722 03:02:28.000" level="INFO">Typing text '' into text field 'password'</msg>
+<msg timestamp="20130722 03:02:28.000" level="DEBUG">POST http://127.0.0.1:60113/hub/session/da19fdc0-ac0f-43a3-b5d7-4635f81493e7/elements {"using": "xpath", "sessionId": "da19fdc0-ac0f-43a3-b5d7-4635f81493e7", "value": "//*[(@id='password' or @name='password')]"}</msg>
+<msg timestamp="20130722 03:02:28.015" level="DEBUG">POST http://127.0.0.1:60113/hub/session/da19fdc0-ac0f-43a3-b5d7-4635f81493e7/element/{7a09be33-0166-4b79-bcee-c2029d88e2a3}/clear {"sessionId": "da19fdc0-ac0f-43a3-b5d7-4635f81493e7", "id": "{7a09be33-0166-4b79-bcee-c2029d88e2a3}"}</msg>
+<msg timestamp="20130722 03:02:28.038" level="DEBUG">POST http://127.0.0.1:60113/hub/session/da19fdc0-ac0f-43a3-b5d7-4635f81493e7/element/{7a09be33-0166-4b79-bcee-c2029d88e2a3}/value {"sessionId": "da19fdc0-ac0f-43a3-b5d7-4635f81493e7", "id": "{7a09be33-0166-4b79-bcee-c2029d88e2a3}", "value": []}</msg>
+<msg timestamp="20130722 03:02:28.074" level="TRACE">Return: None</msg>
+<status status="PASS" endtime="20130722 03:02:28.074" starttime="20130722 03:02:28.000"></status>
+</kw>
+<msg timestamp="20130722 03:02:28.074" level="TRACE">Return: None</msg>
+<status status="PASS" endtime="20130722 03:02:28.074" starttime="20130722 03:02:27.999"></status>
+</kw>
+<kw type="kw" name="resource.Submit Credentials">
+<doc></doc>
+<arguments>
+</arguments>
+<msg timestamp="20130722 03:02:28.075" level="TRACE">Arguments: [  ]</msg>
+<kw type="kw" name="Selenium2Library.Click Button">
+<doc>Clicks a button identified by `locator`.</doc>
+<arguments>
+<arg>login_action</arg>
+</arguments>
+<msg timestamp="20130722 03:02:28.075" level="TRACE">Arguments: [ u'login_action' ]</msg>
+<msg timestamp="20130722 03:02:28.075" level="INFO">Clicking button 'login_action'.</msg>
+<msg timestamp="20130722 03:02:28.075" level="DEBUG">GET http://127.0.0.1:60113/hub/session/da19fdc0-ac0f-43a3-b5d7-4635f81493e7/url {"sessionId": "da19fdc0-ac0f-43a3-b5d7-4635f81493e7"}</msg>
+<msg timestamp="20130722 03:02:28.089" level="DEBUG">POST http://127.0.0.1:60113/hub/session/da19fdc0-ac0f-43a3-b5d7-4635f81493e7/elements {"using": "xpath", "sessionId": "da19fdc0-ac0f-43a3-b5d7-4635f81493e7", "value": "//input[(@id='login_action' or @name='login_action' or @value='login_action' or @src='login_action' or @src='https://www.interviewstreet.com/recruit2/login_action')]"}</msg>
+<msg timestamp="20130722 03:02:28.103" level="DEBUG">POST http://127.0.0.1:60113/hub/session/da19fdc0-ac0f-43a3-b5d7-4635f81493e7/elements {"using": "xpath", "sessionId": "da19fdc0-ac0f-43a3-b5d7-4635f81493e7", "value": "//button[(@id='login_action' or @name='login_action' or @value='login_action' or normalize-space(descendant-or-self::text())='login_action')]"}</msg>
+<msg timestamp="20130722 03:02:28.117" level="DEBUG">POST http://127.0.0.1:60113/hub/session/da19fdc0-ac0f-43a3-b5d7-4635f81493e7/element/{244cfade-44e2-4eaa-a5b0-54c3e43379ac}/click {"sessionId": "da19fdc0-ac0f-43a3-b5d7-4635f81493e7", "id": "{244cfade-44e2-4eaa-a5b0-54c3e43379ac}"}</msg>
+<msg timestamp="20130722 03:02:28.200" level="TRACE">Return: None</msg>
+<status status="PASS" endtime="20130722 03:02:28.200" starttime="20130722 03:02:28.075"></status>
+</kw>
+<msg timestamp="20130722 03:02:28.200" level="TRACE">Return: None</msg>
+<status status="PASS" endtime="20130722 03:02:28.200" starttime="20130722 03:02:28.074"></status>
+</kw>
+<msg timestamp="20130722 03:02:28.200" level="TRACE">Return: None</msg>
+<status status="PASS" endtime="20130722 03:02:28.200" starttime="20130722 03:02:27.910"></status>
+</kw>
+<kw type="kw" name="resource.Then Login Should Have Failed Email Is Required">
+<doc></doc>
+<arguments>
+</arguments>
+<msg timestamp="20130722 03:02:28.203" level="TRACE">Arguments: [  ]</msg>
+<kw type="kw" name="Selenium2Library.Wait Until Page Contains">
+<doc>Waits until `text` appears on current page.</doc>
+<arguments>
+<arg>Please enter your registered e-mail address.</arg>
+</arguments>
+<msg timestamp="20130722 03:02:28.203" level="TRACE">Arguments: [ u'Please enter your registered e-mail address.' ]</msg>
+<msg timestamp="20130722 03:02:28.203" level="DEBUG">POST http://127.0.0.1:60113/hub/session/da19fdc0-ac0f-43a3-b5d7-4635f81493e7/elements {"using": "xpath", "sessionId": "da19fdc0-ac0f-43a3-b5d7-4635f81493e7", "value": "//*[contains(., 'Please enter your registered e-mail address.')]"}</msg>
+<msg timestamp="20130722 03:02:28.425" level="DEBUG">POST http://127.0.0.1:60113/hub/session/da19fdc0-ac0f-43a3-b5d7-4635f81493e7/elements {"using": "xpath", "sessionId": "da19fdc0-ac0f-43a3-b5d7-4635f81493e7", "value": "//*[contains(., 'Please enter your registered e-mail address.')]"}</msg>
+<msg timestamp="20130722 03:02:28.506" level="TRACE">Return: None</msg>
+<status status="PASS" endtime="20130722 03:02:28.506" starttime="20130722 03:02:28.203"></status>
+</kw>
+<msg timestamp="20130722 03:02:28.506" level="TRACE">Return: None</msg>
+<status status="PASS" endtime="20130722 03:02:28.506" starttime="20130722 03:02:28.202"></status>
+</kw>
+<kw type="teardown" name="Selenium2Library.Close Browser">
+<doc>Closes the current browser.</doc>
+<arguments>
+</arguments>
+<msg timestamp="20130722 03:02:28.507" level="TRACE">Arguments: [  ]</msg>
+<msg timestamp="20130722 03:02:28.507" level="DEBUG">Closing browser with session id da19fdc0-ac0f-43a3-b5d7-4635f81493e7</msg>
+<msg timestamp="20130722 03:02:28.507" level="DEBUG">DELETE http://127.0.0.1:60113/hub/session/da19fdc0-ac0f-43a3-b5d7-4635f81493e7 {"sessionId": "da19fdc0-ac0f-43a3-b5d7-4635f81493e7"}</msg>
+<msg timestamp="20130722 03:02:28.617" level="TRACE">Return: None</msg>
+<status status="PASS" endtime="20130722 03:02:28.617" starttime="20130722 03:02:28.507"></status>
+</kw>
+<doc></doc>
+<tags>
+</tags>
+<status status="PASS" endtime="20130722 03:02:28.618" critical="yes" starttime="20130722 03:02:14.677"></status>
+</test>
+<doc>A test suite to test registration, login abd account settings
+</doc>
+<metadata>
+</metadata>
+<status status="PASS" endtime="20130722 03:02:28.621" starttime="20130722 02:59:17.642"></status>
+</suite>
+<doc></doc>
+<metadata>
+</metadata>
+<status status="PASS" endtime="20130722 03:02:28.628" starttime="20130722 02:59:17.613"></status>
+</suite>
+<statistics>
+<total>
+<stat fail="0" pass="13">Critical Tests</stat>
+<stat fail="0" pass="13">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat fail="0" pass="13" id="s1" name="Testsuites">Testsuites</stat>
+<stat fail="0" pass="13" id="s1-s1" name="Registration">Testsuites.Registration</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
