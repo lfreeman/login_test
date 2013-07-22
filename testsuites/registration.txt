@@ -1,5 +1,5 @@
 *** Settings ***
-Documentation     A test suite to test registration, login abd account settings
+Documentation     A test suite to test registration, login and account settings
 ...
 Library         lib/LoginTestLib.py 
 Resource        resource.txt
